@@ -22,8 +22,17 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  postgis_extension: postgis      # default is postgis
+  postgis_schema: public          # default is public
+  schema_search_path: public,postgis
   database: projectIntern_development
+  pool: 5
+
+# development:
+#   <<: *default
+#   database: projectIntern_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
