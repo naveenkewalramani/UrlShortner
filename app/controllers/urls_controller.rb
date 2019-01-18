@@ -25,10 +25,10 @@ class UrlsController < ApplicationController
   	end
 
 	def show_long_url
-		if (Url.where(shorturl: params[:shorturl]).first == nil)
-			render json: {'status' => 'not found'}
-		else
-			@row = Url.where(shorturl: params[:shorturl]).first
+		if @row = Url.where(shorturl: params[:shorturl]).first
+			if @row == nil
+				render json: {'status' => 'not found'}
+			end
 			redirect_to @row
 		end
 	end

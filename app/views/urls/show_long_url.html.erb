@@ -1,3 +1,6 @@
+<%= if @row==nil %>
+	<p>INVALID SHORT URL</p>
+<% end %>
 <p>
   <strong>shorturl:</strong>
   <%= @row.shorturl %>
