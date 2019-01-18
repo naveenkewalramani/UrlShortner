@@ -1,15 +1,37 @@
-
+<style>
+	.Longshort{
+		border:2px solid black;
+		padding:5px;
+		margin:2px;
+		position:relative;
+		display:block;
+	}
+	.Shortlong{
+		border:2px solid black;
+		position:relative;
+		display:block;
+		padding:5px;
+		margin:2px;
+	}
+</style>
  <div class=Longshort>
   <%= form_for @url do |f| %>
     <p> Long Url: <%= f.text_field :longurl%> </br></p>
     <p>Domain : <%= f.text_field :domain%> <br /></p>
-    <%=  f.submit %><br/>
+    <p>Find : <%=  f.submit 'Search' %><br/>
+  <% end %>
+  <% if @url.errors.any? %>
+    <ul class="Signup_Errors">
+    <% for message_error in @url.errors.full_messages %>
+      <li>* <%= message_error %></li>
+    <% end %>
+    </ul> 
   <% end %>
 </div>
 <br><br>
- <div class=ShortLong>
+ <div class=Shortlong>
   <%= form_with url: '/url/shorten' do |f| %>
     <p> Short Url: <%= f.text_field :shorturl%> </br></p>
-    <%=  f.submit  %><br/>
+    <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
 </div>

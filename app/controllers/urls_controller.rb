@@ -4,22 +4,19 @@ class UrlsController < ApplicationController
 	end
 
 	def create
-		if Url.where(longurl: params[:longurl]).first == nil
+		if (Url.where(longurl: params[:longurl]).first)
+			@url = Url.where(longurl: params[:url][:longurl]).first
+			redirect_to @url
+		else
 			@url = Url.new(url_params)
-			@url.mdsum = 0
-			@url.longurl.each_char {|x| @url.mdsum += x.ord}
-			@url.shorturl = @url.domain + (@url.mdsum%67).to_s
+			puts params[:longurl]
+			@url.mdsum = UrlsHelper.mdvalue(params[:url][:longurl])
+			@url.shorturl = UrlsHelper.conversion(params[:url][:domain],@url.mdsum)
 			if @url.save
 				redirect_to @url
 			else
 				render 'new'
-			end
-		else
-			#render json: {'status' => 'already_exist'}
-
-			@url = Url.where(longurl: params[:url][:longurl]).first
-			print @url.as_json
-			redirect_to @url		
+			end	
 		end
 	end
 
@@ -28,7 +25,7 @@ class UrlsController < ApplicationController
   	end
 
 	def show_long_url
-		if Url.where(shorturl: params[:shorturl]).first == nil
+		if (Url.where(shorturl: params[:shorturl]).first == nil)
 			render json: {'status' => 'not found'}
 		else
 			@row = Url.where(shorturl: params[:shorturl]).first
