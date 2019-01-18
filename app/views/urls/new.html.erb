@@ -1,0 +1,15 @@
+
+ <div class=Longshort>
+  <%= form_for @url do |f| %>
+    <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    <p>Domain : <%= f.text_field :domain%> <br /></p>
+    <%=  f.submit %><br/>
+  <% end %>
+</div>
+<br><br>
+ <div class=ShortLong>
+  <%= form_with url: '/url/shorten' do |f| %>
+    <p> Short Url: <%= f.text_field :shorturl%> </br></p>
+    <%=  f.submit  %><br/>
+  <% end %>
+</div>
