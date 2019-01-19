@@ -4,7 +4,7 @@ class UrlsController < ApplicationController
 	end
 
 	def create
-		if (Url.where(longurl: params[:longurl]).first)
+		if (Url.where(longurl: params[:url][:longurl]).first)
 			@url = Url.where(longurl: params[:url][:longurl]).first
 			redirect_to @url
 		else
@@ -24,17 +24,18 @@ class UrlsController < ApplicationController
     	@url = Url.find(params[:id])
   	end
 
-	def show_long_url
-		if @row = Url.where(shorturl: params[:shorturl]).first
-			if @row == nil
-				render json: {'status' => 'not found'}
-			end
-			redirect_to @row
-		end
+	def Shorturl
+		puts "enter shorturl"
+		if(Url.where(shorturl: params[:url][:shorturl]).first)
+			@url = Url.where(shorturl: params[:url][:shorturl]).first
+			redirect_to @url
+		else
+			render json: {'msg' => 'Invalid shorturl'}
+		end 
 	end
 
 	private
 		def url_params
-			params.require(:url).permit(:longurl, :domain)
+			params.require(:url).permit(:longurl, :domain, :shorturl)
 		end
 end

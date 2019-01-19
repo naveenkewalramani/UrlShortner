@@ -1,6 +1,6 @@
 <div class="Sign_Form">
   <h1>Sign Up</h1>
-  <%= form_for @user do |f| %>
+  <%= form_for @user, :url => users_signup_path do |f| %>
     <p> Username:</br> <%= f.text_field :username%> </p>
     <p> Email:</br> <%= f.text_field :email%> </p>
     <p> Password:</br> <%= f.password_field :password%></p>

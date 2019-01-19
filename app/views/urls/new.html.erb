@@ -30,7 +30,7 @@
 </div>
 <br><br>
  <div class=Shortlong>
-  <%= form_with url: '/url/shorten' do |f| %>
+  <%= form_for @url, url: url_shorturl_path do |f| %>
     <p> Short Url: <%= f.text_field :shorturl%> </br></p>
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
