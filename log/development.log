@@ -15501,3 +15501,173 @@ Processing by UrlsController#new as HTML
 Completed 200 OK in 104ms (Views: 99.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-20 12:29:01 +0530
+  [1m[35m (50.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 415ms (Views: 408.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-20 12:29:18 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 302ms (Views: 129.9ms | ActiveRecord: 83.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-20 12:29:27 +0530
+Processing by UsersController#Login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lUxr9sGp3bckWRKthelUr4ZKW/78FNyRFC2lBcd9Qk+ik65/2+YQytvA9bTw2mYuKSlmuYVxmDy6ZcK5wNowiA==", "user"=>{"username"=>"naveen", "email"=>"naveen.kewalramani2903@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (75.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."username" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani2903@gmail.com"], ["username", "naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 75.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-20 12:30:52 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-20 12:30:54 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 98ms (Views: 43.9ms | ActiveRecord: 29.9ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-20 12:30:57 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 58ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2019-01-20 12:31:23 +0530
+Processing by UsersController#Signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oe2cWtD6wJex5reBdKulwvcdNY8dwG9J3Yngl1Bpaw0bDlR82QiBa9pMoGAKQrrFF5Gq4IWdNfeX4mvj3Ywwag==", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+Unpermitted parameter: :password_confirmation
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (45.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "test"], ["email", "test@gmail.com"], ["created_at", "2019-01-20 07:01:23.447975"], ["updated_at", "2019-01-20 07:01:23.447975"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (381.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 446ms (ActiveRecord: 430.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-20 12:31:23 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 85ms (Views: 28.0ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-20 12:31:40 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"11xHfbwu1D90zUuVtIp4RFtTP6iHe/QR/X27SymE0+ZoKG80M9WMUoNx515QeBLjGaN0M+8TLEG9HLS9OYippw==", "url"=>{"longurl"=>"https://www.youtube.com/watch?v=qJ7pCOnohFc", "domain"=>"youtube"}, "commit"=>"Search"}
+  [1m[36mUrl Load (43.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/watch?v=qJ7pCOnohFc"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:15
+  [1m[36mUrl Create (1.0ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/watch?v=qJ7pCOnohFc"], ["shorturl", "www.nav.com/wFaD"], ["domain", "youtube"], ["mdsum", 4082], ["created_at", "2019-01-20 07:01:40.230286"], ["updated_at", "2019-01-20 07:01:40.230286"]]
+  ↳ app/controllers/urls_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:15
+Redirected to http://localhost:3000/urls/13
+Completed 302 Found in 50ms (ActiveRecord: 45.3ms)
+
+
+Started GET "/urls/13" for 127.0.0.1 at 2019-01-20 12:31:40 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:24
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 59ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-20 12:31:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-20 12:31:52 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JjnNq5GkJYL2NKZS5IXSp0d6mkw/YDO2BV3s6yA7bBnSp6NRqnMUCXs+QJkM63cQnMmNqlPdAH6OiJe1XndOxA==", "url"=>{"shorturl"=>"www.nav.com/wFaD"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/wFaD"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[36mCACHE Url Load (0.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/wFaD"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:30
+Redirected to http://localhost:3000/urls/13
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls/13" for 127.0.0.1 at 2019-01-20 12:31:52 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:24
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-20 12:31:55 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-20 12:32:03 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tzF45SJzR0uMIVLXLwEjsCuqvbvJi9loZ2Dq3tGuPP1DrxYfGaR2wAErtBzHb4YH8BmqXaU26qDstZGAr+IeIA==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[36mCACHE Url Load (0.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:30
+Redirected to http://localhost:3000/urls/11
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/11" for 127.0.0.1 at 2019-01-20 12:32:03 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:24
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-20 12:32:06 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-20 12:32:11 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wme+4M+GYam4kJHJCXyIxgZ7zhvXwbSJqB3wGrq2sMGu+dAa9FFQIjWadwLhEi1x3cjZ/bt8h0EjyItExPqSHA==", "url"=>{"shorturl"=>"random"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "random"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
