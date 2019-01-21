@@ -1,17 +1,46 @@
+<style>
+  *{
+    padding:5px;
+    margin:1px;
+    font-family:Georgia,sans-serif;
+      }
+  .Sign_Form{
+    border:1px solid black;
+    font-family:Georgia,sans-serif;
+    text-align:center;
+
+  }
+  h2{
+    color:midnightblue;
+    text-align:center;
+
+  }
+  button{
+    text-align:left;
+  }
+</style>
+<h2><i>WELCOME TO SIGN UP PAGE</i></h2>
 <div class="Sign_Form">
   <h1>Sign Up</h1>
   <%= form_for @user, :url => users_signup_path do |f| %>
-    <p> Username:</br> <%= f.text_field :username%> </p>
-    <p> Email:</br> <%= f.text_field :email%> </p>
-    <p> Password:</br> <%= f.password_field :password%></p>
-    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
-    <%= f.submit :Signup %>
+    <p> Username:<br/><%= f.text_field :username%> </p>
+    <p> Email:<br/><%= f.text_field :email%> </p>
+    <p> Password:<br/> <%= f.password_field :password%></p>
+    <p> Password Confirmation:<br/> <%= f.password_field :password_confirmation%> </p>
+    <%= f.submit :signup %>
   <% end %>
-  <% if @user.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
+  <div class="errors">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
-    </ul> 
-  <% end %>
+    <% if @user.errors.any? %>
+      <ul class="Signup_Errors">
+      <% for message_error in @user.errors.full_messages %>
+        <li>* <%= message_error %></li>
+      <% end %>
+      </ul> 
+    <% end %>
+  </div>
+  <button>Login : <%= link_to "login" , user_login_path %></button>
 </div>
+

@@ -1,10 +1,37 @@
-<p>WELCOME TO LOGIN PAGE</p>
+<style>
+  *{
+    padding:5px;
+    margin:1px;
+    font-family:Georgia,sans-serif;
+      }
+  .Login_Form{
+    border:1px solid black;
+    font-family:Georgia,sans-serif;
+    text-align:center;
+
+  }
+  h2{
+    color:midnightblue;
+    text-align:center;
+
+  }
+  button{
+    text-align:left;
+  }
+</style>
+<h2><i>WELCOME TO LOGIN PAGE</i></h2>
 <div class="Login_Form">
   <h1>Login</h1>
   <%= form_for @user, :url => users_login_path do |t| %>
     <p> Username:</br> <%= t.text_field :username%> </p>
     <p> Email:</br> <%= t.text_field :email%> </p>
     <p> Password:</br> <%= t.password_field :password%></p>
-    <%= t.submit :Login %>
+    <%= t.submit :login_new %>
   <% end %>
+  <div class="errors">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+  <button>SignUp : <%= link_to "signup" , user_new_path %></button>
 </div>

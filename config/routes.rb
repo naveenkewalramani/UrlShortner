@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'homepage' => "users#homepage"	#loads homepage
   get 'user/new' => "users#new"	      #go to signup page
   get 'user/login' => "users#login"   #go to login page
-  post 'users/signup' => "users#Signup"      #post signup page details
-  post 'users/login' => "users#Login"       #post login page details
+  post 'users/signup' => "users#signup"      #post signup page details
+  post 'users/login' => "users#login_new"       #post login page details
   post 'user/show' => 'users#show'
   root "users#homepage"
 

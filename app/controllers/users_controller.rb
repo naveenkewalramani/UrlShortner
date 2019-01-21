@@ -8,29 +8,35 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def Signup
+  def signup
     @user = User.new(user_params)
+    @user.password = UsersHelper.password_convert(params[:user][:password])
     if (User.where(email: params[:user][:email]).first)
-      render json: {'msg' => 'user already exist'}
+      flash[:notice] = "User Already Exist"
+      render 'new'
     elsif(User.where(username: params[:user][:username]).first)
-      render json: {'msg' => 'username already exist'}
+      flash[:notice] = "Username Already Exist"
+      render 'new'
     else
       if @user.save
         redirect_to new_url_path #redirect to the url page
       else
-        render json: {'msg' => 'form invalid'}
+        flash[:notice] = "User Already Exist"
+        render 'new'
       end
     end
   end
 
  
-  def Login
-    puts "login emnter"
-    if (User.where(email: params[:user][:email], username: params[:user][:username]).first)
-      @user = User.where(email: params[:user][:email], username: params[:user][:username]).first
+  def login_new
+    
+    if (User.where(email: params[:user][:email], username: params[:user][:username], password: UsersHelper.password_convert(params[:user][:password])).first)
+      @user = User.where(email: params[:user][:email], username: params[:user][:username], password: UsersHelper.password_convert(params[:user][:password])).first
       redirect_to new_url_path
     else
-      render json: {'msg' => 'username/password/email invalid'}
+      @user = User.new(user_params)
+      flash[:notice] = "username/password/email invalid"
+      render 'login'
     end
   end
 
@@ -39,6 +45,6 @@ class UsersController < ApplicationController
   end
   private
     def user_params
-      params.require(:user).permit(:email, :password, :username)
+      params.require(:user).permit(:username , :email, :password)
     end
 end
