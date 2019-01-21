@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'users/login' => "users#login_new"       #post login page details
   post 'user/show' => 'users#show'
   root "users#homepage"
+  get 'user/logout' => "users#logout"
 
 
   #Routes for Urls

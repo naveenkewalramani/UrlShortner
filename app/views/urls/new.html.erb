@@ -14,7 +14,7 @@
 		margin:2px;
 	}
 </style>
-
+<p></p>
  <div class=Longshort>
   <%= form_for @url do |f| %>
     <p> Long Url: <%= f.text_field :longurl%> </br></p>
@@ -36,3 +36,4 @@
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
 </div>
+<button>Logout : <%= link_to 'logout',user_logout_path  %> </button>

@@ -19,6 +19,9 @@ class UsersController < ApplicationController
       render 'new'
     else
       if @user.save
+        session[:id]=@user[:id]
+        session[:authenticate] = true
+        session[:expires_at] = Time.current + 3.minutes
         redirect_to new_url_path #redirect to the url page
       else
         flash[:notice] = "User Already Exist"
@@ -27,11 +30,20 @@ class UsersController < ApplicationController
     end
   end
 
- 
+  def logout
+    session[:username]=nil
+    session[:authenticate]=false
+    flash[:success] = "Logged out"
+    @user = User.new()
+    render 'login'
+  end
+
   def login_new
-    
-    if (User.where(email: params[:user][:email], username: params[:user][:username], password: UsersHelper.password_convert(params[:user][:password])).first)
-      @user = User.where(email: params[:user][:email], username: params[:user][:username], password: UsersHelper.password_convert(params[:user][:password])).first
+     @user = User.where(email: params[:user][:email], password: UsersHelper.password_convert(params[:user][:password])).first
+    if (@user!=nil)
+      session[:id]=@user[:id]
+      session[:authenticate] = true
+      session[:expires_at] = Time.current + 3.minutes
       redirect_to new_url_path
     else
       @user = User.new(user_params)
