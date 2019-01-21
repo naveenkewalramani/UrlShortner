@@ -18,7 +18,6 @@ class UrlsController < ApplicationController
 				@url.mdsum = UrlsHelper.mdvalue(params[:url][:longurl])
 				@url.shorturl = UrlsHelper.conversion(params[:url][:domain],@url.mdsum)
 				if @url.save
-					flash[:success] = "Welcome to the Sample App!"
 					redirect_to @url
 				else
 					render 'new'
@@ -45,7 +44,8 @@ class UrlsController < ApplicationController
 			if @url!=nil
 				redirect_to @url
 			else
-				render json: {'msg' => 'Short url not present in Database'}
+				flash[:notice] = "Not a valid url"
+				redirect_to new_url_path
 			end 
 		else
 			redirect_to user_login_path

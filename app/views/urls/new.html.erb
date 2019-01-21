@@ -1,20 +1,30 @@
 <style>
+  *{
+    text-align:center;
+  }
 	.Longshort{
 		border:2px solid black;
 		padding:5px;
-		margin:2px;
+		margin:1px;
 		position:relative;
 		display:block;
 	}
 	.Shortlong{
+    margin:2px;
 		border:2px solid black;
 		position:relative;
 		display:block;
-		padding:5px;
-		margin:2px;
+		padding:5px;  
 	}
+  button{
+    text-align:center;
+    padding:2px;
+    margin:2px;
+    font-family:Georgia,sans-serif;
+    font-size:1.2em;
+  }
 </style>
-<p></p>
+<h2>WELCOME TO URL SHORTNER</h2>
  <div class=Longshort>
   <%= form_for @url do |f| %>
     <p> Long Url: <%= f.text_field :longurl%> </br></p>
@@ -35,5 +45,10 @@
     <p> Short Url: <%= f.text_field :shorturl%> </br></p>
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
+  <div class="errors">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
 </div>
 <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
