@@ -1,20 +1,41 @@
+<style>
+  .display{
+    border:2px dotted black;
+    margin:10px;
+    font-size:1.2em;
+    padding:2px;
+    font-family:Georgia;
+    text-decoration: none;
+    text-align:center;
+  }
+  button{
+    color:black;
+    font-size:1.1em;
+    position:relative;
+    left:48%;
+    text-align:center;
+    font-family:sans-serif;
 
+  }
+</style>
+<div class = "display">
   <p>
-    <strong>LongUrl:</strong>
+    <strong>LongUrl : </strong>
     <%= @url.longurl %>
   </p>
    
   <p>
-    <strong>Domain:</strong>
+    <strong>Domain : </strong>
     <%= @url.domain %>
   </p>
    
   <p>
-    <strong>shorturl:</strong>
+    <strong>Shorturl : </strong>
     <%= @url.shorturl %>
   </p>
   <p>
-    <strong>ID:</strong>
+    <strong>ID : </strong>
     <%= @url.id %>
   </p>
-<%= link_to 'Back', new_url_path %>
+</div>
+<button><%= link_to 'Back', new_url_path %></button>

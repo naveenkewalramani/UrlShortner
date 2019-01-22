@@ -7,7 +7,9 @@ class UsersController < ApplicationController
    def login
     @user = User.new
   end
-
+  def ppp
+    
+  end
   def signup
     flash[:notice] = ""
     @user = User.new(user_params)
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:id]=@user[:id]
         session[:authenticate] = true
-        session[:expires_at] = Time.current + 10.seconds
+        session[:expires_at] = Time.current + 15.minutes
         redirect_to new_url_path #redirect to the url page
       else
         flash[:notice] = "User Already Exist"
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
     if (@user!=nil)
       session[:id]=@user[:id]
       session[:authenticate] = true
-      session[:expires_at] = Time.current + 10.seconds
+      session[:expires_at] = Time.current + 15.minutes
       redirect_to new_url_path
     else
       @user = User.new(user_params)

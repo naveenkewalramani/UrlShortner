@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   root "users#homepage"
   get 'user/logout' => "users#logout"
 
-
+  require 'sidekiq/web'
+  mount Sidekiq::Web, :at => '/sidekiq'
+  
   #Routes for Urls
-  #root 'urls#new'
   resources :urls
-  #get 'url/new' => "urls#new"
-  #post 'urls' => "urls#create"
   post 'url/shorturl' => 'urls#Shorturl'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -39,7 +39,7 @@ class UrlsController < ApplicationController
 
 	def Shorturl
 		if(session[:authenticate] == true)
-			if(params[:url][:shorturl][0..3]!="http")
+			if(params[:url][:shorturl][0..3]!="www.")
 				params[:url][:shorturl]="www.nav.com/"+params[:url][:shorturl]
 			end
 			@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
