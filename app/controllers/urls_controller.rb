@@ -11,7 +11,6 @@ class UrlsController < ApplicationController
 	def create
 		if(session[:authenticate] == true)
 			@url = Url.where(longurl: params[:url][:longurl]).first
-			#@url = Url.where(longurl: params[:url][:longurl], domain: params[:url][:domain]).first
 			if @url!=nil
 				redirect_to @url
 			else

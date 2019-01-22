@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_114558) do
+ActiveRecord::Schema.define(version: 2019_01_22_121831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "urlreports", force: :cascade do |t|
+    t.integer "count"
+    t.string "date"
+  end
 
   create_table "urls", force: :cascade do |t|
     t.string "longurl"

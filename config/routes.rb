@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root "users#homepage"
   get 'user/logout' => "users#logout"
 
+  #routes for sidekiq
   require 'sidekiq/web'
   mount Sidekiq::Web, :at => '/sidekiq'
   

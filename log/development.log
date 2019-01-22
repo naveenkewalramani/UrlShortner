@@ -26365,3 +26365,1793 @@ Processing by UrlsController#show as HTML
 Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 14:39:27 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 14:39:27 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 313ms (Views: 280.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/javascripts/dashboard.js" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/images/status.png" for 127.0.0.1 at 2019-01-22 14:43:32 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 14:43:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:43:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:43:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:43:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:43:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:43:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:44:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:45:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:46:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:47:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:48:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:49:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:50:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:51:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:52:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:53:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:54:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:55:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:56:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:56:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:56:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:56:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 14:56:23 +0530
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+Migrating to CreateReports (20190122092707)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (259.4ms)[0m  [1m[35mCREATE TABLE "reports" ("id" bigserial primary key, "counts" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190122092707_create_reports.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190122092707"]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[36mActiveRecord::InternalMetadata Load (61.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21
+Started GET "/" for 127.0.0.1 at 2019-01-22 15:03:14 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 457ms (Views: 448.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 15:03:21 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 53ms (Views: 24.1ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 15:03:25 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gS8H9BLz424o2bliRNPPUBkDSy6TZPCaeKTbUC73wBlYIFiArjrdy2blxr/9mBdlKDNPIMQ1W3rSj4LzXgQF0w==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 15:03:25 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 26.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 15:03:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:03:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:03:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:03:56 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 15:03:58 +0530
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 11]]
+  [1m[35m (64.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."id" = $1[0m  [["id", 11]]
+  [1m[35m (47.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+Started GET "/" for 127.0.0.1 at 2019-01-22 15:24:42 +0530
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 406ms (Views: 396.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 15:24:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:24:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:00 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:30 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:35 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:25:55 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:00 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:10 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:15 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:20 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:26:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:38:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:06 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:16 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:39:56 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:40:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:40:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:40:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:40:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:40:22 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 15:40:25 +0530
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 15:56:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:56:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:56:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:57:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:58:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 15:59:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:29 +0530
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 16:00:29 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:00:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:44 +0530
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:00:45 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 16:00:47 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 25.3ms | ActiveRecord: 22.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 16:00:48 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ch8Rbp7k4vkTxOvPFYtsr9t6E0lsFgsJoRHQ6drkVnOrEE4aIi3cXF34lBKswLSa6koXRztHoOkLOolKqheTuQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:00:48 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 35.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:00:59 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:00:59 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K8jN0Md9715e5XNf7r0ssnunp1PG9ETap3zyjaUG4Iu48PbGwUWY/33b7r4bSs7iT8jAWi5aLhRbnIkalsIGWQ==", "url"=>{"longurl"=>"https://guides.rubyonrails.org/active_record_querying.html", "domain"=>"guides.rubyonrails.org"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://guides.rubyonrails.org/active_record_querying.html"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://guides.rubyonrails.org/active_record_querying.html"], ["shorturl", "www.nav.com/7ksE"], ["domain", "guides.rubyonrails.org"], ["mdsum", 5865], ["created_at", "2019-01-22 10:30:59.901044"], ["updated_at", "2019-01-22 10:30:59.901044"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (350.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/82
+Completed 302 Found in 362ms (ActiveRecord: 352.6ms)
+
+
+Started GET "/urls/82" for 127.0.0.1 at 2019-01-22 16:01:00 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"82"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 16:01:03 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:01:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:01:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:01:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:01:19 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:02:24 +0530
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 16:02:27 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:02:28 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:02:31 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:02:37 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 247ms (Views: 225.1ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:02:47 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/KOy8WrI2z7By2jKK6yFBjph3ytZ2Wh18JJxkz/tf0myWMovP3LhWgYlfQzAgqS2dt/rozry8yyeAv4nrdPRBw==", "url"=>{"longurl"=>"https://redis.io/commands/monitor", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/commands/monitor"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/commands/monitor"], ["shorturl", "www.nav.com/Op3C"], ["domain", "redis.io"], ["mdsum", 3232], ["created_at", "2019-01-22 10:32:47.866345"], ["updated_at", "2019-01-22 10:32:47.866345"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/83
+Completed 302 Found in 18ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/urls/83" for 127.0.0.1 at 2019-01-22 16:02:47 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:02:50 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:02:50 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 16:02:55 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:02:57 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:04:30 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:04:32 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:04:33 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:08:04 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 19.8ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:08:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qNGYp2+d8n5YMyiUx1db4QeMSxIknLPRboWMMFmvw2fmKuB5OifIGp/dPVIseXpRSzJ/mke3KIgAFQOEy5FtKQ==", "url"=>{"longurl"=>"www.google.com", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.google.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+Redirected to http://localhost:3000/urls/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/1" for 127.0.0.1 at 2019-01-22 16:08:29 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:08:33 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:08:33 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:08:35 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:08:35 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:08:37 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:08:43 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:08:57 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R5sNB5LcxE4tbi3WLzS33kjMCIn8hsUOLGjkyOtrpiYJYHXZx2b+KuqAOBDEGpZuBHI8AZ+tXldC+Gt8eVUIaA==", "url"=>{"longurl"=>"www.wasz.com", "domain"=>"wsa.comn"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.wasz.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.wasz.com"], ["shorturl", "www.nav.com/NpKA"], ["domain", "wsa.comn"], ["mdsum", 1221], ["created_at", "2019-01-22 10:38:57.615651"], ["updated_at", "2019-01-22 10:38:57.615651"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/84
+Completed 302 Found in 59ms (ActiveRecord: 41.6ms)
+
+
+Started GET "/urls/84" for 127.0.0.1 at 2019-01-22 16:08:57 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:09:01 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:09:01 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:09:03 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:09:50 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:09:50 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:09:55 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:10:04 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VrKRrCR7z6kVoTs/YDwXJDRZ6ZQEwBwHORj+2zbrfXcYSelyccH1zdJPLvmLEjaUeOfdHGfrh15XiHFvpNXTOQ==", "url"=>{"longurl"=>"plp.com", "domain"=>"p.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "plp.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "plp.com"], ["shorturl", "www.nav.com/ZBF"], ["domain", "p.com"], ["mdsum", 697], ["created_at", "2019-01-22 10:40:04.556106"], ["updated_at", "2019-01-22 10:40:04.556106"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/85
+Completed 302 Found in 54ms (ActiveRecord: 46.0ms)
+
+
+Started GET "/urls/85" for 127.0.0.1 at 2019-01-22 16:10:04 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"85"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:10:07 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:10:07 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:13:27 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 41ms (Views: 22.3ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:13:46 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U3bhZJmfC1ixG1RPmY8+3XAdYlCkmK/WhgOy7kw7/dwdjZm6zCUxPHb1QYlyoR9tPKNW2MezNI/okz1a3gVTkg==", "url"=>{"longurl"=>"www.makaan.com/user?naveen", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.makaan.com/user?naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (2.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.makaan.com/user?naveen"], ["shorturl", "www.nav.com/4qXB"], ["domain", "makaan.com"], ["mdsum", 2579], ["created_at", "2019-01-22 10:43:46.464117"], ["updated_at", "2019-01-22 10:43:46.464117"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/86
+Completed 302 Found in 53ms (ActiveRecord: 43.4ms)
+
+
+Started GET "/urls/86" for 127.0.0.1 at 2019-01-22 16:13:46 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:13:48 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:13:49 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:14:34 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:14:34 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:19:05 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 16:19:05 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 23.8ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 16:19:07 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zl6jmKafDhenwNUGDk4vvWx0a2MZP3Rs39RbvXvvxgkXUfzsGlYwsun8qtu3BfeIXURvbU5u34x1/wIeCxwDww==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:19:07 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 21.9ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:19:20 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cnGHA66N4JklkkJZygn57yoQcNRQv6TI9iFZYRLD5gfhSbwVqLWXOAas37g//hu/Hn8X3bgRzgYKwSL2IQcA1Q==", "url"=>{"longurl"=>"www.vipul.com", "domain"=>"vipul.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.vipul.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.vipul.com"], ["shorturl", "www.nav.com/pzLA"], ["domain", "vipul.com"], ["mdsum", 1328], ["created_at", "2019-01-22 10:49:20.100091"], ["updated_at", "2019-01-22 10:49:20.100091"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/87
+Completed 302 Found in 53ms (ActiveRecord: 42.6ms)
+
+
+Started GET "/urls/87" for 127.0.0.1 at 2019-01-22 16:19:20 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"87"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:19:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:19:24 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:19:24 +0530
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-22 16:22:40 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:22:44 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-22 16:23:19 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 78ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:23:48 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:24:06 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:24:07 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:24:44 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:01 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:11 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:20 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:21 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:26 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:27 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 16:25:30 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 16:25:51 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 16:25:52 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mdVhPBpNpxG+JbFp2txbu2xgI1OwHzfrb+EE5bcoHWJA2j5IpoSZtPAZzrRjl4OOXVAnXedOnAvFyl1Gx9vYqA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:25:52 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:26:13 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9DcJxgxKH3567IkkxwwmDo40uiJdotBUzsX++0PQmoo6OcxHglf3NrVL8Vm69LIDle14WHY4Y+v22xs3sukuA==", "url"=>{"longurl"=>"https://angularjs.org/", "domain"=>"angularjs"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://angularjs.org/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://angularjs.org/"], ["shorturl", "www.nav.com/YITB"], ["domain", "angularjs"], ["mdsum", 2103], ["created_at", "2019-01-22 10:56:13.100958"], ["updated_at", "2019-01-22 10:56:13.100958"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/88
+Completed 302 Found in 48ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/urls/88" for 127.0.0.1 at 2019-01-22 16:26:13 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:26:14 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:32:08 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:32:08 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:32:09 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:32:09 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:32:10 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:32:10 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:32:10 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:32:19 +0530
+Started GET "/sidekiq/" for 127.0.0.1 at 2019-01-22 16:32:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:32:56 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:06 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:11 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:16 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:33:56 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:07 +0530
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-22 16:34:08 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:11 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:45 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:55 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:34:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:05 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:11 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:15 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:17 +0530
+Started GET "/sidekiq/?days=90" for 127.0.0.1 at 2019-01-22 16:35:19 +0530
+Started GET "/sidekiq/?days=180" for 127.0.0.1 at 2019-01-22 16:35:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 16:35:23 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:35:24 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-21 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-21 00:00:00"], ["created_at", "2019-01-21 23:59:59.999999"]]
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 16:42:04 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gcgND5fJjFR9ueNH+Uben0yR7LFOeI+sOdcEIMfbbNZYx1J7KwCy8TOFnJpADQaqfaHovxkpJEyT/F2DtyipHA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 32ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:42:04 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 34.0ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:42:35 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CSRGUY/YkBPbUQxPaLhHTg5a9t2BHUYIScHJjLcpVfGaHH1HieDnsvhvka6dT6UeOjWR1GmzLMa1IbIbhO2zIw==", "url"=>{"longurl"=>"http://hris.proptiger.com/attendance/index/view-attendance", "domain"=>"hris.proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://hris.proptiger.com/attendance/index/view-attendance"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "http://hris.proptiger.com/attendance/index/view-attendance"], ["shorturl", "www.nav.com/A4qE"], ["domain", "hris.proptiger.com"], ["mdsum", 5696], ["created_at", "2019-01-22 11:12:35.410128"], ["updated_at", "2019-01-22 11:12:35.410128"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/89
+Completed 302 Found in 88ms (ActiveRecord: 42.0ms)
+
+
+Started GET "/urls/89" for 127.0.0.1 at 2019-01-22 16:42:35 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"89"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:42:41 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:42:41 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:42:42 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:42:42 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:02 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:07 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:07 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:11 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:11 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:13 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:13 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:15 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:15 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:15 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:15 +0530
+Started POST "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:23 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 16:43:23 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 16:43:25 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:43:27 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:43:35 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:43:47 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArvA2RmbPwDsWG4Xey//gARxex7bNx+0ErJ6/fm4k6VMQLgHTCEFZCu2e9GQAd4wSM9PlrgchO18IvVJa4Y96w==", "url"=>{"longurl"=>"http://hris.proptiger.com/", "domain"=>"hris.proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://hris.proptiger.com/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "http://hris.proptiger.com/"], ["shorturl", "www.nav.com/EhWB"], ["domain", "hris.proptiger.com"], ["mdsum", 2484], ["created_at", "2019-01-22 11:13:47.876037"], ["updated_at", "2019-01-22 11:13:47.876037"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/90
+Completed 302 Found in 49ms (ActiveRecord: 41.3ms)
+
+
+Started GET "/urls/90" for 127.0.0.1 at 2019-01-22 16:43:47 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:43:49 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:43:51 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:43:51 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:44:28 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WbZtGHTIBowndvJ3+PIYkF5QPVb6H/jju72WOHz6rdoXTRXGIXI86OCY57ET3DkgEu4J3pk0Y7rVLRmM7sQDlA==", "url"=>{"longurl"=>"www.test.com/wvuafuafwuv", "domain"=>"test.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.test.com/wvuafuafwuv"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (3.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.test.com/wvuafuafwuv"], ["shorturl", "www.nav.com/GhWB"], ["domain", "test.com"], ["mdsum", 2486], ["created_at", "2019-01-22 11:14:28.281439"], ["updated_at", "2019-01-22 11:14:28.281439"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/91
+Completed 302 Found in 53ms (ActiveRecord: 44.8ms)
+
+
+Started GET "/urls/91" for 127.0.0.1 at 2019-01-22 16:44:28 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:44:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:44:32 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:44:32 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:44:34 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:44:34 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:44:34 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:44:35 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:49:32 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jgX3ZPDEPTPIhzm3vxrcdhLRLK0YeSiZt3Hg20CL6aDA/o+6pX4HVw9pLHFUNP3GXm8YJXtSs8DZ4W9v0rVH7g==", "url"=>{"longurl"=>"www.hfhfh.com", "domain"=>"dkf.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hfhfh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.hfhfh.com"], ["shorturl", "www.nav.com/%vKA"], ["domain", "dkf.com"], ["mdsum", 1284], ["created_at", "2019-01-22 11:19:32.986876"], ["updated_at", "2019-01-22 11:19:32.986876"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/92
+Completed 302 Found in 45ms (ActiveRecord: 32.9ms)
+
+
+Started GET "/urls/92" for 127.0.0.1 at 2019-01-22 16:49:33 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"92"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:36 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:36 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:38 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:38 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:39 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:39 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:40 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:40 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:40 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:41 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:41 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:41 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:41 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:41 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:42 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:42 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:42 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:49:43 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:49:43 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 16:50:05 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 337ms (Views: 297.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 16:50:15 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zKQttk8E+XnHN13yhVDP7vg+WSFS13VbGYp+GuFonTmCX1VoGr7DHQDZSDRufu5etIBtqTH87gJ3GvGuc1Yzdw==", "url"=>{"longurl"=>"www.qww.com", "domain"=>"d.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.qww.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.qww.com"], ["shorturl", "www.nav.com/he%A"], ["domain", "d.com"], ["mdsum", 1119], ["created_at", "2019-01-22 11:20:15.253933"], ["updated_at", "2019-01-22 11:20:15.253933"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/93
+Completed 302 Found in 52ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/urls/93" for 127.0.0.1 at 2019-01-22 16:50:15 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"93"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:20 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:20 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:21 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:22 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:22 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:22 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:22 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:23 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:23 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:23 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:23 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:23 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:24 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:25 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:25 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:25 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:25 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:26 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:26 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:26 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:26 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:26 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:27 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:27 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:27 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 16:50:27 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 16:50:27 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 17:22:03 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 17:22:44 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 17:22:45 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 17:22:50 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:24:17 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 17:24:18 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 20.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 17:25:57 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 388ms (Views: 379.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 17:25:59 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 69ms (Views: 25.1ms | ActiveRecord: 23.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 17:26:01 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGnls4brnp307hH8jqIL4PijDayfPSNNivWn4pMRpRkRZrrHOiKgOLrSbiE36dPVyZMJoshsiK0g3v5B4+Jg0w==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:26:01 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 25.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:26:26 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H0CtTeKh5rmxahZ5v9QQCjoKGQ0zQ90gRJ/wdAsrb06MeJZb5JmRGJJUi5hKI/JaDmV+BNvtt+64f4vjOO+JnA==", "url"=>{"longurl"=>"https://github.com/mperham/sidekiq", "domain"=>"github.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (3.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://github.com/mperham/sidekiq"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://github.com/mperham/sidekiq"], ["shorturl", "www.nav.com/Yw4C"], ["domain", "github.com"], ["mdsum", 3309], ["created_at", "2019-01-22 11:56:26.583326"], ["updated_at", "2019-01-22 11:56:26.583326"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/94
+Completed 302 Found in 32ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/urls/94" for 127.0.0.1 at 2019-01-22 17:26:26 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:26:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 17:26:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:45 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:55 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:26:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:27:00 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 17:27:00 +0530
+Started POST "/sidekiq/retries/all/delete" for 127.0.0.1 at 2019-01-22 17:27:03 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 17:27:03 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 17:27:15 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:27:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MEsmjRcATCqikltL/Y7t/gL+PcJtWX4c9NQeMb9G3E9+sF5TQrp2TmV8To0WoMxOTkAJSg5y5UWaRJGFLXhyAQ==", "url"=>{"longurl"=>"http://localhost:3000/sidekiq/busy", "domain"=>"localhost:3000"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://localhost:3000/sidekiq/busy"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (3.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:20
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 34.8ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:27:55 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OicfJzBJ3Owrhek+FcaYs8jdL4T+qzPLwTbuY/9kBUepHyQxNnGrTQi7dN/gMXrj/LJIjRYFWQU91pX0zKDjlQ==", "url"=>{"longurl"=>"http://localhost:3000.com/sidekiq/busy", "domain"=>"localhost:3000"}, "commit"=>"Search"}
+  [1m[36mUrl Load (3.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://localhost:3000.com/sidekiq/busy"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:20
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 42ms (Views: 30.6ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:28:14 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lkspczCgTOKlr18SZXmujFB7djyw/tGu0PZioSc0vMoFcxJlNpg7Q4aRwvOQjkzcZBQRNVhQu2AsFhk2FPBaGA==", "url"=>{"longurl"=>"https://mva.microsoft.com/", "domain"=>"microsoft"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://mva.microsoft.com/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://mva.microsoft.com/"], ["shorturl", "www.nav.com/?gWB"], ["domain", "microsoft"], ["mdsum", 2479], ["created_at", "2019-01-22 11:58:14.773940"], ["updated_at", "2019-01-22 11:58:14.773940"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/95
+Completed 302 Found in 48ms (ActiveRecord: 41.1ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/95" for 127.0.0.1 at 2019-01-22 17:28:14 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"95"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 60ms (Views: 55.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 17:28:26 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 17:28:27 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 17:28:27 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 17:28:27 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:39:56 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 22.0ms | ActiveRecord: 6.6ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+Migrating to CreateUrlreports (20190122121831)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (89.2ms)[0m  [1m[35mCREATE TABLE "urlreports" ("id" bigserial primary key, "count" integer, "date" character varying)[0m
+  ↳ db/migrate/20190122121831_create_urlreports.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190122121831"]]
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 17:58:10 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:15 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:17 +0530
+Started GET "/" for 127.0.0.1 at 2019-01-22 17:58:19 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 329ms (Views: 325.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:20 +0530
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 17:58:22 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 70ms (Views: 26.2ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:22 +0530
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 17:58:23 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XYZwBsyQk4HDcm63scx86McVrQD/Yv0k7Tb2u91HzAweUa0p/t860kxtmdnjOnGkixSulSsIBQ5n4J5n4ba+g==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:58:23 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 49ms (Views: 26.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:35 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:43 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:58:44 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c+dzTki96hJ9ac92hwmohl6ZKmseAdXz+0DJPWa6Ub3g30hYToWds15XUpdy/krWavZNYvavvz0HoLKqVX63bw==", "url"=>{"longurl"=>"https://www.google.com/search?q=youtube+to+mp3&rlz=1C5CHFA_enIN831IN831&oq=oyutub&aqs=chrome.2.69i57j0l5.2015j0j7&sourceid=chrome&ie=UTF-8", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.google.com/search?q=youtube+to+mp3&rlz=1C5CHFA_enIN831IN831&oq=oyutub&aqs=chrome.2.69i57j0l5.2015j0j7&sourceid=chrome&ie=UTF-8"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.google.com/search?q=youtube+to+mp3&rlz=1C5CHFA_enIN831IN831&oq=oyutub&aqs=chrome.2.69i57j0l5.2015j0j7&sourceid=chrome&ie=UTF-8"], ["shorturl", "www.nav.com/zgl%A"], ["domain", "google.com"], ["mdsum", 11857], ["created_at", "2019-01-22 12:28:44.581027"], ["updated_at", "2019-01-22 12:28:44.581027"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 42.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/url.rb:6:in `start_background_processing'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:46 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:50 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:56 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:58:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:00 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:06 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:10 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:16 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:20 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:30 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:46 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 17:59:48 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c+dzTki96hJ9ac92hwmohl6ZKmseAdXz+0DJPWa6Ub3g30hYToWds15XUpdy/krWavZNYvavvz0HoLKqVX63bw==", "url"=>{"longurl"=>"https://www.google.com/search?q=youtube+to+mp3&rlz=1C5CHFA_enIN831IN831&oq=oyutub&aqs=chrome.2.69i57j0l5.2015j0j7&sourceid=chrome&ie=UTF-8", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.google.com/search?q=youtube+to+mp3&rlz=1C5CHFA_enIN831IN831&oq=oyutub&aqs=chrome.2.69i57j0l5.2015j0j7&sourceid=chrome&ie=UTF-8"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+Redirected to http://localhost:3000/urls/96
+Completed 302 Found in 26ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/urls/96" for 127.0.0.1 at 2019-01-22 17:59:48 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"96"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 32.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:48 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 17:59:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:50 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:56 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 17:59:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:06 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:09 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:11 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:16 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:20 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:30 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:41 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:45 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:51 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:55 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:00:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:06 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:10 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:11 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:14 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:15 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:21 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:29 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:31 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:35 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:01:37 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:02:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U4Jv5NMagEChRtz/QfRfJQcumWwOTMMhpnxxHOu1CJ8deRc6hqC6JGaoyTmq2n6VS5Ct5G1nWHjI7P6oeYum0Q==", "url"=>{"longurl"=>"https://www.onlinevideoconverter.com/mp3-converter", "domain"=>"onlinevideoconvertor.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.onlinevideoconverter.com/mp3-converter"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.onlinevideoconverter.com/mp3-converter"], ["shorturl", "www.nav.com/81jD"], ["domain", "onlinevideoconvertor.com"], ["mdsum", 4995], ["created_at", "2019-01-22 12:32:17.978188"], ["updated_at", "2019-01-22 12:32:17.978188"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 9.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/url.rb:8:in `start_background_processing'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:6
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:04:48 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gxHL/APX4MKfir1JABtCri2si43wKM8Sjm5klOj7NHYQKfDqBe+XY7y0IKj17KD+GcPshBiGpdxyjh8D2z/SpA==", "url"=>{"longurl"=>"https://www.onfvffddvlinevideoconverter.com/mp3-converter", "domain"=>"onlinevideoconvertor.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.onfvffddvlinevideoconverter.com/mp3-converter"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.onfvffddvlinevideoconverter.com/mp3-converter"], ["shorturl", "www.nav.com/c8rE"], ["domain", "onlinevideoconvertor.com"], ["mdsum", 5737], ["created_at", "2019-01-22 12:34:48.281054"], ["updated_at", "2019-01-22 12:34:48.281054"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 45.8ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/url.rb:9:in `start_background_processing'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:6
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:06:18 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gxHL/APX4MKfir1JABtCri2si43wKM8Sjm5klOj7NHYQKfDqBe+XY7y0IKj17KD+GcPshBiGpdxyjh8D2z/SpA==", "url"=>{"longurl"=>"https://www.onekjbkhebvefvffddvlinevideoconverter.com/mp3-converter", "domain"=>"onlinevideoconvertor.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.onekjbkhebvefvffddvlinevideoconverter.com/mp3-converter"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.onekjbkhebvefvffddvlinevideoconverter.com/mp3-converter"], ["shorturl", "www.nav.com/%G?F"], ["domain", "onlinevideoconvertor.com"], ["mdsum", 6778], ["created_at", "2019-01-22 12:36:18.896750"], ["updated_at", "2019-01-22 12:36:18.896750"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 6.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/url.rb:9:in `start_background_processing'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:07:20 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gxHL/APX4MKfir1JABtCri2si43wKM8Sjm5klOj7NHYQKfDqBe+XY7y0IKj17KD+GcPshBiGpdxyjh8D2z/SpA==", "url"=>{"longurl"=>"https://www.bkhebvefvffddvlinevideoconverter.com/mp3-converter", "domain"=>"onlinevideoconvertor.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.bkhebvefvffddvlinevideoconverter.com/mp3-converter"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.bkhebvefvffddvlinevideoconverter.com/mp3-converter"], ["shorturl", "www.nav.com/KTwF"], ["domain", "onlinevideoconvertor.com"], ["mdsum", 6243], ["created_at", "2019-01-22 12:37:20.197593"], ["updated_at", "2019-01-22 12:37:20.197593"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 44.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/url.rb:9:in `start_background_processing'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:15:01 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gxHL/APX4MKfir1JABtCri2si43wKM8Sjm5klOj7NHYQKfDqBe+XY7y0IKj17KD+GcPshBiGpdxyjh8D2z/SpA==", "url"=>{"longurl"=>"https://git-scm.com/docs/gittutorial", "domain"=>"git-scm.com"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 18:15:01 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 43ms (Views: 23.9ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 18:15:03 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wF0yZlvRONAcEHA6833dX283x93qOtMzxDRImI/vvzhTZQlwXelPcT8u7dsGij8PW1ig1AKUuf041DMPvCtZ6g==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:15:03 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 22.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:15:12 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rgpjc8kmbPEDGgfdPMLiNJCxrOr3zrIl/ns4AR23iLQ9Mlhlzx4bUCAkmjzJNQBkpN7L4x9g2OsCm0OWLnNuZg==", "url"=>{"longurl"=>"https://git-scm.com/docs/gittutorial", "domain"=>"git-scm.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://git-scm.com/docs/gittutorial"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://git-scm.com/docs/gittutorial"], ["shorturl", "www.nav.com/NM5C"], ["domain", "git-scm.com"], ["mdsum", 3499], ["created_at", "2019-01-22 12:45:12.374505"], ["updated_at", "2019-01-22 12:45:12.374505"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/101
+Completed 302 Found in 58ms (ActiveRecord: 43.8ms)
+
+
+Started GET "/urls/101" for 127.0.0.1 at 2019-01-22 18:15:12 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:15:13 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 38ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-22 18:15:39 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:15:41 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:15:42 +0530
+Started GET "/sidekiq/queues/count_queue" for 127.0.0.1 at 2019-01-22 18:15:49 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:22:19 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HcombXh3XWGSP9drnCAylqvTjcL/7HolQVvrH6Wcs7NTMV6zLc1nBVXRwq13DhMm5225SpzH4Xwvy2SrN6Id/Q==", "url"=>{"longurl"=>"www.makaan.com/rental/nodia", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.makaan.com/rental/nodia"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.makaan.com/rental/nodia"], ["shorturl", "www.nav.com/6xYB"], ["domain", "makaan.com"], ["mdsum", 2648], ["created_at", "2019-01-22 12:52:19.338050"], ["updated_at", "2019-01-22 12:52:19.338050"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Redirected to http://localhost:3000/urls/102
+Completed 302 Found in 60ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/urls/102" for 127.0.0.1 at 2019-01-22 18:22:19 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 269ms (Views: 262.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:22:28 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 18:22:29 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:25:34 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:26:38 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 58ms (Views: 34.9ms | ActiveRecord: 7.1ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:27:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 25.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:27:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:27:48 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 18:27:48 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 18:28:02 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hdig9m+rfK9wfSs07Z5hSTJU5dN0NURwqo7Z3kt8yF8W4JvgaZMLDlNDttUYaYMZBjuC2pybLr5WbqJJeLgujQ==", "url"=>{"longurl"=>"https://git-scm.com/docs", "domain"=>"git-scm.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://git-scm.com/docs"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://git-scm.com/docs"], ["shorturl", "www.nav.com/4VUB"], ["domain", "git-scm.com"], ["mdsum", 2244], ["created_at", "2019-01-22 12:58:02.881555"], ["updated_at", "2019-01-22 12:58:02.881555"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/103
+Completed 302 Found in 56ms (ActiveRecord: 43.3ms)
+
+
+Started GET "/urls/103" for 127.0.0.1 at 2019-01-22 18:28:02 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:28:07 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-22 18:28:07 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls" WHERE "urls"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-01-22 00:00:00"], ["created_at", "2019-01-22 23:59:59.999999"]]
+  ↳ app/workers/convert_worker.rb:5
+Started POST "/sidekiq/retries/all/kill" for 127.0.0.1 at 2019-01-22 18:28:18 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:28:18 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 18:28:20 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-22 18:28:23 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-22 18:28:24 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-22 18:28:25 +0530
+Started GET "/sidekiq/" for 127.0.0.1 at 2019-01-22 18:28:26 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:30 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:36 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:28:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:29:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:29:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:29:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:30:01 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:30:04 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:30:19 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:30:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:30:49 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:31:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:31:24 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-22 18:31:38 +0530
