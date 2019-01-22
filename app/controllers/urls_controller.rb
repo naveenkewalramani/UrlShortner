@@ -1,6 +1,7 @@
 class UrlsController < ApplicationController
 	def new
 		if(session[:authenticate] == true)
+			
 			@url = Url.new
 		else
 			redirect_to user_login_path
@@ -38,7 +39,10 @@ class UrlsController < ApplicationController
 
 	def Shorturl
 		if(session[:authenticate] == true)
-			@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 12.hours) do
+			if(params[:url][:shorturl][0..3]!="http")
+				params[:url][:shorturl]="www.nav.com/"+params[:url][:shorturl]
+			end
+			@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
 				Url.where(shorturl: params[:url][:shorturl]).first
 			end
 			if @url!=nil

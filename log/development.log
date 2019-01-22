@@ -24231,3 +24231,864 @@ Completed 200 OK in 67ms (Views: 63.5ms | ActiveRecord: 0.0ms)
   [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."domain" = $1 LIMIT $2[0m  [["domain", "proptiger.com"], ["LIMIT", 11]]
   [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."domain" = $1 LIMIT $2[0m  [["domain", "proptiger.com"], ["LIMIT", 11]]
   [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."domain" = $1 LIMIT $2[0m  [["domain", "proptiger.com"], ["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-01-22 10:51:28 +0530
+  [1m[35m (61.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 397ms (Views: 389.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 10:51:51 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 287ms (Views: 279.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-22 10:53:22 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 240ms (Views: 79.7ms | ActiveRecord: 84.2ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 10:53:25 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 10:53:27 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XiD9FmuFQ/ENm6TM3Fa1roASeYi4eX8TOUv1toDmRO7RSRzVKLXdzhG/CH8Q/4ArJTH7Ypzt4uX2M8RFc6P1+w==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (75.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 147ms (ActiveRecord: 75.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:53:27 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 23.6ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:53:47 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PM7DhPNVvmuPA0XSy+doPKCN+R721UHfvMYgDMQkli1g0SgVMIBqWRCeGxBJoqHh6COR6cyJSqTVhoklyYwDIw==", "url"=>{"longurl"=>"https://www.makaan.com/", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (62.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (100.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/"], ["shorturl", "www.nav.com/CLTB"], ["domain", "makaan.com"], ["mdsum", 2147], ["created_at", "2019-01-22 05:23:47.529310"], ["updated_at", "2019-01-22 05:23:47.529310"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (808.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/71
+Completed 302 Found in 977ms (ActiveRecord: 971.3ms)
+
+
+Started GET "/urls/71" for 127.0.0.1 at 2019-01-22 10:53:48 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 70ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:53:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:54:02 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p/RWWqXGRGC+njXM9VutknNgZfjmTsGs8wAiYcqLYR57TFLCOwKzQWeQK+zRhuFkdH9cNEm69aKWNrKelD+vAA==", "url"=>{"longurl"=>"https://www.makaan.com/home-loan", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/home-loan"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/home-loan"], ["shorturl", "www.nav.com/&71C"], ["domain", "makaan.com"], ["mdsum", 3043], ["created_at", "2019-01-22 05:24:02.740890"], ["updated_at", "2019-01-22 05:24:02.740890"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/72
+Completed 302 Found in 47ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/urls/72" for 127.0.0.1 at 2019-01-22 10:54:02 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:54:04 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:54:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 10:54:23 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gvTLXtnuuOVUpgKhwsE8v1qnHLNLF//YyFefHe475A6sQQH7+LUzBFTjd/kOwWntsguF5BVYlFplNQNcNCWEuw==", "url"=>{"shorturl"=>"www.nav.com/&71C"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/&71C"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:42
+Redirected to http://localhost:3000/urls/72
+Completed 302 Found in 16ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/72" for 127.0.0.1 at 2019-01-22 10:54:23 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:56:42 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 21.4ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:57:04 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W3rYwWy9b7S23sslUa6ijKeKMx8dUFcXb0fw3mXHuNOHwtxZ8nmYlW/Q1QV1c+56oJUK07KkYxkKcWAhO3N2zQ==", "url"=>{"longurl"=>"https://www.makaan.com/home-loan#applyHomeLoanProject", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/home-loan#applyHomeLoanProject"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/home-loan#applyHomeLoanProject"], ["shorturl", "www.nav.com/kflE"], ["domain", "makaan.com"], ["mdsum", 5142], ["created_at", "2019-01-22 05:27:04.341760"], ["updated_at", "2019-01-22 05:27:04.341760"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/73
+Completed 302 Found in 53ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/urls/73" for 127.0.0.1 at 2019-01-22 10:57:04 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:57:06 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:57:36 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dRLyOfFXhWkeiKiyPgIvJjsc7YeaLl7/mVEswuaygS+pqvahb5NySMeGtpIa32PQPAPUSzXaavH8Z7w9uAZPMQ==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city"], ["shorturl", "www.nav.com/E?LH"], ["domain", "makaan.com"], ["mdsum", 8045], ["created_at", "2019-01-22 05:27:36.848205"], ["updated_at", "2019-01-22 05:27:36.848205"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/74
+Completed 302 Found in 52ms (ActiveRecord: 43.5ms)
+
+
+Started GET "/urls/74" for 127.0.0.1 at 2019-01-22 10:57:36 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"74"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:57:38 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:57:52 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6M0GXiyfNOt5qlipXsKLg4Xedp7J6bdTuoBFAQ/s0vw0dQLGslvDyqCkRol6H8d1gsFPUmYdg13fttX+UVgc4g==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/dlf-phase-2-in-sector-25-6394661/1bhk-1t-550-sqft-builderfloor-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/dlf-phase-2-in-sector-25-6394661/1bhk-1t-550-sqft-builderfloor-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.0ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon/dlf-phase-2-in-sector-25-6394661/1bhk-1t-550-sqft-builderfloor-for-rent"], ["shorturl", "www.nav.com/$WUH"], ["domain", "makaan.com"], ["mdsum", 8950], ["created_at", "2019-01-22 05:27:52.805108"], ["updated_at", "2019-01-22 05:27:52.805108"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (50.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/75
+Completed 302 Found in 61ms (ActiveRecord: 53.3ms)
+
+
+Started GET "/urls/75" for 127.0.0.1 at 2019-01-22 10:57:52 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"75"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:57:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:58:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w0ffZ/jSCeMUwauiEcI6Zrl6lxR3UaSlSA5ZQQYZb+Mf/9v/Zhb+ws3PtYI1H3aQvmWu2NilkKstOMm+WK2h/Q==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/reputed-builder-hewo-apartments-ii-in-sector-56-4898372/1bhk-1t-791-sqft-apartment-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/reputed-builder-hewo-apartments-ii-in-sector-56-4898372/1bhk-1t-791-sqft-apartment-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon/reputed-builder-hewo-apartments-ii-in-sector-56-4898372/1bhk-1t-791-sqft-apartment-for-rent"], ["shorturl", "www.nav.com/37d%A"], ["domain", "makaan.com"], ["mdsum", 11087], ["created_at", "2019-01-22 05:28:06.476646"], ["updated_at", "2019-01-22 05:28:06.476646"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/76
+Completed 302 Found in 47ms (ActiveRecord: 41.6ms)
+
+
+Started GET "/urls/76" for 127.0.0.1 at 2019-01-22 10:58:06 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:58:08 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:58:28 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JOuwQav4JIZL1BL0FO6vBn5ZMf6T2pr6hoW24qYSjRn4U7TZNTzTp5LaDNQwM+PweUYIMjwurvTjsyYd+KZDBw==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/dlf-phase-2-in-sector-25-6394661/1bhk-1t-550-sqft-builderfloor-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/dlf-phase-2-in-sector-25-6394661/1bhk-1t-550-sqft-builderfloor-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/75
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/urls/75" for 127.0.0.1 at 2019-01-22 10:58:28 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"75"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:58:38 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:58:43 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XLNT4NJjUInHw8GiomPkOAuXBHMupzFcF0Y2hN8xGHeAC1d4TKenqB7N34KGvqjODIg9v4FTBVJycKZ7gYXWaQ==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/emaar-india-palm-drive-in-sector-66-3960333/3bhk-3t-1950-sqft-apartment-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/emaar-india-palm-drive-in-sector-66-3960333/3bhk-3t-1950-sqft-apartment-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (1.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon/emaar-india-palm-drive-in-sector-66-3960333/3bhk-3t-1950-sqft-apartment-for-rent"], ["shorturl", "www.nav.com/ug2I"], ["domain", "makaan.com"], ["mdsum", 9842], ["created_at", "2019-01-22 05:28:43.898038"], ["updated_at", "2019-01-22 05:28:43.898038"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/77
+Completed 302 Found in 54ms (ActiveRecord: 46.1ms)
+
+
+Started GET "/urls/77" for 127.0.0.1 at 2019-01-22 10:58:43 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:58:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:59:10 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Dl9WKLOnf69EXJid9f3vhn8Cw9L3BRMIIhxyQuluXkMgXnAPApq32QfbEJTCrtIHuMyw+QoIEJFvuE2VRF3Zw==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/emaar-india-palm-drive-in-sector-66-3960333/3bhk-3t-1950-sqft-apartment-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/emaar-india-palm-drive-in-sector-66-3960333/3bhk-3t-1950-sqft-apartment-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/77
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/77" for 127.0.0.1 at 2019-01-22 10:59:10 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:59:13 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:59:37 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EZWqa7XK+rRn7fc14zR8XPj1yc2dpUdXoB6RkopGV7TNLa7zKw4Nlb7j6RXH6TCq/+rwATJRc1nFKAFt1PKZqg==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city#lg=1", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city#lg=1"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon-residential-property/rent-property-in-gurgaon-city#lg=1"], ["shorturl", "www.nav.com/Y7PH"], ["domain", "makaan.com"], ["mdsum", 8401], ["created_at", "2019-01-22 05:29:37.492194"], ["updated_at", "2019-01-22 05:29:37.492194"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/78
+Completed 302 Found in 51ms (ActiveRecord: 42.9ms)
+
+
+Started GET "/urls/78" for 127.0.0.1 at 2019-01-22 10:59:37 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:59:39 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 10:59:55 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QoszAduoo0Var/9VcXKD3pX1nFKfwNSIrR1CzUf1Ts6eMzeZRWxUZIOh4XVVr88okuqlnjA04IbIK9IyGUGA0A==", "url"=>{"longurl"=>"https://www.makaan.com/gurgaon/pioneer-urban-pioneer-park-ph-1-in-sector-61-3898531/2bhk-2t-1300-sqft-apartment-for-rent", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/gurgaon/pioneer-urban-pioneer-park-ph-1-in-sector-61-3898531/2bhk-2t-1300-sqft-apartment-for-rent"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/gurgaon/pioneer-urban-pioneer-park-ph-1-in-sector-61-3898531/2bhk-2t-1300-sqft-apartment-for-rent"], ["shorturl", "www.nav.com/%v$JA"], ["domain", "makaan.com"], ["mdsum", 10664], ["created_at", "2019-01-22 05:29:55.564726"], ["updated_at", "2019-01-22 05:29:55.564726"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/79
+Completed 302 Found in 47ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/urls/79" for 127.0.0.1 at 2019-01-22 10:59:55 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 10:59:57 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 11:00:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gwfmfTG4mDItYprhxtuUQ72cgwjinyg3jxIqRwMZhn9fv+Llr3xvE/RshMHiBti1uoO6xE1rHDnqJLq4Xa1IYQ==", "url"=>{"longurl"=>"https://www.makaan.com/noida-residential-property/buy-property-in-noida-city#lg=1", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.makaan.com/noida-residential-property/buy-property-in-noida-city#lg=1"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.makaan.com/noida-residential-property/buy-property-in-noida-city#lg=1"], ["shorturl", "www.nav.com/ug%G"], ["domain", "makaan.com"], ["mdsum", 7832], ["created_at", "2019-01-22 05:30:17.665411"], ["updated_at", "2019-01-22 05:30:17.665411"]]
+  ↳ app/controllers/urls_controller.rb:20
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:20
+Redirected to http://localhost:3000/urls/80
+Completed 302 Found in 50ms (ActiveRecord: 43.3ms)
+
+
+Started GET "/urls/80" for 127.0.0.1 at 2019-01-22 11:00:17 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:00:19 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:01:59 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F5XWIQ7PDvzXbYrrO1emvsUzftg538u1XUkue9T8JPg5IByEL5SFHdco/7P3V/PsLZ/nj2eQoDfwK7I6DuJETQ==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:42
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 20ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-22 11:01:59 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:02:09 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:02:12 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9/CVqEUVhIBiM9sJZ6eF5vBHf4rjyTgd5OnGht9PetPZRV8NZE4PYWJ2rlGrp9C0GOvm3b2GU59Ji1rHBVEaZg==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-22 11:02:12 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:03:27 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:03:30 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tgF02AXnsbEt/2ojVl0c5aVWuQpvzLYOr3niTMBJtEuYtL59JLw6UC26H3uaXUm3TfogXTGD3YwCG34NGlfU/g==", "url"=>{"shorturl"=>"www.nav.com/88yF"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/88yF"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:42
+Redirected to http://localhost:3000/urls/19
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/19" for 127.0.0.1 at 2019-01-22 11:03:30 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:03:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:03:43 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+hu7vyXWxGGmfbZDVyZbkj77Fekh/7tQmyruJilhw7rUrnEaBI1PgKY4wxubJg7A1leMvn+w0NI2SHJn83+jDw==", "url"=>{"shorturl"=>"www.nav.com/88yF"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/19
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/19" for 127.0.0.1 at 2019-01-22 11:03:43 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:04:05 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:06:21 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rkCv421kF5wmUbHLMxzCqWSQtKMn0p7W9+pUmAdYfLuA9WVGTD+cfSYUxJP/HJf7jDwt9Hmd9VRaiMjZ3UYcDg==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-22 11:06:21 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:08:01 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 11:08:07 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jzXqFVEDNwkr0UW5/lqSkOTwr9GSQFSzF2jF7hAWxm5Tje6Nz8fAKPLfW5nah95m4++WHT20YL1yXlURTqIIcA==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 22ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-22 11:08:08 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:08:12 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:08:14 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WjuFX+wXsOuGfW6e5E/vZlR47uRwCSVRjNPk5jn5TD10jk/6zUw7CoY4G8YoT7o0vNR3sy5GTtMhsXin4+csiA==", "url"=>{"shorturl"=>"www.nav.com/OTUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/OTUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:42
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-22 11:08:14 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:08:18 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:08:21 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsgCKs4P75QPBnV1ygPFJJTpsoLWIfp+rj3ADeruOIA4fciP71RkdQ9DAC0GA5B2fEUr1YhukfwDX1xMMPBYNQ==", "url"=>{"shorturl"=>"www.nav.com/OTUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-22 11:08:21 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:26:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 32.8ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:26:35 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w80tHoq37PADf23mbFweVlNsUnYsh2sI+o3lOgFKYrzteOe7q+xnEQM6GL6gXEsEu8DLIXLIAIpX73l721QCCQ==", "url"=>{"shorturl"=>"tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/http"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:26:35 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:27:41 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IISKAaON76yrG5YGp0l1Wc325t5nfvuwQparaFDczKJ8m2GQYFg7njSGyMQlDLyEhViOKV0i8Msr1gJBXXRZrA==", "url"=>{"shorturl"=>"tRUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:27:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 47ms (Views: 29.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:27:58 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 50ms (Views: 31.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:28:01 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQWwUk0UZph5rJm37YBzHFU0PKf9yRWPXsJh9jr4hRoe/1QiuGFqP577KRd88gROfq4BaWrLy1UO6Cu1UN3Gg==", "url"=>{"shorturl"=>"tRUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-22 11:28:02 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:28:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 88ms (Views: 55.5ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 11:28:53 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EjKYwugsf4J7XrypKce/Wuup4BnJ6OiVuN9CKIYGDrzOipxaduiIo6JQookNGvOs7LbZ1WYc3Jvd6dLX2LLAog==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-22 11:28:53 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:28:57 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-22 11:29:02 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNMSfYSdJxhZ/YOJu6BkX8NEtYRnnDiQrfps+becTJVeZtjYpcas+Vm49tF3oDENK+gs0znTUxIAmPC4bYIsIA==", "url"=>{"shorturl"=>"OTUB"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-22 11:29:02 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (2.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 11:29:04 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 12:40:04 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 368ms (Views: 359.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 12:40:08 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 83ms (Views: 23.5ms | ActiveRecord: 34.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 12:40:11 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pw1nxDG23/gSmtHxd4IP4+Z3EZPwzcVqX+T9cOAA3LmwZIYHcoZBxw6+fUK7KzpmQ1STedRZWJyQnMyDE0VtrA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 54ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 12:40:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 39ms (Views: 25.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-22 12:41:36 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 12:51:43 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 286ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 12:51:46 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 96ms (Views: 37.5ms | ActiveRecord: 40.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-22 12:51:47 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2TWZvuk3X4U9NWbwtUQRLRlhLJhqdmIMCAC5JVCfkhFWXHh9qgfBuiERykN57SSovEKuck7i//rHeIjWo9ojBA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-22 12:51:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 48ms (Views: 23.1ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 12:51:56 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G0yNLXalZlhM2opL/pVKMIB8ciL5C/DaW4ynRoh4B8JHU2a8tXCyatNH1Il80IPtyNIa1cNX+6EyzA5vhdCSzA==", "url"=>{"longurl"=>"", "domain"=>""}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:21
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 120ms (Views: 23.0ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-22 12:51:59 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nGnUNY4OgdHB9f7k/yOv3zt2tcLulVu5AsBQ4p37saHAdj+kTdtV415ooCZ9ZmYCc9jdNdTJUMJrgPnLkFMkrw==", "url"=>{"longurl"=>"", "domain"=>""}, "commit"=>"Search"}
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-22 12:51:59 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
