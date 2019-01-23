@@ -2,6 +2,14 @@ class ConvertWorker
   include Sidekiq::Worker
   sidekiq_options :queue => :count_queue
   def perform(*args)
-  	puts Url.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).count
+  	@urlreport = Urlreport.where(date: Date.today).first
+  	if @urlreport == nil
+  		@urlreport = Urlreport.new()
+  		@urlreport.date = Date.today
+  		@urlreport.count = 1
+  		@url.save	
+  	else
+  		@urlreport.update(count: @urlreport.count+=1)
+  	end
   end
 end
