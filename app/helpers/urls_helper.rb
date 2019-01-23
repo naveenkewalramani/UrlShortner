@@ -1,6 +1,5 @@
 module UrlsHelper
 	def self.mdvalue(value)
-		puts value
 		mdsum = 0;
 		value.each_char {|x| mdsum+=x.ord}
 		return mdsum

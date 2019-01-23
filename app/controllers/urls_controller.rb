@@ -1,7 +1,6 @@
 class UrlsController < ApplicationController
 	def new
 		if(session[:authenticate] == true)
-			
 			@url = Url.new
 		else
 			redirect_to user_login_path
@@ -14,14 +13,14 @@ class UrlsController < ApplicationController
 			if @url!=nil
 				redirect_to @url
 			else
-				@url = Url.new(url_params)
+				@url = Url.new(web_params)
 				@url.mdsum = UrlsHelper.mdvalue(params[:url][:longurl])
 				@url.shorturl = UrlsHelper.conversion(params[:url][:domain],@url.mdsum)
-				if @url.save
+				if @url.save 
 					redirect_to @url
 				else
 					render 'new'
-				end	
+				end
 			end
 		else
 			redirect_to user_login_path
@@ -54,9 +53,41 @@ class UrlsController < ApplicationController
 			redirect_to user_login_path
 		end
 	end
+	def short
+		@url = Url.where(longurl: params[:longurl]).first
+		if @url!=nil
+			render json: {'status'=>'ok', 'shorturl'=>	@url.shorturl}
+		else
+			@url = Url.new(web_params)
+			@url.mdsum = UrlsHelper.mdvalue(params[:longurl])
+			@url.shorturl = UrlsHelper.conversion(params[:domain],@url.mdsum)
+			if @url.save
+				render json: ({'status'=>'new_created', 'shorturl'=>@url.shorturl})
+			else 
+				render json: ({'status'=>'error occured'})
+			end
+		end
+	end
+	def long
+		if(params[:shorturl][0..3]!="www.")
+				params[:shorturl]="www.nav.com/"+params[:shorturl]
+		end
+		@url = Rails.cache.fetch("#{params[:shorturl]}", expires_in: 15.minutes) do
+			Url.where(shorturl: params[:shorturl]).first
+		end
+		if @url!=nil
+			render json:  ({'status'=>'ok' ,'shorturl'=>@url.longurl})
+		else
+			render json:  ({'status'=>'Not a valid url'})
+		end 
+	end
 
 	private
-		def url_params
-			params.require(:url).permit(:longurl, :domain, :shorturl)
+		def web_params
+			params.require(:url).permit(:utf8, :longurl, :domain, :shorturl)
 		end
+		def postman_params
+			params.permit(:longurl, :domain)
+		end
+
 end

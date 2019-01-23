@@ -7,11 +7,9 @@ class UsersController < ApplicationController
    def login
     @user = User.new
   end
-  def ppp
-    
-  end
   def signup
     flash[:notice] = ""
+    puts params[:action]
     @user = User.new(user_params)
     @user.password = UsersHelper.password_convert(params[:user][:password])
     if (User.where(email: params[:user][:email]).first)
