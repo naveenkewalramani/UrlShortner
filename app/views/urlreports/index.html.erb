@@ -1,0 +1,17 @@
+<style></style>
+<h2>DAILY REPORTS</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Count</th>
+    <th></th>
+  </tr>
+ 
+  <% @urlreport.each do |urlreport| %>
+    <tr>
+      <td><%= urlreport.date %></td>
+      <td><%= urlreport.count %></td>
+    </tr>
+  <% end %>
+</table>
+<button>BACK : <%= link_to 'index', new_url_path  %> </button>

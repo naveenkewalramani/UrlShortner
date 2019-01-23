@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   #Routes for Urls
   resources :urls
   post 'url/shorturl' => 'urls#Shorturl'
+
+  #Routes for urlreport
+  resources :urlreports
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
