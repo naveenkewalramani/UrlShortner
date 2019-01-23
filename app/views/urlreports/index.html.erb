@@ -1,17 +1,41 @@
-<style></style>
-<h2>DAILY REPORTS</h2>
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Count</th>
-    <th></th>
-  </tr>
- 
-  <% @urlreport.each do |urlreport| %>
+<style>
+  
+  h2{
+    font-family:Georgia,sans-serif;
+    color:midnightblue;
+  }
+  table{
+    border:2px dotted black;
+    padding:3px;  
+    margin:3px;
+    font-family:sans-serif;
+    text-align:center;
+  }
+  th{
+    color:midnightblue;
+    font-size:1.2em;
+    font-family:Georgia;
+  }
+  button{
+    font-family:Georgia;
+    font-size:1.2em;
+  }
+</style>
+<div class="report_show">
+  <h2>DAILY REPORTS</h2>
+  <table>
     <tr>
-      <td><%= urlreport.date %></td>
-      <td><%= urlreport.count %></td>
+      <th>Date</th>
+      <th>Count</th>
+      <th></th>
     </tr>
-  <% end %>
-</table>
-<button>BACK : <%= link_to 'index', new_url_path  %> </button>
+   
+    <% @urlreport.each do |urlreport| %>
+      <tr>
+        <td><%= urlreport.date %> &nbsp &nbsp</td>
+        <td><%= urlreport.count %></td>
+      </tr>
+    <% end %>
+  </table><br/>
+  <button>BACK : <%= link_to 'index', new_url_path  %> </button>
+</div>
