@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   #Routes for Urls
   resources :urls
-  post 'url/short' => 'urls#short'
+ 
   get 'url/long' => 'urls#long'
   post 'url/shorturl' => 'urls#Shorturl'
 

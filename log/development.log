@@ -40055,3 +40055,447 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 17:18:10 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 312ms (Views: 298.1ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 17:18:12 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8F6cmvWrQtqE0czgBXTR3upHHctk1DjpGE5U3ltthyxsCsmWaCo5fYhf2TPa5uEKiUv4Eosa7UrlaOH3t5VJLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:18:12 +0530
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:99: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/urls_controller.rb:99: syntax error, unexpected end-of-input, expecting end
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 17:19:10 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jqIAt1AFoSH2l1XsDVFzP6MOxd/FOVFdxyMBHUd+BohB1kQ30dF7qu/PSUBq3R2GfqOHJSkpnKJ5qnuYaJ6NpA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 21ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:19:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 47ms (Views: 34.6ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:19:26 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NQLKhP6KWg2jaaHtG2G1QUzjlZQXZIhkJh3T23PJAl76do4Ef16AhroxvUF87dv4kU7Xbvt0RZuYlKleXCmJcg==", "url"=>{"longurl"=>"https://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to", "domain"=>"apidock.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to"], ["shorturl", "www.EFKB/BS%I"], ["domain", "apidock.com"], ["suffix", "BS%I"]]
+  ↳ app/models/url.rb:12
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 46], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (404.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (334.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 417ms (ActiveRecord: 406.4ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-24 17:19:27 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:49
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:19:29 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:19:43 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rbqmRn+sPdl0l/u1jdEmzjCyZUIFuzaaradL4or8h/ad/VC1TdRE7d7o9htSTyFt1TRAE/u/Jpx4ZSU9r4XnkA==", "url"=>{"longurl"=>"https://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to", "domain"=>"apidock.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-24 17:19:43 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:49
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:19:46 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:19:49 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0uJ1det2qJHlE67eiYmrfwmtoWCBCmAhOeoLYTb3SjdJwqighVjC59Y/rZTjdqnsdniS4W+v0HGX+Pc2+/VsDg==", "url"=>{"shorturl"=>"BS%I"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "BS%I"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:59
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-24 17:19:49 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:49
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:19:52 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:19:54 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gwWlxkVUTi/xgbChkCySmK44hb1DMk2xLe4I28ldgk8YJXgTK3okWcKts+v605AL0e22PK2X/eGD/PSMBF+kdg==", "url"=>{"shorturl"=>"www.EFKB/BS%I"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.EFKB/BS%I"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:63
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-24 17:19:54 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:49
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:19:56 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/new" for 127.0.0.1 at 2019-01-24 17:21:20 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/urls/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:22:09 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com", "url"=>{"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com"}}
+Can't verify CSRF token authenticity.
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 17:22:09 +0530
+Processing by UsersController#login as */*
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 58ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:22:26 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com", "url"=>{"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com"}}
+Can't verify CSRF token authenticity.
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 17:22:26 +0530
+Processing by UsersController#login as */*
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:23:02 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com", "url"=>{"longurl"=>"www.youtube.com/channels", "domain"=>"www.youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.youtube.com/channels"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.youtube.com/channels"], ["shorturl", "www.pyPB/yiXC"], ["domain", "www.youtube.com"], ["suffix", "yiXC"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 47], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:23:26 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:23:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9q/DLPf4gY7BYobqosgM/894gWtPFULZ+5+vMwn4ch4524esdixbBdg6mkbFRGJGEtXDkaMFjyZFFtW2Jhj5Mg==", "url"=>{"longurl"=>"https://stackoverflow.com/questions/7051062/whats-the-best-way-to-include-a-like-clause-in-a-rails-query/7051086dddd", "domain"=>"stackoverflow"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://stackoverflow.com/questions/7051062/whats-the-best-way-to-include-a-like-clause-in-a-rails-query/7051086dddd"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://stackoverflow.com/questions/7051062/whats-the-best-way-to-include-a-like-clause-in-a-rails-query/7051086dddd"], ["shorturl", "www.OlOB/5xbKB"], ["domain", "stackoverflow"], ["suffix", "5xbKB"]]
+  ↳ app/models/url.rb:12
+  [1m[36mUrlreport Load (2.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 48], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/20
+Completed 302 Found in 52ms (ActiveRecord: 43.8ms)
+
+
+Started GET "/urls/20" for 127.0.0.1 at 2019-01-24 17:23:42 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+  [1m[35m (74.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:23:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 17:26:18 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6oqwoXuGzL/BBF+WMqO4VTqcjpFp2iUWPqQyEmwnQPXazUZSSf61i2t7UjjtPb/23xqrwJfeNRDrZlzNSV4gkw==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.housing.com/seller"], ["shorturl", "www.mJLB/kXVC"], ["domain", "housing.com"], ["suffix", "kXVC"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/21
+Completed 302 Found in 26ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/urls/21" for 127.0.0.1 at 2019-01-24 17:26:18 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUrl Load (2.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 49], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:26:22 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:26:24 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vdD3LKMg9qwFBf4P8bm79JEhsQDRqNCilvIa4XDXMgUm8Cr5zQ6c2jYp/UWbRrln7vSCgT8NYPI44Oa2vdUUPA==", "url"=>{"shorturl"=>"www.mJLB/kXVC"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.mJLB/kXVC"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:79
+Redirected to http://localhost:3000/urls/21
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls/21" for 127.0.0.1 at 2019-01-24 17:26:24 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:26:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:26:30 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w/rhX7Zw5ENBf5K7WAPOy/TNsgLuA9KBCXBPRiCXektY2jyK2F6ONXJTkfEy/MxYixiBgwCmYtGnYrMR7ZVccg==", "url"=>{"shorturl"=>"kXVC"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "kXVC"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:75
+Redirected to http://localhost:3000/urls/21
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/21" for 127.0.0.1 at 2019-01-24 17:26:30 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 64ms (Views: 58.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:26:31 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 97ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:27:45 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/url/shorturl"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 17:28:34 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WNKDHPzkieZGW+R1KeEOBk/dcmxpu5S8QPvuPL1h3JaXpsecfTBTbV8D+NlObWC/knAwloWrWUP+cpS5koFXug==", "url"=>{"shorturl"=>"www.EFKB/BS%I"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 9ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-24 17:28:34 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/url/long?shorturl=www.EFKB/BS%25I" for 127.0.0.1 at 2019-01-24 17:28:53 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"www.EFKB/BS%I"}
+No template found for UrlsController#long, rendering head :no_content
+Completed 204 No Content in 52ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/url/long?shorturl=www.EFKB/BS%25I" for 127.0.0.1 at 2019-01-24 17:29:59 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"www.EFKB/BS%I"}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 17:30:03 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 96ms (Views: 26.2ms | ActiveRecord: 40.9ms)
+
+
