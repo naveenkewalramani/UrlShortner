@@ -38086,3 +38086,1972 @@ Processing by UrlsController#new as HTML
 Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-24 15:55:01 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 373ms (Views: 363.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 15:55:03 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 26.0ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 15:55:04 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hgu4xnv2+jRfQVrrny/EPsYr6XhzXMcDQ+DYHJ2t6UIaX+3K5neBk1PPTzhAvfTqpScMoZySEqC+xm01cVUnQA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 15:55:04 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 54ms (Views: 37.3ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 15:55:18 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pS/WpC/H0C1tzrqKRT1Qx7wF2BPz1mC8VvVGGALnq6NqW5IkrhMKpnSWpiYisT5+Yaia6R/GrUPofDydLQcgjw==", "url"=>{"longurl"=>"www.google.com", "domain"=>"google.com"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `keys?' for #<ActionController::Parameters:0x00007fc981380c28>
+Did you mean?  keys
+               key?):
+  
+app/controllers/urls_controller.rb:11:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 15:56:09 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pS/WpC/H0C1tzrqKRT1Qx7wF2BPz1mC8VvVGGALnq6NqW5IkrhMKpnSWpiYisT5+Yaia6R/GrUPofDydLQcgjw==", "url"=>{"longurl"=>"www.google.com", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.google.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:22
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.google.com"], ["shorturl", "www.OwKB/SIOB"], ["domain", "google.com"], ["suffix", "SIOB"]]
+  ↳ app/controllers/urls_controller.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:22
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 26ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-24 15:56:09 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUrlreport Load (1.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 35], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 15:56:23 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-24 16:13:09 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 82ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 16:13:11 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 76ms (Views: 22.1ms | ActiveRecord: 36.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 16:13:12 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+BdMz4rfPcUEmSkwg6bXRTKtob+8JY/S4KKGH5834gxkQxnDF15GYggXPONcNOeRUaFEZlPrWnEdhDM2c88sDg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:13:12 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 78ms (Views: 51.0ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:13:26 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r0cvsinCxx3bFacUHHWWfPfH0JlShKTuPOSuPdCCWVZgM2syqBYdlsJNu7h7+fjFKmqSY76UaRGCbdS4/2LSeg==", "url"=>{"longurl"=>"http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/", "domain"=>"blog.getpostman.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `params' for #<Class:0x00007fc98125a628>):
+  
+app/models/url.rb:10:in `CreateLongUrl'
+app/controllers/urls_controller.rb:16:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:14:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r0cvsinCxx3bFacUHHWWfPfH0JlShKTuPOSuPdCCWVZgM2syqBYdlsJNu7h7+fjFKmqSY76UaRGCbdS4/2LSeg==", "url"=>{"longurl"=>"http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/", "domain"=>"blog.getpostman.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 5.3ms)
+
+
+  
+NameError (undefined local variable or method `params' for #<Class:0x00007fc9804ea308>):
+  
+app/models/url.rb:11:in `CreateLongUrl'
+app/controllers/urls_controller.rb:16:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:16:39 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r0cvsinCxx3bFacUHHWWfPfH0JlShKTuPOSuPdCCWVZgM2syqBYdlsJNu7h7+fjFKmqSY76UaRGCbdS4/2LSeg==", "url"=>{"longurl"=>"http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/", "domain"=>"blog.getpostman.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:15
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/"], ["shorturl", "www.xkTB/h3JH"], ["domain", "blog.getpostman.com"], ["suffix", "h3JH"]]
+  ↳ app/models/url.rb:15
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:15
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 65ms (ActiveRecord: 46.1ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-24 16:16:39 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:26
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUrlreport Load (1.3ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 36], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:18:24 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 57ms (Views: 38.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:18:38 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZxhxJ0kCysVjIcq89omWdrcfOz0RsTME1oQy/1aa8P1XX4fUe3qz8clexxIpF5HVUpkebO+1IwIDRlwgc+OQmw==", "url"=>{"longurl"=>"www.gfgf jfjfj .com", "domain"=>"feh fhjwb .com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf jfjfj .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:18:38 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:18:54 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GOzxG2BGxCPp12t2hgl26L77iN3c5iQvxZBzfDKtvxrXmLWb4ZIeqPCPd9rhhRhRY1bKJzD26dB7GQn5HU00Ng==", "url"=>{"longurl"=>"www.gfgf jfjfj .com", "domain"=>"fehfhjwb.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf jfjfj .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:18:54 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 16:19:14 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 34.0ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 16:19:15 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YrJcwyYc2A9g5Cx49odh0CD92Z3xI1KpC6KGuO7Mgcf+5gnPu52jqGxqOaspFVEEQ/E8RB7thwr2hDORAjRPxQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:19:15 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:19:25 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"noAA7dVR6eAuIn7oNrM5Uccgk7dh3CqVytZ+AUPyfldR9ERtVIUzazd6YkRRP1foGo3RTY3M52p0XwSEbBL1ew==", "url"=>{"longurl"=>"www.hr .com", "domain"=>"bbfbf"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hr .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:19:25 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:20:04 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"noAA7dVR6eAuIn7oNrM5Uccgk7dh3CqVytZ+AUPyfldR9ERtVIUzazd6YkRRP1foGo3RTY3M52p0XwSEbBL1ew==", "url"=>{"longurl"=>"www.hr.com", "domain"=>"bbfbf"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hr.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.hr.com"], ["shorturl", "www.exE/x4J"], ["domain", "bbfbf"], ["suffix", "x4J"]]
+  ↳ app/models/url.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:13
+Redirected to http://localhost:3000/urls/9
+Completed 302 Found in 30ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/urls/9" for 127.0.0.1 at 2019-01-24 16:20:04 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:26
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51ms (Views: 42.3ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mUrlreport Load (34.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 37], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:20:08 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 63ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:20:14 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DZklbyx3kM+igorKQPVSRnWUPox2pS7GrS/H9OLNlr893tOcHg/p+wj9h2Sfa1XlkBIb3YihPsB47akrx7T22Q==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.RbH/J$&D"], ["domain", "redis.io"], ["suffix", "J$&D"]]
+  ↳ app/models/url.rb:13
+  [1m[36mUrlreport Load (1.2ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 38], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:13
+Redirected to http://localhost:3000/urls/10
+Completed 302 Found in 55ms (ActiveRecord: 43.6ms)
+
+
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/10" for 127.0.0.1 at 2019-01-24 16:20:14 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:26
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 28.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:20:15 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:21:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 24.2ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:21:54 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzglW9YYOEwz8Jts/iKhKA3IAPu8aa6nH/UT71SrK12oTGHbV8zixyqoh8CZrs+R0GVCAVB5Y1ihfGlqe0ugcQ==", "url"=>{"longurl"=>"www.gf .com", "domain"=>"wbj fj"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `render' for #<Class:0x00007fc97cd531b0>
+Did you mean?  render_bind):
+  
+app/models/url.rb:16:in `CreateLongUrl'
+app/controllers/urls_controller.rb:16:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:23:03 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzglW9YYOEwz8Jts/iKhKA3IAPu8aa6nH/UT71SrK12oTGHbV8zixyqoh8CZrs+R0GVCAVB5Y1ihfGlqe0ugcQ==", "url"=>{"longurl"=>"www.gf .com", "domain"=>"wbj fj"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___4044017055831173420_70251716335680'
+app/controllers/urls_controller.rb:20:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:27:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzglW9YYOEwz8Jts/iKhKA3IAPu8aa6nH/UT71SrK12oTGHbV8zixyqoh8CZrs+R0GVCAVB5Y1ihfGlqe0ugcQ==", "url"=>{"longurl"=>"www.gf .com", "domain"=>"wbj fj"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___4044017055831173420_70251709354320'
+app/controllers/urls_controller.rb:20:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:28:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzglW9YYOEwz8Jts/iKhKA3IAPu8aa6nH/UT71SrK12oTGHbV8zixyqoh8CZrs+R0GVCAVB5Y1ihfGlqe0ugcQ==", "url"=>{"longurl"=>"www.gf .com", "domain"=>"wbj fj"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___4044017055831173420_70251717268540'
+app/controllers/urls_controller.rb:21:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:29:11 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzglW9YYOEwz8Jts/iKhKA3IAPu8aa6nH/UT71SrK12oTGHbV8zixyqoh8CZrs+R0GVCAVB5Y1ihfGlqe0ugcQ==", "url"=>{"longurl"=>"www.gf .com", "domain"=>"wbj fj"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 5.0ms)
+
+
+  
+NameError (undefined local variable or method `url_new_path' for #<Class:0x00007fc97ce0fa40>):
+  
+app/models/url.rb:16:in `CreateLongUrl'
+app/controllers/urls_controller.rb:17:in `create'
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:29:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 29.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:29:36 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3S48wRlekKRjStMjg6hcVcf+NsAY9nZDh/ewGUCHQRoSWnhBmIpKL3oSz4/kJDLsGlN0OvTmu7w5fsqcb2fKNg==", "url"=>{"longurl"=>"ww.fhfh .com", "domain"=>"bebbfb"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "ww.fhfh .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:13
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:13
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.9ms)
+
+
+  
+NameError (undefined local variable or method `new_url_path' for #<Class:0x00007fc97cbb47c8>):
+  
+app/models/url.rb:16:in `CreateLongUrl'
+app/controllers/urls_controller.rb:17:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:31:22 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3S48wRlekKRjStMjg6hcVcf+NsAY9nZDh/ewGUCHQRoSWnhBmIpKL3oSz4/kJDLsGlN0OvTmu7w5fsqcb2fKNg==", "url"=>{"longurl"=>"ww.fhfh .com", "domain"=>"bebbfb"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "ww.fhfh .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:17
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 78ms (Views: 57.7ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:35:52 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3S48wRlekKRjStMjg6hcVcf+NsAY9nZDh/ewGUCHQRoSWnhBmIpKL3oSz4/kJDLsGlN0OvTmu7w5fsqcb2fKNg==", "url"=>{"longurl"=>"ww.fhfh .com", "domain"=>"bebbfb"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 16:35:52 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 27.6ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 16:35:54 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5MZR8jLyRalDFQWPLoi7/UrrgFnx7RxktONha6tzFS8rshVysyafIlpNGSNJBNVEl0bCox390ZsKahvuhJOeAw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:35:54 +0530
+Processing by UrlsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/models/url.rb:20: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/url.rb:20: syntax error, unexpected end-of-input, expecting end
+app/controllers/urls_controller.rb:4:in `new'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 16:36:20 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5MZR8jLyRalDFQWPLoi7/UrrgFnx7RxktONha6tzFS8rshVysyafIlpNGSNJBNVEl0bCox390ZsKahvuhJOeAw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 16ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:36:20 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 41ms (Views: 29.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:36:27 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OwXkaWLI3jlUxClZwRogJwhZiXdJGtwyEa2MNVHaT3v0caDp4xwEsk2cNfWmlk6e1fTLjaUKEc2vJPawfjrEVw==", "url"=>{"longurl"=>"www.gvge .com`", "domain"=>"gd . ew "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gvge .com`"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 72ms (Views: 26.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:37:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OwXkaWLI3jlUxClZwRogJwhZiXdJGtwyEa2MNVHaT3v0caDp4xwEsk2cNfWmlk6e1fTLjaUKEc2vJPawfjrEVw==", "url"=>{"longurl"=>"www.gvge .com`", "domain"=>"gd . ew "}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gvge .com`"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 31.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:37:35 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ibfRTOMmg1nGrXKaD7ECk1YYYr1uJlk9P0zMaThWs3lGw5XMYvJZ0t/1bjZoPWwqi7UgR4I2lMKBxbbsF7Y4VQ==", "invalid url"=>{"longurl"=>"www.hotstar.com", "domain"=>"hotstar.com"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:12:in `create'
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:38:12 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:38:15 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OwXkaWLI3jlUxClZwRogJwhZiXdJGtwyEa2MNVHaT3v0caDp4xwEsk2cNfWmlk6e1fTLjaUKEc2vJPawfjrEVw==", "url"=>{"longurl"=>"www.gvge .com`", "domain"=>"gd . ew "}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gvge .com`"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 49ms (Views: 37.9ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:38:20 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"InPdCYDBFzZA/xwKPXcwByKTZPO+SE4rmQOJ+kSP7dbtB5mJARXNvVmnAKZa+16+/z4mCVJYg9QnivN/a29m+g==", "invalid url"=>{"longurl"=>"www.hotstar.com", "domain"=>"hotstar.com"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:12:in `create'
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:39:40 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:39:45 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OwXkaWLI3jlUxClZwRogJwhZiXdJGtwyEa2MNVHaT3v0caDp4xwEsk2cNfWmlk6e1fTLjaUKEc2vJPawfjrEVw==", "url"=>{"longurl"=>"www.gvge .com`", "domain"=>"gd . ew "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gvge .com`"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls?msg=invalid+url
+Completed 302 Found in 34ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/urls?msg=invalid+url" for 127.0.0.1 at 2019-01-24 16:39:45 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:40:00 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OwXkaWLI3jlUxClZwRogJwhZiXdJGtwyEa2MNVHaT3v0caDp4xwEsk2cNfWmlk6e1fTLjaUKEc2vJPawfjrEVw==", "url"=>{"longurl"=>"www.gvge.com", "domain"=>"gdw "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gvge.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.gvge.com"], ["shorturl", "www.qjD/FoLB"], ["domain", "gdw "], ["suffix", "FoLB"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/11
+Completed 302 Found in 16ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/urls/11" for 127.0.0.1 at 2019-01-24 16:40:00 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUrl Load (2.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:31
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 43.2ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mUrlreport Load (1.9ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 39], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:40:03 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:40:50 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATkpb5ggaDn+IUlZsBK3EyHdxzxcRvaNUD+HbvF4rvgxft+cqlgRDVReRPdvjLCwxFvibaJC5ouF/emx1AHOng==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls?msg=invalid+url
+Completed 302 Found in 20ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/urls?msg=invalid+url" for 127.0.0.1 at 2019-01-24 16:40:50 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:41:08 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls?msg=invalid+url
+Completed 302 Found in 23ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/urls?msg=invalid+url" for 127.0.0.1 at 2019-01-24 16:41:08 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:43:02 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `key?' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:18:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:44:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___4044017055831173420_70251707123200'
+app/controllers/urls_controller.rb:20:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:44:39 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf.com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.gfgf.com"], ["shorturl", "www.GlD/rmLB"], ["domain", " efg "], ["suffix", "rmLB"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (42.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 46.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___4044017055831173420_70251679693780'
+app/controllers/urls_controller.rb:20:in `create'
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.3ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 40], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:45:52 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf.com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/12
+Completed 302 Found in 18ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/urls/12" for 127.0.0.1 at 2019-01-24 16:45:52 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:46:00 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:46:00 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:47:10 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLSHIueEnGbUSTsQ3zCXSedBT1/Rw/SS0UwUt+FHwgyXwMOiZlBG7c0RJ7y4vPnwOuwNpT3TOW1vxW4yzqdJIA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>" efg "}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 23ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:47:10 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/urls/11" for 127.0.0.1 at 2019-01-24 16:47:29 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUrl Load (2.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:31
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:47:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 84ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:47:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0aTi8kI1SWcxeXoPrVOCuSKuJ0tB7+FQzl2reWwiM3Th4xQBcE0wU5sGd6FyzYUaxygCGr/r8VYbn8WmSVtTEg==", "url"=>{"longurl"=>"www.makaan.com/rental/nodia", "domain"=>"makaan.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.makaan.com/rental/nodia"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.makaan.com/rental/nodia"], ["shorturl", "www.uuJ/IAZC"], ["domain", "makaan.com"], ["suffix", "IAZC"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/13
+Completed 302 Found in 28ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/urls/13" for 127.0.0.1 at 2019-01-24 16:47:42 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:31
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 35.3ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUrlreport Load (1.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (11.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (52.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 41], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:47:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:47:52 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/tcuwWCMAata7h72N4Wtd59bC9NuveXBHfBqW3MmTXrOkNgyUvR4n/CRE1joG6rUet0ugpC59cfIMgSEVl8tHA==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>"fffff"}, "commit"=>"Search"}
+  [1m[36mUrl Load (3.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:47:52 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 16:50:19 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 302ms (Views: 278.0ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 16:50:21 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n/UbqznWWBzMT31WOcs4Y4da7ciEyHme/iU2e8WR+EQDoU6npFcju8DBaIXmWQi35FYIEWsGrD0DA4NSKWk2Rg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:50:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 28.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:50:45 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sr1VISEvldiljJhn2ybmW6R+pv8DHZw87Cw61b0+Vht9yRGhoPtPU7zUhMu8qojiedPkBe8NUcNSpUBQkt7dNw==", "url"=>{"longurl"=>"https://scalegrid.io/blog/redis-iterating-over-keys/", "domain"=>"scalegrid.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://scalegrid.io/blog/redis-iterating-over-keys/"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (1.0ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://scalegrid.io/blog/redis-iterating-over-keys/"], ["shorturl", "www.IQMB/qalF"], ["domain", "scalegrid.io"], ["suffix", "qalF"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/14
+Completed 302 Found in 35ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/urls/14" for 127.0.0.1 at 2019-01-24 16:50:45 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUrlreport Load (1.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 42], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:50:48 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:50:56 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"puyprJ9S2XenZrw/HlY/1wXPlYZWlJXkvaG+HPt/MqGWq19frSqgQw0ZsZHByDh04Emw16iQheJoY9DD3gZSxw==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000invalid msg
+Completed 302 Found in 11ms (ActiveRecord: 1.9ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:51:25 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000invalid msg
+Completed 302 Found in 22ms (ActiveRecord: 7.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:51:46 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgf .com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000invalid msg
+Completed 302 Found in 32ms (ActiveRecord: 10.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:55:24 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgf com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000invalid msg
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:55:56 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgf com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___1924203991941664874_70095668935260'
+app/controllers/urls_controller.rb:21:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:56:07 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgf.com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/12
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls/12" for 127.0.0.1 at 2019-01-24 16:56:07 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:31
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:56:41 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ovQy21EnCNdivncZGZxpyCq5lFhP74FVkaZ9SSors8R/5RL7JBGqETS5XAD6h8e/Qekq40vc/roz+NwC0gl4w==", "url"=>{"longurl"=>"www.gfgef.com", "domain"=>"ffffdd"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.gfgef.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.gfgef.com"], ["shorturl", "www.kIG/YwMB"], ["domain", "ffffdd"], ["suffix", "YwMB"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Redirected to http://localhost:3000/urls/15
+Completed 302 Found in 62ms (ActiveRecord: 45.1ms)
+
+
+Started GET "/urls/15" for 127.0.0.1 at 2019-01-24 16:56:41 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 43], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:56:43 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 73ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:56:48 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BySFlfvd+n5VWmJCVO/eNLuOimUTIVLqDpSDwjyZVXo3Y3NmyaWDSv8lb+yLcdmXXgivNO0lQuzbVu0dGeA1HA==", "url"=>{"longurl"=>"www.f f jf .com", "domain"=>" w vv we"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.f f jf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 53ms (Views: 42.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:56:50 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dYjIsZwCqn1sq3wz4ruMxww2G0TCkkpeJgmfOHVTrly6/IwxHdZw9nXzYJ+FN+J+0ZtZvi6Ch6GYgOW9WrMlcA==", "url"=>{"longurl"=>"", "domain"=>""}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 45ms (Views: 37.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:57:05 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/urls" for 127.0.0.1 at 2019-01-24 16:57:06 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:57:09 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2sCC0v8rvmXe//5cAzDWt/Xzknm1NVbTcTE0kVKkkAwVtMZSfv9k7sen4vBkvLgOKF7Qg1klmyzPuE4UfUQbIA==", "url"=>{"longurl"=>"www.f f jf .com", "domain"=>" w vv we"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.f f jf .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:12
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 27.5ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 16:57:19 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUv2WxbQfmm1qrli2yxEVDz7mVED+ci6NFOYhN7EqQjCP7LblwSk4qzypc68oCrt4Vbbq+/pBUWK2uIB8SQiJA==", "url"=>{"longurl"=>"www.facebook.com", "domain"=>"facebook.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/4
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/4" for 127.0.0.1 at 2019-01-24 16:57:19 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 16:57:20 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:02:06 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:02:41 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Unpermitted parameter: :url
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:02:43 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Unpermitted parameter: :url
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:04:33 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Unpermitted parameter: :url
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:05:29 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Unpermitted parameter: :url
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:07:25 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:11:05 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:68
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.facebook.com/sellers"], ["shorturl", "www.vPLB/0eXC"], ["domain", "facebook.com"], ["suffix", "0eXC"]]
+  ↳ app/controllers/urls_controller.rb:68
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:68
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 8.6ms)
+
+
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 44], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:12:07 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:12:16 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers=naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `CreateLongurl' for #<Class:0x00007fe67f5b45d8>
+Did you mean?  CreateLongUrl):
+  
+app/controllers/urls_controller.rb:65:in `short'
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:12:44 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers=naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:12
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.facebook.com/sellers=naveen"], ["shorturl", "www.vPLB/zi&D"], ["domain", "facebook.com"], ["suffix", "zi&D"]]
+  ↳ app/models/url.rb:12
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:12
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 12.8ms)
+
+
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.2ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 45], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:13:23 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers=naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 17:13:26 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers=naveen", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers=naveen"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:61
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+

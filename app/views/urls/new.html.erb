@@ -31,25 +31,18 @@
     <p>Domain : <%= f.text_field :domain%> <br /></p>
     <p>Find : <%=  f.submit 'Search' %><br/>
   <% end %>
-  <% if @url.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @url.errors.full_messages %>
-      <li>* <%= message_error %></li>
-    <% end %>
-    </ul> 
-  <% end %>
 </div>
 <br><br>
- <div class=Shortlong>
+<div class=Shortlong>
   <%= form_for @url, url: url_shorturl_path do |f| %>
     <p> Short Url / Suffix: <%= f.text_field :shorturl%> </br></p>
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
-  <div class="errors">
+</div>
+<div class="errors">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-    </div>
-</div>
+  </div>
 <button>Logout : <%= link_to 'logout',user_logout_path  %> </button><br/>
 <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>

@@ -13,12 +13,12 @@ class UrlsController < ApplicationController
 			if @url!=nil
 				redirect_to @url
 			else
-				@url = Url.new(web_params)
-				@url.suffix= UrlsHelper.suffix(params[:url][:longurl])
-				@url.shorturl = UrlsHelper.domain(params[:url][:domain]) + @url.suffix
-				if @url.save 
+				@url = Url.CreateLongUrl(web_params)
+				if @url!=nil
 					redirect_to @url
 				else
+					@url = Url.new
+					flash[:notice] = "Invalid long url"
 					render 'new'
 				end
 			end
@@ -62,10 +62,8 @@ class UrlsController < ApplicationController
 		if @url!=nil
 			render json: { 'status' => 'already_exist', 'shorturl' =>	@url.shorturl }
 		else
-			@url = Url.new(web_params)
-			@url.suffix= UrlsHelper.suffix(params[:url][:longurl])
-			@url.shorturl = UrlsHelper.domain(params[:url][:domain]) + @url.suffix
-			if @url.save
+			@url = Url.CreateLongUrl(web_params)
+			if @url!=nil
 				render json: { 'status' => 'new_created', 'shorturl' => @url.shorturl }
 			else 
 				render json: { 'status' => 'error_occured' }
@@ -91,9 +89,4 @@ class UrlsController < ApplicationController
 		def web_params
 			params.require(:url).permit( :utf8, :longurl, :domain, :shorturl )
 		end
-
-		def postman_params
-			params.permit( :longurl, :domain )
-		end
-
 end
