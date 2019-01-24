@@ -40499,3 +40499,28 @@ Processing by UrlsController#new as HTML
 Completed 200 OK in 96ms (Views: 26.2ms | ActiveRecord: 40.9ms)
 
 
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 17:57:38 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 111ms (Views: 56.8ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/url/long?shorturl=www.vPLB/K0%25B" for 127.0.0.1 at 2019-01-24 17:58:47 +0530
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:98: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/urls_controller.rb:98: syntax error, unexpected end, expecting end-of-input
+Started GET "/url/long?shorturl=www.vPLB/K0%25B" for 127.0.0.1 at 2019-01-24 17:59:23 +0530
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:98: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/urls_controller.rb:98: syntax error, unexpected end, expecting end-of-input
+Started GET "/url/long?shorturl=www.vPLB/K0%25B" for 127.0.0.1 at 2019-01-24 18:00:24 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"www.vPLB/K0%B"}
+  [1m[36mUrl Load (2.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.vPLB/K0%B"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:83
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 9.1ms)
+
+

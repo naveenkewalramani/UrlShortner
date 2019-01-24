@@ -54,41 +54,24 @@ class UrlsController < ApplicationController
   	end
 
 	def Shorturl
-		respond_to do |format|
-			format.json{
-				if(params[:shorturl][0..3]!="www.")
-					params[:shorturl]="www.nav.com/"+params[:shorturl]
+		if(session[:authenticate] == true)
+			if(params[:url][:shorturl][0..3]!="www.")
+				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
+						Url.where(suffix: params[:url][:shorturl]).first
 				end
-				@url = Rails.cache.fetch("#{params[:shorturl]}", expires_in: 15.minutes) do
-					Url.where(shorturl: params[:shorturl]).first
+			else
+				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
+					Url.where(shorturl: params[:url][:shorturl]).first
 				end
-				if @url!=nil
-					render json: { 'status' => 'already_exist', 'shorturl' => @url.longurl }
-				else
-					render json: { 'status' => 'invalid_shorturl' }
-				end
-			}
-			format.html{
-				if(session[:authenticate] == true)
-					if(params[:url][:shorturl][0..3]!="www.")
-						@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
-							Url.where(suffix: params[:url][:shorturl]).first
-						end
-					else
-						@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
-							Url.where(shorturl: params[:url][:shorturl]).first
-						end
-					end
-					if @url!=nil
-						redirect_to @url
-					else
-						flash[:notice] = "Not a valid url"
-						redirect_to new_url_path
-					end 
-				else
-					redirect_to user_login_path
-				end
-			}
+			end
+			if @url!=nil
+				redirect_to @url
+			else
+				flash[:notice] = "Not a valid url"
+				redirect_to new_url_path
+			end 
+		else
+			redirect_to user_login_path
 		end
 	end
 
