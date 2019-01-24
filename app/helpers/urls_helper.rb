@@ -6,7 +6,7 @@ module UrlsHelper
 	end
 	def self.conversion(value1,value2)
 		shorturl = "www.nav.com/"
-		map = "?ABCDEFGHIJ%KLMNOPQRSTUVWXYZ&0123456789$abcdefghijklmnopqrstuvwxyz*"
+		map = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz"
 		while value2!=0
 			shorturl += map[value2%67]
 			value2=value2/10

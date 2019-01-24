@@ -7,7 +7,7 @@ class ConvertWorker
   		@urlreport = Urlreport.new()
   		@urlreport.date = Date.today
   		@urlreport.count = 1
-  		@url.save	
+  		@urlreport.save	
   	else
   		@urlreport.update(count: @urlreport.count+=1)
   	end

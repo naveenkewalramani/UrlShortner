@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   #routes for login
-  #resources :users
   get 'homepage' => "users#homepage"	#loads homepage
   get 'user/new' => "users#new"	      #go to signup page
   get 'user/login' => "users#login"   #go to login page
@@ -22,6 +21,6 @@ Rails.application.routes.draw do
   post 'url/shorturl' => 'urls#Shorturl'
 
   #Routes for urlreport
-  resources :urlreports
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'urlreport' => 'urlreports#index'
+  
 end

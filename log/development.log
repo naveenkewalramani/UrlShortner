@@ -33084,3 +33084,2890 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 34ms (Views: 0.5ms | ActiveRecord: 7.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-24 10:08:35 +0530
+  [1m[35m (61.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 496ms (Views: 488.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 10:08:39 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 254ms (Views: 86.8ms | ActiveRecord: 84.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 10:08:41 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fuV+M0wUNYVZYnG0Q+tH60VehTEU9HCO+R/ZNHYvYQXisSs/0ZVOIlXsZGeceXc/JlJg6Ps6pS0EOWwdmtevBw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (441.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 480ms (ActiveRecord: 441.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:08:42 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 172ms (Views: 29.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 10:09:12 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9m6K7kRqjLz/X4tVtxV4KJpj8237LK0hRmqNphuZj/s5Gs5uxb5WN+YHl/nQmRaRR86xlxc8YN744/cjNHkE1w==", "url"=>{"longurl"=>"https://www.facebook.com/instantgames/1072612402873309/?ref=bookmarks&count=0&fb_bmpos=_0&source=www_app_bookmark", "domain"=>"facebook.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (121.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.facebook.com/instantgames/1072612402873309/?ref=bookmarks&count=0&fb_bmpos=_0&source=www_app_bookmark"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (141.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.facebook.com/instantgames/1072612402873309/?ref=bookmarks&count=0&fb_bmpos=_0&source=www_app_bookmark"], ["shorturl", "www.nav.com/nQ6JA"], ["domain", "facebook.com"], ["mdsum", 10237], ["created_at", "2019-01-24 04:39:12.376645"], ["updated_at", "2019-01-24 04:39:12.376645"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrlreport Load (39.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (613.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/123
+Completed 302 Found in 960ms (ActiveRecord: 876.8ms)
+
+
+Started GET "/urls/123" for 127.0.0.1 at 2019-01-24 10:09:13 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"123"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 52ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:09:25 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUrlreport Load (0.9ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/javascripts/dashboard.js" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/images/status.png" for 127.0.0.1 at 2019-01-24 10:09:56 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:09:59 +0530
+Started GET "/sidekiq/retries/1548304829.73001-235800392064de6c56122939" for 127.0.0.1 at 2019-01-24 10:10:10 +0530
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 10:10:31 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.9ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 66ms (Views: 41.5ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 10:10:36 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:10:55 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:10:57 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:10:57 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:11:43 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 86ms (Views: 34.9ms | ActiveRecord: 38.0ms)
+
+
+  [1m[36mUrlreport Load (0.3ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 10:12:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aJ4v6kilg6bAFiAmPwnuVAS2KB3MpPkTxl1cu6rbDUlY2dkZet36kmppLYjgl+n34TANTDKg6RUTnzJkj6JtLw==", "url"=>{"longurl"=>"https://www.netflix.com/in/Login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fbrowse", "domain"=>"netflix.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.netflix.com/in/Login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fbrowse"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (1.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.netflix.com/in/Login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fbrowse"], ["shorturl", "www.nav.com/iDGG"], ["domain", "netflix.com"], ["mdsum", 7418], ["created_at", "2019-01-24 04:42:06.086657"], ["updated_at", "2019-01-24 04:42:06.086657"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/124
+Completed 302 Found in 18ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/urls/124" for 127.0.0.1 at 2019-01-24 10:12:06 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"124"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUrlreport Load (0.9ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:12:33 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:12:33 +0530
+  [1m[36mUrlreport Load (0.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:13:08 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:13:08 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:13:10 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:13:10 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-24 10:13:13 +0530
+Started GET "/sidekiq/busy" for 127.0.0.1 at 2019-01-24 10:13:29 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:13:29 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:13:32 +0530
+Started POST "/sidekiq/retries/all/delete" for 127.0.0.1 at 2019-01-24 10:13:39 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:13:39 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:14:09 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 26.8ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 10:14:22 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QOC/FI7bPPufdXrwdN26mHHRHGeLuOBetHYKO67jzF5wp0nnvKNFzzUKd16rQ707lFc5NnW88FhhtGTki5qsOA==", "url"=>{"longurl"=>"https://www.google.com/search?q=youtube+video+download&rlz=1C5CHFA_enIN831IN831&oq=youtb&aqs=chrome.4.69i57j0l5.3104j0j7&sourceid=chrome&ie=UTF-8", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.google.com/search?q=youtube+video+download&rlz=1C5CHFA_enIN831IN831&oq=youtb&aqs=chrome.4.69i57j0l5.3104j0j7&sourceid=chrome&ie=UTF-8"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (5.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://www.google.com/search?q=youtube+video+download&rlz=1C5CHFA_enIN831IN831&oq=youtb&aqs=chrome.4.69i57j0l5.3104j0j7&sourceid=chrome&ie=UTF-8"], ["shorturl", "www.nav.com/9rtKA"], ["domain", "google.com"], ["mdsum", 12634], ["created_at", "2019-01-24 04:44:22.351206"], ["updated_at", "2019-01-24 04:44:22.351206"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/125
+Completed 302 Found in 56ms (ActiveRecord: 46.2ms)
+
+
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/125" for 127.0.0.1 at 2019-01-24 10:14:22 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"125"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:10
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 125], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUrlreport Create (8.8ms)[0m  [1m[32mINSERT INTO "urlreports" ("count", "date") VALUES ($1, $2) RETURNING "id"[0m  [["count", 1], ["date", "2019-01-24"]]
+  ↳ app/workers/convert_worker.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:10
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:14:25 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:14:25 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:14:29 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:14:29 +0530
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2019-01-24 10:14:29 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:14:29 +0530
+Started GET "/sidekiq/queues" for 127.0.0.1 at 2019-01-24 10:14:32 +0530
+Started GET "/sidekiq/" for 127.0.0.1 at 2019-01-24 10:14:34 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:14:40 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:14:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:14:50 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:14:54 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:14:59 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:04 +0530
+Started GET "/sidekiq/" for 127.0.0.1 at 2019-01-24 10:15:08 +0530
+Started GET "/sidekiq/images/favicon.ico" for 127.0.0.1 at 2019-01-24 10:15:08 +0530
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:15:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:28 +0530
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 10:15:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QlpQ9fdGDZDFQeglP3qbkOniWYnfXXUwvC1VsR5ZDjRTp+w5aVhAulqCg5LY+3NpiGsN9l5ZdIXMtuJ4QAEXg==", "url"=>{"longurl"=>"https://qdownloader.net/youtube-video-downloader", "domain"=>"qdownloader.net"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://qdownloader.net/youtube-video-downloader"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (2.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://qdownloader.net/youtube-video-downloader"], ["shorturl", "www.nav.com/$JhD"], ["domain", "qdownloader.net"], ["mdsum", 4796], ["created_at", "2019-01-24 04:45:29.973748"], ["updated_at", "2019-01-24 04:45:29.973748"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (44.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/126
+Completed 302 Found in 55ms (ActiveRecord: 47.6ms)
+
+
+Started GET "/urls/126" for 127.0.0.1 at 2019-01-24 10:15:30 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"126"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 126], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUrlreport Load (1.9ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (3.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 2], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 10:15:31 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:38 +0530
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 10:15:41 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (5.2ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 41ms (Views: 28.0ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:15:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:16:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:17:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:18:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:19:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:20:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:21:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:22:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:23:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:24:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:25:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:26:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:27:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:18 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:23 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:28 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:33 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:38 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:43 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:48 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:53 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:28:58 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:29:03 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:29:08 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:29:13 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:35:44 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:35:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:35:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:35:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:36:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:37:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:38:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:39:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:40:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:41:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:42:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:43:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:44:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:45:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:46:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:47:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:52 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:48:57 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:02 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:07 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:12 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:17 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:22 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:27 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:32 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:37 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:42 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:47 +0530
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2019-01-24 10:49:52 +0530
+Started GET "/" for 127.0.0.1 at 2019-01-24 11:06:38 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 367ms (Views: 357.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 11:06:40 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 65ms (Views: 26.7ms | ActiveRecord: 20.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:06:41 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uoeUKdBxgOtXcDNqTp0fkLOl6iCxYfXrpczCWXZauvMm08ElTfD7TFv+JrmRDy9E0KkP+V6vIEhY6ndwmqJ08Q==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:06:41 +0530
+  
+ActionController::RoutingError (uninitialized constant UrlController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:07:17 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fO7E/0SQKExvqXCHdmPrVoUxmU4I60ZeQeitxXpBt/SzmoB/xUTyx3bxbCsR74XvWJzbtOT7i6H/YddAVaE82A==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 19ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:07:17 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (247.1ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `urls_path' for #<#<Class:0x00007fcd8bdcef78>:0x00007fcd8bdcd628>
+Did you mean?  url_new_path):
+    26: </style>
+    27: <h2>WELCOME TO URL SHORTNER</h2>
+    28:  <div class=Longshort>
+    29:   <%= form_for @url do |f| %>
+    30:     <p> Long Url: <%= f.text_field :longurl%> </br></p>
+    31:     <p>Domain : <%= f.text_field :domain%> <br /></p>
+    32:     <p>Find : <%=  f.submit 'Search' %><br/>
+  
+app/views/urls/new.html.erb:29:in `_app_views_urls_new_html_erb___983027967350015557_70260395768680'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:07:55 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fO7E/0SQKExvqXCHdmPrVoUxmU4I60ZeQeitxXpBt/SzmoB/xUTyx3bxbCsR74XvWJzbtOT7i6H/YddAVaE82A==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:07:55 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 11:07:59 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hhORjGRGU+5fmwsiqmnlTaVKWtQi3n9FZI1bh3C46cBJZ9UM5ZKJZUbDF47N5Yv0eOcYLs7OsrraBCECX1hi7A==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to 
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `url_url' for #<UrlsController:0x00007fcd876648e0>
+Did you mean?  url_new_url):
+  
+app/controllers/urls_controller.rb:47:in `Shorturl'
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:10:49 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (326.6ms)
+Completed 500 Internal Server Error in 344ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url_shorturl_path' for #<#<Class:0x00007fcd8bb4b5f8>:0x00007fcd8bb49ca8>
+Did you mean?  urls_shorturl_path
+               urls_short_path
+               urls_shorturl_url):
+    41: </div>
+    42: <br><br>
+    43:  <div class=Shortlong>
+    44:   <%= form_for @url, url: url_shorturl_path do |f| %>
+    45:     <p> Short Url: <%= f.text_field :shorturl%> </br></p>
+    46:     <p>Find : <%=  f.submit  'Search'%><br/></p>
+    47:   <% end %>
+  
+app/views/urls/new.html.erb:44:in `_app_views_urls_new_html_erb___983027967350015557_70260394450600'
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:11:22 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:11:25 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQXKmdLN5Enz4DV+9iUOklDdtaZGqFo2Rbz1JBTxR4eicY4ZUxk+wuq4KdKRqWArjXD3XKq4l8n7NY+hOxHMqw==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/urls/show
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/show" for 127.0.0.1 at 2019-01-24 11:11:25 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/show"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:13:06 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQXKmdLN5Enz4DV+9iUOklDdtaZGqFo2Rbz1JBTxR4eicY4ZUxk+wuq4KdKRqWArjXD3XKq4l8n7NY+hOxHMqw==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 26ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:13:06 +0530
+Processing by UrlsController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Url without an ID):
+  
+app/controllers/urls_controller.rb:32:in `show'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:14:16 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQXKmdLN5Enz4DV+9iUOklDdtaZGqFo2Rbz1JBTxR4eicY4ZUxk+wuq4KdKRqWArjXD3XKq4l8n7NY+hOxHMqw==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 27ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:14:17 +0530
+Processing by UrlsController#show as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:32:in `show'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:14:40 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQXKmdLN5Enz4DV+9iUOklDdtaZGqFo2Rbz1JBTxR4eicY4ZUxk+wuq4KdKRqWArjXD3XKq4l8n7NY+hOxHMqw==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 29ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:14:40 +0530
+Processing by UrlsController#show as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Url without an ID):
+  
+app/controllers/urls_controller.rb:32:in `show'
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:15:00 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (336.5ms)
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_url_path' for #<#<Class:0x00007fcd88d08420>:0x00007fcd8c8c9450>
+Did you mean?  url_new_path):
+    38:     <%= @url.id %>
+    39:   </p>
+    40: </div>
+    41: <button><%= link_to 'Back', new_url_path %></button>
+  
+app/views/urls/show.html.erb:41:in `_app_views_urls_show_html_erb___2926257064551897830_70260370197840'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:15:24 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQXKmdLN5Enz4DV+9iUOklDdtaZGqFo2Rbz1JBTxR4eicY4ZUxk+wuq4KdKRqWArjXD3XKq4l8n7NY+hOxHMqw==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (5.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 20ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:15:24 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:15:29 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 71ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:15:32 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0HoPadxCjYJxBGZ2X5eCMpihkmpgS1NEXdJJsXjTvihrqZphw8R4MSDsuzWcGi6QxfNyaKEOzcc3ZA9J+1Udg==", "url"=>{"shorturl"=>"www.nav.com/PwKA"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/PwKA"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 14ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:15:32 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:15:51 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 79ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:15:55 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2UUH95k3sUSTiIBjVTI5Lifjb0ODrXNpU/O0yu1FMJ1LqkmjuUmqkl7PIxZaPA+crpYkw4ioZRNeWW3RD0sqEw==", "url"=>{"shorturl"=>"www.nav.com/88yF"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/88yF"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:15:55 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:15:57 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:16:27 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u6u3eTbBVYPF8eTiTaUN3oLDPjGrFHwVPrjGHZADVH4pRPktFr9OVQi2R5dCqztsC7Z1saARam8zEh8Gcg1O8A==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 27ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:16:27 +0530
+Processing by UrlsController#show as HTML
+  Rendering urls/show.html.erb within layouts/application
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendered urls/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `longurl' for #<Url::ActiveRecord_Relation:0x00007fcd8bb52d30>):
+    21: <div class = "display">
+    22:   <p>
+    23:     <strong>LongUrl : </strong>
+    24:     <%= @url.longurl %>
+    25:   </p>
+    26:    
+    27:   <p>
+  
+app/views/urls/show.html.erb:24:in `_app_views_urls_show_html_erb___2926257064551897830_70260370340380'
+app/controllers/urls_controller.rb:33:in `show'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:20:00 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGX0B9zYFXQnnoHbMW2XJUWhIaKzdH9uDVGJbKgdGdkHEbCHXQzP/z7GnXdW4fmcmAxjWF9kspGz2PPph/2S9Q==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 31ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:20:00 +0530
+Processing by UrlsController#show as HTML
+  Rendering urls/show.html.erb within layouts/application
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  Rendered urls/show.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `longurl' for #<Url::ActiveRecord_Relation:0x00007fcd8e17d780>):
+    21: <div class = "display">
+    22:   <p>
+    23:     <strong>LongUrl : </strong>
+    24:     <%= @url.longurl %>
+    25:   </p>
+    26:    
+    27:   <p>
+  
+app/views/urls/show.html.erb:24:in `_app_views_urls_show_html_erb___2926257064551897830_70260414472820'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:20:28 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGX0B9zYFXQnnoHbMW2XJUWhIaKzdH9uDVGJbKgdGdkHEbCHXQzP/z7GnXdW4fmcmAxjWF9kspGz2PPph/2S9Q==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 22ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:20:28 +0530
+Processing by UrlsController#show as HTML
+  Rendering urls/show.html.erb within layouts/application
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  Rendered urls/show.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `longurl' for #<Url::ActiveRecord_Relation:0x00007fcd876f92b0>):
+    21: <div class = "display">
+    22:   <p>
+    23:     <strong>LongUrl : </strong>
+    24:     <%= @url.longurl %>
+    25:   </p>
+    26:    
+    27:   <p>
+  
+app/views/urls/show.html.erb:24:in `_app_views_urls_show_html_erb___2926257064551897830_70260358627500'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:20:53 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGX0B9zYFXQnnoHbMW2XJUWhIaKzdH9uDVGJbKgdGdkHEbCHXQzP/z7GnXdW4fmcmAxjWF9kspGz2PPph/2S9Q==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 28ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:20:53 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT "urls".* FROM "urls"[0m
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `longurl' for #<Url::ActiveRecord_Relation:0x00007fcd8c818420>):
+    21: <div class = "display">
+    22:   <p>
+    23:     <strong>LongUrl : </strong>
+    24:     <%= @url.longurl %>
+    25:   </p>
+    26:    
+    27:   <p>
+  
+app/views/urls/show.html.erb:24:in `_app_views_urls_show_html_erb___2926257064551897830_70260369853880'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:21:30 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGX0B9zYFXQnnoHbMW2XJUWhIaKzdH9uDVGJbKgdGdkHEbCHXQzP/z7GnXdW4fmcmAxjWF9kspGz2PPph/2S9Q==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 41ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:21:31 +0530
+Processing by UrlsController#show as HTML
+  [1m[36mUrl Load (1.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Url Load (0.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/extensions.rb:28
+NoMethodError (undefined method `longurl' for #<Url::ActiveRecord_Relation:0x00007fcd8cd64b18>):
+  
+app/controllers/urls_controller.rb:33:in `show'
+Started POST "/urls/shorturl" for 127.0.0.1 at 2019-01-24 11:21:51 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGX0B9zYFXQnnoHbMW2XJUWhIaKzdH9uDVGJbKgdGdkHEbCHXQzP/z7GnXdW4fmcmAxjWF9kspGz2PPph/2S9Q==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/url/show
+Completed 302 Found in 27ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:21:51 +0530
+Processing by UrlsController#show as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Url without an ID):
+  
+app/controllers/urls_controller.rb:32:in `show'
+Started POST "/url/new" for 127.0.0.1 at 2019-01-24 11:22:54 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/url/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/url/show" for 127.0.0.1 at 2019-01-24 11:23:47 +0530
+Processing by UrlsController#show as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 11:23:47 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 73ms (Views: 23.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:23:49 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TaBbTPhVUqcZVaN1pKJsHbzSRUnjulBnW/0VtqXopKfR9A5AZdQpABXbtqZ7MFzJ396gkAx0hcSm26CfSRBqpQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:23:49 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 29.6ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/url/new" for 127.0.0.1 at 2019-01-24 11:23:55 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/url/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/url/new" for 127.0.0.1 at 2019-01-24 11:24:10 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/url/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:26:31 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/urls/create
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:26:31 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/create"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:27:25 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/create"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/user/login" for 127.0.0.1 at 2019-01-24 11:27:27 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 25.5ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:27:29 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:27:29 +0530
+Processing by UrlsController#new as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:13:in `create'
+app/controllers/urls_controller.rb:5:in `new'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:30:04 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 18ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:30:04 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/urls/create
+Completed 302 Found in 14ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:30:04 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/create"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:30:35 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 19ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:30:35 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/urls/create
+Completed 302 Found in 13ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:30:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/create"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:31:54 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 19ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:31:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:32:27 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/url/new
+Completed 302 Found in 18ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/url/new" for 127.0.0.1 at 2019-01-24 11:32:28 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/urls/create
+Completed 302 Found in 12ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:32:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/urls/create"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/urls/create" for 127.0.0.1 at 2019-01-24 11:34:48 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+Completed 404 Not Found in 8ms (ActiveRecord: 3.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Url with 'id'=create):
+  
+app/controllers/urls_controller.rb:32:in `show'
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:34:54 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vL/ZKPWZUWYIC1M0PYOcAWYnAc64DvTxLnnX/gwIrAJzy52odE2L7RFTT5haD/K4u4pDNFQeOQ6Q8K17I+gnLg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 20ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:34:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (340.4ms)
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url_shorturl_path' for #<#<Class:0x00007fcd8bd93310>:0x00007fcd8bd91768>
+Did you mean?  urls_shorturl_path
+               urls_short_path
+               urls_shorturl_url):
+    41: </div>
+    42: <br><br>
+    43:  <div class=Shortlong>
+    44:   <%= form_for @url, url: url_shorturl_path do |f| %>
+    45:     <p> Short Url: <%= f.text_field :shorturl%> </br></p>
+    46:     <p>Find : <%=  f.submit  'Search'%><br/></p>
+    47:   <% end %>
+  
+app/views/urls/new.html.erb:44:in `_app_views_urls_new_html_erb___983027967350015557_70260395646280'
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:35:18 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 74ms (Views: 51.6ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:35:23 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u19RKboo+jYB6bFPZ7C5KyiZV+WlfY72nfHbp1/gTdV0KxWpO/wgvRixreMAPNeS9TQVH0ltQwkjeKEicADG+Q==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-24 11:35:23 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (356.4ms)
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url_new_path' for #<#<Class:0x00007fcd8bd5b5a0>:0x00007fcd877e22a8>
+Did you mean?  user_new_path):
+    38:     <%= @url.id %>
+    39:   </p>
+    40: </div>
+    41: <button><%= link_to 'Back', url_new_path %></button>
+  
+app/views/urls/show.html.erb:41:in `_app_views_urls_show_html_erb___2926257064551897830_70260359108600'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:35:37 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u19RKboo+jYB6bFPZ7C5KyiZV+WlfY72nfHbp1/gTdV0KxWpO/wgvRixreMAPNeS9TQVH0ltQwkjeKEicADG+Q==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-24 11:35:37 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:35:39 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 11:35:42 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nBBvz+shgwmBwu2EjESYEU7vtTMAXVwY5Ywa+Vf0n0MHMLIahQ/pf7Lu7s7mu5qCMTqGsu747EhLnuaumva5eg==", "url"=>{"shorturl"=>"www.nav.com/tRUB"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/tRUB"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-24 11:35:42 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:35:44 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 11:35:48 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CWg2ZoYEaULbrzGdb4kwYtK7SSg7zSQiJtKCPVOmsdmSSOuz6CoDNOiDMtcFdjLxrW56qdVolHKIwH5qnqSX4A==", "url"=>{"shorturl"=>"www.nav.com/88yF"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/88yF"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:44
+Redirected to http://localhost:3000/urls/19
+Completed 302 Found in 19ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/19" for 127.0.0.1 at 2019-01-24 11:35:48 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:35:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:36:55 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 29.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:36:57 +0530
+Processing by UrlreportsController#index as HTML
+Completed 404 Not Found in 18ms (ActiveRecord: 14.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Urlreport without an ID):
+  
+app/controllers/urlreports_controller.rb:9:in `show'
+app/controllers/urlreports_controller.rb:5:in `index'
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:17 +0530
+Processing by UrlreportsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/urlreports_controller.rb:8:in `show'
+app/controllers/urlreports_controller.rb:5:in `index'
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:38 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:39 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:41 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:37:47 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:06 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:07 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:07 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:07 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:07 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:38:07 +0530
+Processing by UrlreportsController#index as HTML
+Redirected to http://localhost:3000/urlreports
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:40:37 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:40:40 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 94ms (Views: 45.3ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:40:41 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:40:42 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:40:54 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:40:56 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 76ms (Views: 32.3ms | ActiveRecord: 19.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:41:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZsldFfmc8lkZ8/qsJtgSGzBrPdPGiXffdyZRSYLvMK13NOHZZ4K/c4YwkRvBWfriUeJprEeNdmoHveaA3LcpA==", "url"=>{"longurl"=>"www.hsfafhvafjhg.com", "domain"=>"vufwevufvwv.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hsfafhvafjhg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.hsfafhvafjhg.com"], ["shorturl", "www.nav.com/MBTC"], ["domain", "vufwevufvwv.com"], ["mdsum", 2022], ["created_at", "2019-01-24 06:11:06.094062"], ["updated_at", "2019-01-24 06:11:06.094062"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:19
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.8ms)
+
+
+  
+Redis::CannotConnectError (Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)):
+  
+app/models/url.rb:6:in `background_process'
+app/controllers/urls_controller.rb:19:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:41:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAACzN36x7ihC25ActGza21oumflKrW8qxgCkD8CTcyXdEZMXC4dM7hTcuwVXd3SsMX4nQk6eEMVkXgVEOLG4A==", "url"=>{"longurl"=>"www.hsfafhvafjhg.com", "domain"=>"vufwevufvwv.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hsfafhvafjhg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.hsfafhvafjhg.com"], ["shorturl", "www.nav.com/MBTC"], ["domain", "vufwevufvwv.com"], ["mdsum", 2022], ["created_at", "2019-01-24 06:11:30.001886"], ["updated_at", "2019-01-24 06:11:30.001886"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/128
+Completed 302 Found in 55ms (ActiveRecord: 42.2ms)
+
+
+Started GET "/urls/128" for 127.0.0.1 at 2019-01-24 11:41:30 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"128"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 128], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/views/urls/show.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+... link_to 'Back', new_  url_path );@output_buffer.safe_append...
+...                       ^~~~~~~~):
+  
+app/views/urls/show.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+  [1m[36mUrlreport Load (1.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 3], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:41:51 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAACzN36x7ihC25ActGza21oumflKrW8qxgCkD8CTcyXdEZMXC4dM7hTcuwVXd3SsMX4nQk6eEMVkXgVEOLG4A==", "url"=>{"longurl"=>"www.hsfafhvafjhg.com", "domain"=>"vufwevufvwv.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hsfafhvafjhg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+Redirected to http://localhost:3000/urls/128
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/urls/128" for 127.0.0.1 at 2019-01-24 11:41:52 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"128"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 128], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:41:55 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreports" for 127.0.0.1 at 2019-01-24 11:41:57 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (1.2ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:43:59 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 28.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:44:00 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 11:44:02 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 73ms (Views: 63.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:44:03 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 63ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 11:44:04 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (9.1ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 60ms (Views: 49.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:44:05 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 11:44:06 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (10.0ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 58ms (Views: 46.9ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:44:07 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 11:44:42 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 27.4ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 11:44:44 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOi/SU7jQL3QihyRdwL3mYLhpBYN+AXXeBUv9teqfeTAvOpF02I7GtwECUKokMdN4e1Bz+I20HSFM5rfO1Kz5g==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:44:44 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 62ms (Views: 48.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:44:53 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DO6EhrdQDNVOi2H3JUTSMCMxo8k4AMBcdsGR7XG5q0HDmsAGNoTWXlfTfVtCyLyJ/pzhM9QQDaPISOtoXlkgbQ==", "url"=>{"longurl"=>"www. fehfav j dv dsv j dvj .com", "domain"=>"ugvwuvfuwav.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (6.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www. fehfav j dv dsv j dvj .com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:19
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 37.0ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:45:05 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z5SZ4PUugFWWdhR2qQsi9y5JidTcX4Ar9PNug48FstIA4N1gdPpa3o8uCNrOh0xO8+TLLjBPTdRKehQGoOU5/g==", "url"=>{"longurl"=>"www. fehfavjdvdsvjdvj.com", "domain"=>"ugvwuvfuwav.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www. fehfavjdvdsvjdvj.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:19
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 37.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:45:08 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d2vrm2NY/wvFBL2do9QGkcdMT+FLSgW4CM2MrRHUFDe4H68b4owlgNxcoTHEWGgoGuENG6dayEe2RPYoPjSfGw==", "url"=>{"longurl"=>"www.fehfavjdvdsvjdvj.com", "domain"=>"ugvwuvfuwav.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.fehfavjdvdsvjdvj.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.fehfavjdvdsvjdvj.com"], ["shorturl", "www.nav.com/AiXC"], ["domain", "ugvwuvfuwav.com"], ["mdsum", 2479], ["created_at", "2019-01-24 06:15:08.527048"], ["updated_at", "2019-01-24 06:15:08.527048"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+Redirected to http://localhost:3000/urls/129
+Completed 302 Found in 48ms (ActiveRecord: 41.6ms)
+
+
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/129" for 127.0.0.1 at 2019-01-24 11:45:08 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"129"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 4], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrl Load (2.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 23.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:45:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 47ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 11:45:19 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (5.1ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 59ms (Views: 33.9ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:45:20 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 70ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 11:45:31 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iNt4pr7AIn1iS03jWNrbVF12KyOe+4ubHFfSQnnZlSG4nI5VjLhbScg0QE2HRNz3uPAOcmD/m53JlbydXKD1Rw==", "url"=>{"longurl"=>"www.hfhfhfhhvh.com", "domain"=>"hfgfgfgfg.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.hfhfhfhhvh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.hfhfhfhhvh.com"], ["shorturl", "www.nav.com/H$RB"], ["domain", "hfgfgfgfg.com"], ["mdsum", 1816], ["created_at", "2019-01-24 06:15:31.443219"], ["updated_at", "2019-01-24 06:15:31.443219"]]
+  ↳ app/controllers/urls_controller.rb:19
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 5], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (33.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:19
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/130
+Completed 302 Found in 52ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/urls/130" for 127.0.0.1 at 2019-01-24 11:45:31 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"130"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 11:45:32 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 76ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 11:45:33 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (17.1ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 57ms (Views: 38.5ms | ActiveRecord: 17.1ms)
+
+
