@@ -1,23 +1,29 @@
 module UrlsHelper
-	def self.mdvalue(value)
+	def self.mdvalue(input)
 		mdsum = 0;
-		value.each_char {|x| mdsum+=x.ord}
+		input.each_char {|x| mdsum+=x.ord}
 		return mdsum
 	end
-	def self.conversion(value1,value2)
-		value1=mdvalue(value1)
+	def self.suffix(input)
+		mdsum = mdvalue(input)
+		output = ""
+		map = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz" #base(66)
+		while mdsum!=0
+			output += map[mdsum%66]
+			mdsum=mdsum/10
+		end
+		return output
+	end
+	def self.domain(input)
+		mdsum=mdvalue(input)
 		shorturl="www."
-		map1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
-		map2 = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz" #base(66)
-		while value1!=0
-			shorturl += map1[value1%52]
-			value1=value1/10
+		map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
+		while mdsum!=0
+			shorturl += map[mdsum%52]
+			mdsum=mdsum/10
 		end
 		shorturl+='/'
-		while value2!=0
-			shorturl += map2[value2%66]
-			value2=value2/10
-		end
+		
 		return shorturl
 	end
 end

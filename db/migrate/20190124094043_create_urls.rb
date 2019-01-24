@@ -4,8 +4,7 @@ class CreateUrls < ActiveRecord::Migration[5.2]
       t.string :longurl 
       t.string :shorturl
       t.string :domain
-      t.integer :mdsum
-      t.timestamps
+      t.string :suffix
     end
   end
 end

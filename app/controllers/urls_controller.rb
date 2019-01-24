@@ -14,8 +14,8 @@ class UrlsController < ApplicationController
 				redirect_to @url
 			else
 				@url = Url.new(web_params)
-				@url.mdsum = UrlsHelper.mdvalue(params[:url][:longurl])
-				@url.shorturl = UrlsHelper.conversion(params[:url][:domain],@url.mdsum)
+				@url.suffix= UrlsHelper.suffix(params[:url][:longurl])
+				@url.shorturl = UrlsHelper.domain(params[:url][:domain]) + @url.suffix
 				if @url.save 
 					redirect_to @url
 				else
@@ -38,10 +38,13 @@ class UrlsController < ApplicationController
 	def Shorturl
 		if(session[:authenticate] == true)
 			if(params[:url][:shorturl][0..3]!="www.")
-				params[:url][:shorturl]="www.nav.com/"+params[:url][:shorturl]
-			end
-			@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
-				Url.where(shorturl: params[:url][:shorturl]).first
+				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
+					Url.where(suffix: params[:url][:shorturl]).first
+				end
+			else
+				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
+					Url.where(shorturl: params[:url][:shorturl]).first
+				end
 			end
 			if @url!=nil
 				redirect_to @url
@@ -57,13 +60,13 @@ class UrlsController < ApplicationController
 	def short
 		@url = Url.where(longurl: params[:longurl]).first
 		if @url!=nil
-			render json: { 'status' => 'already_exist' , 'shorturl' =>	@url.shorturl }
+			render json: { 'status' => 'already_exist', 'shorturl' =>	@url.shorturl }
 		else
 			@url = Url.new(web_params)
-			@url.mdsum = UrlsHelper.mdvalue(params[:longurl])
-			@url.shorturl = UrlsHelper.conversion(params[:domain],@url.mdsum)
+			@url.suffix= UrlsHelper.suffix(params[:url][:longurl])
+			@url.shorturl = UrlsHelper.domain(params[:url][:domain]) + @url.suffix
 			if @url.save
-				render json: { 'status' => 'new_created' , 'shorturl' => @url.shorturl }
+				render json: { 'status' => 'new_created', 'shorturl' => @url.shorturl }
 			else 
 				render json: { 'status' => 'error_occured' }
 			end
@@ -78,7 +81,7 @@ class UrlsController < ApplicationController
 			Url.where(shorturl: params[:shorturl]).first
 		end
 		if @url!=nil
-			render json: { 'status' => 'already_exist' , 'shorturl' => @url.longurl }
+			render json: { 'status' => 'already_exist', 'shorturl' => @url.longurl }
 		else
 			render json: { 'status' => 'invalid_shorturl' }
 		end
