@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   #routes for login
-  get 'homepage' => "users#homepage"	#loads homepage
-  get 'user/new' => "users#new"	      #go to signup page
-  get 'user/login' => "users#login"   #go to login page
-  post 'users/signup' => "users#signup"      #post signup page details
-  post 'users/login' => "users#login_new"       #post login page details
+  get 'homepage' => 'users#homepage'
+  get 'user/new' => 'users#new'
+  get 'user/login' => 'users#login'
+  post 'users/signup' => 'users#signup'
+  post 'users/login' => 'users#login_new'
   post 'user/show' => 'users#show'
-  root "users#homepage"
-  get 'user/logout' => "users#logout"
+  root 'users#homepage'
+  get 'user/logout' => 'users#logout'
 
   #routes for sidekiq
   require 'sidekiq/web'
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   
   #Routes for Urls
   resources :urls
-  post 'url/short' => "urls#short"
-  get 'url/long' => "urls#long"
+  post 'url/short' => 'urls#short'
+  get 'url/long' => 'urls#long'
   post 'url/shorturl' => 'urls#Shorturl'
 
   #Routes for urlreport

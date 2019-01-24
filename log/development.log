@@ -36267,3 +36267,621 @@ Processing by UsersController#logout as HTML
 Completed 200 OK in 56ms (Views: 27.4ms | ActiveRecord: 13.4ms)
 
 
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 13:10:17 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 323ms (Views: 284.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-24 13:10:19 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 110ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2019-01-24 13:10:43 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SjV/kLxCG7Ml8gs57bIYKXgIp33wUuwTn+qhRsN1MtR32/rSjRzO7KWam7J0mC3YlseZt7ObD2WP1NrlLITYsw==", "user"=>{"username"=>"prabal", "email"=>"prabal@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"signup"}
+Unpermitted parameter: :password_confirmation
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "prabal@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "prabal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "prabal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "prabal@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Create (13.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "prabal"], ["email", "prabal@gmail.com"], ["password", "q112tb323db518n267544776"], ["created_at", "2019-01-24 07:40:43.326844"], ["updated_at", "2019-01-24 07:40:43.326844"]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 35ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:10:43 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 27.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 13:10:57 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (11.9ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 68ms (Views: 42.0ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:10:59 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 80ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 13:11:00 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 13:20:49 +0530
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 366ms (Views: 328.4ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-24 13:20:51 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7AxYlSlFkxPtXfJ+CauLoumLFZCDlGsqwC5SEYZ4sAsjeBwVqJFJmPQF7tJuJ+UbNCZXam+EptV+pyiUqZg7Jw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:20:51 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 28.5ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:21:01 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6zv3fWbgdL5IQ/on51fd1pznHmSU9oKEA07u0uPwnKkkT7P95zSuNVEb5ouA27NvQUpcnnjmT3u9x5RXzBAXhQ==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+Redirected to 
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/urls_controller.rb:16:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:21:36 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6zv3fWbgdL5IQ/on51fd1pznHmSU9oKEA07u0uPwnKkkT7P95zSuNVEb5ouA27NvQUpcnnjmT3u9x5RXzBAXhQ==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:51:36.469778"], ["updated_at", "2019-01-24 07:51:36.469778"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 67ms (ActiveRecord: 45.2ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:21:36 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUrlreport Load (1.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (2.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 9], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:21:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:21:47 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pp+2amjeWndjxmO2ZhFAe5CFEVJrIx1SYtmZxpqgRXsO2ECZWqYjQ8m5bhi5j0fYdQM0A5UnDVS3G/cZv9klHQ==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:51:47.565112"], ["updated_at", "2019-01-24 07:51:47.565112"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.3ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 10], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/137
+Completed 302 Found in 47ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/urls/137" for 127.0.0.1 at 2019-01-24 13:21:47 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"137"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:21:53 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:21:59 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LDwmP5O5Dum9NLmMZ+4zdpFpm2Y+QV8KkCdR2+BUsBcce9DMocF33RdLtCK4cDTVdO++N8BFTwxF5T8ExS3QcQ==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (1.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:51:59.114699"], ["updated_at", "2019-01-24 07:51:59.114699"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 11], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/138
+Completed 302 Found in 52ms (ActiveRecord: 41.7ms)
+
+
+Started GET "/urls/138" for 127.0.0.1 at 2019-01-24 13:21:59 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:22:08 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 73ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:23:22 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"db16QdLS+Ez2zbu6/A9Z72Kk1xl7IXmbxLnwUnRClvFF+oyy4KqBeFyythQjkV5MhyLySIUlaZ0Re56NUTv2lw==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:53:22.417937"], ["updated_at", "2019-01-24 07:53:22.417937"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+Redirected to http://localhost:3000/urls/139
+Completed 302 Found in 23ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/urls/139" for 127.0.0.1 at 2019-01-24 13:23:22 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"139"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.2ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 12], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (45.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:23:23 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:23:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QtkEPCzlzwBoP7Tu9QSftpRNEqdp2kJPHb5ebngMx7pynvLPHp22NMJAuUAqmpgVccs39pfeUknIfDCxXXWn3A==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:53:29.286884"], ["updated_at", "2019-01-24 07:53:29.286884"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrlreport Load (0.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 13], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/140
+Completed 302 Found in 49ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/urls/140" for 127.0.0.1 at 2019-01-24 13:23:29 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"140"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:23:46 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 23.3ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:23:51 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HVTSSnsnmkkH1VZFUvR5UxTiX/N5H6MDTpm4H6chjTwtEyS5SV/jfa2qW+uNan7w8WR6oocbswWbW9bAgljtWg==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+Redirected to 
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/urls_controller.rb:16:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:24:59 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r17aTCXbn1o3V9K09xi1mBtGaM3aqfbFUg9zDqBFDAZgKp7MpA9F0S4PzhiQlNshxusqNza5OzrshgmLj6WHKg==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 23ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:24:59 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:25:00 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 62ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:25:01 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQeq4nXnaAxNSb6hVEcFlW1tm39OXgUOfCJYyJAzKKC9QFwRR58ROOc2sw+L2QI2iOu+LrBaFQip4DYXtUpIxg==", "url"=>{"longurl"=>"", "domain"=>""}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+  [1m[36mCACHE Url Load (0.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:22
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 34.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:25:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1LMYto/adxyNtjLHpNiYYnYkISpp/EAyuZoIxPXO6B0bx1w2Dg6tl5TuLmvDVPbbq4lj0IXsjc0HE3JB2i5jMQ==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:25:06 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:25:07 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 13:25:08 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (9.4ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 69ms (Views: 43.1ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:25:37 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:25:41 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rqF9dZ8atwy0m7JiLHGx32mnd2ApnjUXXcolMg4WFACe5ouGrWLOOB7kv8zz77Z8jCFSMdeaJRGICEvtK290Zg==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 10ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:25:41 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:26:13 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:26:20 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F+Gcg/bE0lrqQ8S9AbA/EuaC/mXfac/zhLaw+5Lt7jAnpmpwxLyrbkA8yRPeLjixAwTbNCFt3/VRdN4kt5SOVg==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:15
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:26:20 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:26:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 77ms (Views: 44.3ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:26:54 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V6xuG/87b3BkRDETdfRJJtjWj49+Mxoy0U4+8dNiOAVn65jozUMWRM47PL2qak6FPVCq3oA3CjQEjFAu9htYYw==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:56:54.731865"], ["updated_at", "2019-01-24 07:56:54.731865"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+Redirected to http://localhost:3000/urls/141
+Completed 302 Found in 22ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/urls/141" for 127.0.0.1 at 2019-01-24 13:26:54 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"141"}
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 14], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:27:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:27:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iPQBhgNPykHYchkZos9nFL7e5bj/nlMezWmjaLG+0Lq4s/d1MTezdXINFLd9UWC3W1jA6QGaQxgYq823lMew3A==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrl Create (1.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "www.nav.com/J$&D"], ["domain", "redis.io"], ["mdsum", 3111], ["created_at", "2019-01-24 07:57:17.295742"], ["updated_at", "2019-01-24 07:57:17.295742"]]
+  ↳ app/controllers/urls_controller.rb:21
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-24"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 15], ["id", 2]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:21
+Redirected to http://localhost:3000/urls/142
+Completed 302 Found in 53ms (ActiveRecord: 44.8ms)
+
+
+Started GET "/urls/142" for 127.0.0.1 at 2019-01-24 13:27:17 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"142"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+  [1m[35m (75.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:27:19 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-24 13:29:06 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZFS2R/e4R9ACkkdjVT56xw20C3KCvVqM/gDYH1Tl/kZUE0C0xcA+5KjtSs2KoH1k6DIuI3y5SoorwrbAcZyeIA==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:13
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 19ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:29:06 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:29:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 13:29:13 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+3eDfVAXO7GApUU23yTbS17qkPZ/1tCCwbxM1bcPM38zQPYm242mPUull6xg5H+Uq6Zwjda6xKlFA1km94a9A==", "url"=>{"shorturl"=>"www.nav.com/J$&D"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/J$&D"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 37ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:29:13 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:29:14 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-24 13:29:35 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RVGe6Ahc0ta5Uh1Z8HQFyOazv+kWzB64RpuRF5+2u+becUM9ZnK4oIp+HhOaiwdbmWaMaPhprujoiW1AUrSd3w==", "url"=>{"shorturl"=>"www.nav.com/J$&D"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/136
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/136" for 127.0.0.1 at 2019-01-24 13:29:35 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:33
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:29:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 63ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-24 13:30:03 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 48ms (Views: 37.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-24 13:30:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-24 13:30:22 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 25.6ms | ActiveRecord: 12.9ms)
+
+
