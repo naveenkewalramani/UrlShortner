@@ -35971,3 +35971,33 @@ Processing by UrlreportsController#index as HTML
 Completed 200 OK in 57ms (Views: 38.5ms | ActiveRecord: 17.1ms)
 
 
+Started GET "/url/long?shorturl=www.nav.com/ytuR" for 127.0.0.1 at 2019-01-24 11:56:31 +0530
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"www.nav.com/ytuR"}
+  [1m[36mUrl Load (1.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.nav.com/ytuR"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:76
+Completed 200 OK in 49ms (Views: 0.6ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/url/short?=" for 127.0.0.1 at 2019-01-24 11:56:49 +0530
+Processing by UrlsController#short as */*
+  Parameters: {"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com", "url"=>{"longurl"=>"www.facebook.com/sellers", "domain"=>"facebook.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (28.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com/sellers"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:64
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "mdsum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["longurl", "www.facebook.com/sellers"], ["shorturl", "www.nav.com/tbXC"], ["domain", "facebook.com"], ["mdsum", 2403], ["created_at", "2019-01-24 06:26:49.234303"], ["updated_at", "2019-01-24 06:26:49.234303"]]
+  ↳ app/controllers/urls_controller.rb:64
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:64
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 29.3ms)
+
+
+  
+Redis::CannotConnectError (Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)):
+  
+app/models/url.rb:6:in `background_process'
+app/controllers/urls_controller.rb:64:in `short'
