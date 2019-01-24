@@ -8,7 +8,7 @@ module UrlsHelper
 		shorturl = "www.nav.com/"
 		map = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz"
 		while value2!=0
-			shorturl += map[value2%67]
+			shorturl += map[value2%66]
 			value2=value2/10
 		end
 		return shorturl

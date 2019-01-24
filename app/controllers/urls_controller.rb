@@ -53,21 +53,23 @@ class UrlsController < ApplicationController
 			redirect_to user_login_path
 		end
 	end
+
 	def short
 		@url = Url.where(longurl: params[:longurl]).first
 		if @url!=nil
-			render json: {'status'=>'ok', 'shorturl'=>	@url.shorturl}
+			render json: { 'status' => 'already_exist' , 'shorturl' =>	@url.shorturl }
 		else
 			@url = Url.new(web_params)
 			@url.mdsum = UrlsHelper.mdvalue(params[:longurl])
 			@url.shorturl = UrlsHelper.conversion(params[:domain],@url.mdsum)
 			if @url.save
-				render json: ({'status'=>'new_created', 'shorturl'=>@url.shorturl})
+				render json: { 'status' => 'new_created' , 'shorturl' => @url.shorturl }
 			else 
-				render json: ({'status'=>'error occured'})
+				render json: { 'status' => 'error_occured' }
 			end
 		end
 	end
+
 	def long
 		if(params[:shorturl][0..3]!="www.")
 				params[:shorturl]="www.nav.com/"+params[:shorturl]
@@ -76,18 +78,19 @@ class UrlsController < ApplicationController
 			Url.where(shorturl: params[:shorturl]).first
 		end
 		if @url!=nil
-			render json:  ({'status'=>'ok' ,'shorturl'=>@url.longurl})
+			render json: { 'status' => 'already_exist' , 'shorturl' => @url.longurl }
 		else
-			render json:  ({'status'=>'Not a valid url'})
-		end 
+			render json: { 'status' => 'invalid_shorturl' }
+		end
 	end
 
 	private
 		def web_params
-			params.require(:url).permit(:utf8, :longurl, :domain, :shorturl)
+			params.require(:url).permit( :utf8, :longurl, :domain, :shorturl )
 		end
+
 		def postman_params
-			params.permit(:longurl, :domain)
+			params.permit( :longurl, :domain )
 		end
 
 end
