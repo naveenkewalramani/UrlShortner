@@ -9,7 +9,7 @@ class ConvertWorker
   		@urlreport.count = 1
   		@urlreport.save	
   	else
-  		@urlreport.update(count: @urlreport.count+=1)
+  		@urlreport.update(count: @urlreport.count += 1)
   	end
   end
 end

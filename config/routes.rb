@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  #routes for login
+  # Routes for sidekiq
+  require 'sidekiq/web'
+  mount Sidekiq::Web, :at => '/sidekiq'
+
+  # Routes for login
   get 'homepage' => 'users#homepage'
   get 'user/new' => 'users#new'
   get 'user/login' => 'users#login'
@@ -9,18 +13,13 @@ Rails.application.routes.draw do
   post 'user/show' => 'users#show'
   root 'users#homepage'
   get 'user/logout' => 'users#logout'
-
-  #routes for sidekiq
-  require 'sidekiq/web'
-  mount Sidekiq::Web, :at => '/sidekiq'
   
-  #Routes for Urls
+  # Routes for Urls
   resources :urls
- 
   get 'url/long' => 'urls#long'
   post 'url/shorturl' => 'urls#Shorturl'
 
-  #Routes for urlreport
+  # Routes for urlreport
   get 'urlreport' => 'urlreports#index'
   
 end

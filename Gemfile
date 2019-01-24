@@ -30,6 +30,7 @@ gem 'redis-rails'
 gem 'redis'
 gem 'rubocop', require: false
 gem 'sidekiq'
+gem 'elasticsearch'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry'
