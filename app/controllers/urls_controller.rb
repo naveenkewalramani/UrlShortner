@@ -1,6 +1,7 @@
 require 'rubygems'
 #require 'tire'
 class UrlsController < ApplicationController
+
 	def new
 		if(session[:authenticate] == true)
 			@url = Url.new
@@ -12,7 +13,7 @@ class UrlsController < ApplicationController
 	def create
 		respond_to do |format|
 			format.json{
-				@url = Url.FindLong(params[:longurl])
+				@url = Url.where(longurl: params[:longurl]).first
 				if @url!=nil
 					render json: { 'status' => 'already_exist', 'shorturl' =>	@url.shorturl }
 				else
@@ -26,7 +27,7 @@ class UrlsController < ApplicationController
 			}	
 			format.html{
 				if(session[:authenticate] == true)
-					@url = Url.FindLong(params[:url][:longurl])
+					@url = Url.where(longurl: params[:url][:longurl]).first
 					if @url!=nil
 						redirect_to @url
 					else

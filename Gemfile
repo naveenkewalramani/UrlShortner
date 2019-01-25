@@ -32,6 +32,7 @@ gem 'sidekiq'
 gem 'elasticsearch'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'searchkick'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry'

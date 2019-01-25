@@ -43366,3 +43366,1788 @@ Processing by SearchController#search as HTML
 Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:52:25 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 106ms (Views: 46.8ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-25 16:53:02 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 16:53:05 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 79ms (Views: 29.4ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 16:53:07 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GvDdYgwk/XMoEKhtwqZ+/e/QLVJtZhHJun+KASMBNEaGpIhukaWG1CSevb4dNE4pjNzIi4KoxGpHWT8oz/n6RA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:53:07 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 59ms (Views: 41.7ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 16:53:16 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zi9pj67qCANoZYOiu0XhlqbkdNHVSKZc9Y7HPbu6JvSpWy0PLz7SiHE9nw7cyY8ve0k2KzlYa6NLB724lFqt2A==", "url"=>{"longurl"=>"http://hris.proptiger.com/attendance/index/view-attendance", "domain"=>"hris.proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://hris.proptiger.com/attendance/index/view-attendance"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (3.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "http://hris.proptiger.com/attendance/index/view-attendance"], ["shorturl", "http://RbSB/TdrF"], ["domain", "hris.proptiger.com"], ["suffix", "TdrF"]]
+  ↳ app/models/url.rb:16
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+Redirected to http://localhost:3000/urls/11
+Completed 302 Found in 117ms (ActiveRecord: 45.3ms)
+
+
+Started GET "/urls/11" for 127.0.0.1 at 2019-01-25 16:53:17 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 52ms (Views: 45.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUrlreport Load (10.2ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (3.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 25], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (35.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:53:18 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 77ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 16:53:26 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sUe0b8ng1wxyIYHEKa/RB1+OMUmB2BpmESrAtsvWiZeBAEKc+5iuONhejGr2MdakuggUGH/cCmDE6K5p7q/p8Q==", "url"=>{"longurl"=>"www.proptiger.com/rentals", "domain"=>"proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.proptiger.com/rentals"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:24
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.proptiger.com/rentals"], ["shorturl", "http://BfNB/rtYC"], ["domain", "proptiger.com"], ["suffix", "rtYC"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 26], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (36.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/12
+Completed 302 Found in 85ms (ActiveRecord: 42.3ms)
+
+
+Started GET "/urls/12" for 127.0.0.1 at 2019-01-25 16:53:26 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:53:27 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 59ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 16:53:45 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l7nyIR5Q0/IKmcKYGW7AhdL0lrbs+P6cQBBPbZm0LPqn/gTSLCiqxqDmzzbG8McmN3Kz5xL87pqV0iGyvM1MnA==", "url"=>{"longurl"=>"www.proptiger.com/seller", "domain"=>"proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.proptiger.com/seller"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (1.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.proptiger.com/seller"], ["shorturl", "http://BfNB/I$XC"], ["domain", "proptiger.com"], ["suffix", "I$XC"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 27], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/13
+Completed 302 Found in 95ms (ActiveRecord: 43.3ms)
+
+
+Started GET "/urls/13" for 127.0.0.1 at 2019-01-25 16:53:45 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:53:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 56ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:53:59 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:54:00 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:54:02 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:54:03 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:54:04 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 113ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:55:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 16:55:26 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:55:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 60ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:55:30 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:55:35 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:17:36 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 136ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:17:42 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 17:17:42 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 76ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 17:17:43 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZ+tT9tzUqY5gbizfKTg363MID4eI2fj4R0XjYLmxsaVy/hDRvIpATUPrWCjNtALzsDF5/HtskAcO6Kkbh4IxA==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 14ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:17:43 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 55ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:17:49 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kCXg9Utduhc+0ni2lJ9hOi/3MGFn4cwojr+mvmpu2S1fUaR1yolgnCeKZBrzEw+D8lpym4vxAdcwNtw7RY5SAQ==", "url"=>{"longurl"=>"https://www.w3schools.com/cssref/pr_class_cursor.asp", "domain"=>"w3schools.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.w3schools.com/cssref/pr_class_cursor.asp"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.w3schools.com/cssref/pr_class_cursor.asp"], ["shorturl", "http://yZMB/ynmF"], ["domain", "w3schools.com"], ["suffix", "ynmF"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 28], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (368.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (339.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/14
+Completed 302 Found in 449ms (ActiveRecord: 376.1ms)
+
+
+Started GET "/urls/14" for 127.0.0.1 at 2019-01-25 17:17:49 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:17:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 52ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:17:57 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=+https%3A%2F%2Fwww.w3schools.com%2Fcssref%2Fpr_class_cursor.asp&commit=Go" for 127.0.0.1 at 2019-01-25 17:17:59 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>" https://www.w3schools.com/cssref/pr_class_cursor.asp", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=w3&commit=Go" for 127.0.0.1 at 2019-01-25 17:18:15 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"w3", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=w3schools&commit=Go" for 127.0.0.1 at 2019-01-25 17:18:19 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"w3schools", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=w3schools&commit=Go" for 127.0.0.1 at 2019-01-25 17:18:21 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"w3schools", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/_search" for 127.0.0.1 at 2019-01-25 17:18:41 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/_search"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[33mUrl Import (401.2ms)[0m  {"count":14}
+Started GET "/" for 127.0.0.1 at 2019-01-25 17:38:28 +0530
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 698ms (Views: 689.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 17:38:32 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 166ms (Views: 63.8ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 17:38:33 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sd6U/PK4irH+tkJyGUD/WtW2dMNbtKIiNjgd0URqJMEtisHwbznxFvI4V6HG0s+OtrqRGrR6d4HLHqj4qJLqww==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 53ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:38:33 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 28.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:38:37 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/views/search/search.html.erb:13: syntax error, unexpected '<', expecting ')'
+		<% end );@output_buffer.safe_a...
+		^
+/Users/naveen/Documents/Internship/projectIntern/app/views/search/search.html.erb:21: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/search/search.html.erb:13: syntax error, unexpected '<', expecting ')'
+app/views/search/search.html.erb:21: syntax error, unexpected end-of-input, expecting end
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:38:52 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 134ms (Views: 131.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 17:38:58 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  [1m[33mUrl Search (240.9ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 306ms (Views: 34.8ms | Searchkick: 240.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[33mUrl Search (40.1ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:40:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 88ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:41:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"INTLiu6d1Z2dRvydDlF8qQyCyKRI2rhhOw9onDdkOiMQkz153OWsqTc58TPRz3sK6QTt9bbeqGfuzQZDEh1aRQ==", "url"=>{"longurl"=>"https://www.proptiger.com/guide/post/things-you-must-know-about-rera-website", "domain"=>"proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.proptiger.com/guide/post/things-you-must-know-about-rera-website"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.proptiger.com/guide/post/things-you-must-know-about-rera-website"], ["shorturl", "http://BfNB/3VIH"], ["domain", "proptiger.com"], ["suffix", "3VIH"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (44.9ms)[0m  {"id":15}
+Redirected to http://localhost:3000/urls/15
+Completed 302 Found in 183ms (Searchkick: 44.9ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/urls/15" for 127.0.0.1 at 2019-01-25 17:41:18 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUrlreport Load (1.2ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 29], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:41:19 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:41:29 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hy0GYmvWaiE7K6Sg7EPPSd/KCAkITNLd8CqD4ea3+7wvavCRWa4TFZFUqQ4z3cjqOkwtWPZIwtsl6O0+w86b2g==", "url"=>{"longurl"=>"https://www.proptiger.com/guide/news-views", "domain"=>"proptiger.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.proptiger.com/guide/news-views"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.proptiger.com/guide/news-views"], ["shorturl", "http://BfNB/$QdE"], ["domain", "proptiger.com"], ["suffix", "$QdE"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 30], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (43.0ms)[0m  {"id":16}
+Redirected to http://localhost:3000/urls/16
+Completed 302 Found in 93ms (Searchkick: 43.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/urls/16" for 127.0.0.1 at 2019-01-25 17:41:29 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUrl Load (4.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 72ms (Views: 64.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:41:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:41:48 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6cP+qCS6YxOWNB11YGNlrzkvP7nLTQ3Ichw6QZIwbd3ZhAhbFsIaJzxLENu//WIM3Kka6DVJHc6n3lSet0kNuw==", "url"=>{"longurl"=>"https://www.proptiger.com/guide/post/things-you-must-know-about-rera-website", "domain"=>"proptiger.com"}, "commit"=>"Search"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.proptiger.com/guide/post/things-you-must-know-about-rera-website"], ["shorturl", "http://BfNB/3VIH"], ["domain", "proptiger.com"], ["suffix", "3VIH"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 31], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (31.2ms)[0m  {"id":17}
+Redirected to http://localhost:3000/urls/17
+Completed 302 Found in 113ms (Searchkick: 31.2ms | ActiveRecord: 40.3ms)
+
+
+Started GET "/urls/17" for 127.0.0.1 at 2019-01-25 17:41:48 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:41:57 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 17:41:59 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 59ms (Views: 43.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:42:01 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:42:02 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[33mUrl Search (58.2ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[33mUrl Import (89.3ms)[0m  {"count":17}
+  [1m[33mUrl Search (43.2ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:51:15 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 109ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:51:39 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I8YBeCQoEL7BPWRqzCEKhm/1JAeFDO7oZW/xFSm1Em8TgfeLFlBpimtCacQTvw0linMBVnsI/u6wrZ/KDMxyCQ==", "url"=>{"longurl"=>"https://www.youtube.com/watch?v=jb4lrihz6_E", "domain"=>"youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/watch?v=jb4lrihz6_E"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/watch?v=jb4lrihz6_E"], ["shorturl", "http://CKLB/W%dE"], ["domain", "youtube.com"], ["suffix", "W%dE"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (19.1ms)[0m  {"id":18}
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 68ms (Searchkick: 19.1ms | ActiveRecord: 13.1ms)
+
+
+  [1m[36mUrlreport Load (3.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-25 17:51:39 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 32], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 68ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:51:51 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 58ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:51:53 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 74ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A%2F%2FCKLB%2FW%25dE&commit=Go" for 127.0.0.1 at 2019-01-25 17:51:57 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http://CKLB/W%dE", "commit"=>"Go"}
+  [1m[33mUrl Search (179.2ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"http:////CKLB//W%dE","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"http:////CKLB//W%dE","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"http:////CKLB//W%dE","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"http:////CKLB//W%dE","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT "urls".* FROM "urls" WHERE "urls"."id" = $1[0m  [["id", 18]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/searchkick-3.1.2/lib/searchkick/results.rb:30
+  Rendered search/search.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 297ms (Views: 108.4ms | Searchkick: 179.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=youtube&commit=Go" for 127.0.0.1 at 2019-01-25 17:52:06 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"youtube", "commit"=>"Go"}
+  [1m[33mUrl Search (49.6ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"youtube","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtube","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtube","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtube","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 185ms (Views: 129.2ms | Searchkick: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:54:34 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 17:54:34 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 66ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 17:54:35 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ph5CF9wPFv0HjsNQzWBDt3Ibt7SO4q02aFNt4CFEKg2iShcbQY5tWgsA1oMS8nNjERdSbWEseJWVddjJzbzkDw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 11ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:54:35 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:54:51 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wm9roDrgdqWs9ZeGNiNt3b1odk3ijpwZ4lrOfJ6pSWaVGy8guzSsLrWtiypRrwNkYMU0tw6eUeZc07T5sUnCSg==", "url"=>{"longurl"=>"https://mp3-youtube.download/en", "domain"=>"mp3-youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://mp3-youtube.download/en"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:17
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 36.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:55:10 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tbnpzJtbNxZguWJOJthDcf1FGVOw03ADbnLtpM/jUwF6za1MGo/tnXnhfuJBVC3IIOhbqVzDvfzQ+5ch4APYLQ==", "url"=>{"longurl"=>"https://mp3-youtube.download/en", "domain"=>"mfmfmf"}, "commit"=>"Search"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:17
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 61.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:55:25 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt0wN5gl8IPhGkcY+PjiGTpvQpzDpLctcklULuroJCqZqXS3GfEqCPhCW7SfdIyg58IAZi+0etLMwC6rxQivBg==", "url"=>{"longurl"=>"https://github.com/ankane/searchkick", "domain"=>"github.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://github.com/ankane/searchkick"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://github.com/ankane/searchkick"], ["shorturl", "http://UwKB/qR6D"], ["domain", "github.com"], ["suffix", "qR6D"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 33], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (33.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (9.9ms)[0m  {"id":19}
+Redirected to http://localhost:3000/urls/19
+Completed 302 Found in 110ms (Searchkick: 9.9ms | ActiveRecord: 42.8ms)
+
+
+Started GET "/urls/19" for 127.0.0.1 at 2019-01-25 17:55:25 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:55:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 17:57:27 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 17:57:32 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  [1m[33mUrl Search (28.8ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"proptiger","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 139ms (Views: 47.2ms | Searchkick: 28.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:58:34 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 114ms (Views: 86.3ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:58:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2dB72HVRhLKYndgZvAOogYdigF44/GJQMeGoU+T/vrXpl40rRyn9hjLi1bdjna8iYuSlD8b4clbkI8aMwYbe0w==", "url"=>{"longurl"=>"https://www.youtube.com/channel/UC1zZE_kJ8rQHgLTVfobLi_g", "domain"=>"youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UC1zZE_kJ8rQHgLTVfobLi_g"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (5.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UC1zZE_kJ8rQHgLTVfobLi_g"], ["shorturl", "http://CKLB/utnF"], ["domain", "youtube.com"], ["suffix", "utnF"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 34], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (30.9ms)[0m  {"id":20}
+Redirected to http://localhost:3000/urls/20
+Completed 302 Found in 151ms (Searchkick: 30.9ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/urls/20" for 127.0.0.1 at 2019-01-25 17:58:43 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 48ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:58:44 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 67ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:59:09 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1204dCYZfzZNPg2eTSIFOgsb8mM6gqEeWQLM17Cs8+jnKs6HFGEGAudBADCSvAKZ7p3XMsSGsRiMwKIIldWTjg==", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A", "domain"=>"youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A"], ["shorturl", "http://CKLB/9kmF"], ["domain", "youtube.com"], ["suffix", "9kmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 35], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (38.9ms)[0m  {"id":21}
+Redirected to http://localhost:3000/urls/21
+Completed 302 Found in 121ms (Searchkick: 38.9ms | ActiveRecord: 42.2ms)
+
+
+Started GET "/urls/21" for 127.0.0.1 at 2019-01-25 17:59:09 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 65ms (Views: 59.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:59:10 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:59:27 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1idZlah2Ty+KMK5eUV21JFG8/K+ul4CyY7HgEKYT4dDmYK9mmg42GyBPo/COw7KHtDrZ/lCTkLS2c47Pg2qBtg==", "url"=>{"longurl"=>"https://www.youtube.com/user/crashcourse/featured", "domain"=>"youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/crashcourse/featured"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/crashcourse/featured"], ["shorturl", "http://CKLB/CZjE"], ["domain", "youtube.com"], ["suffix", "CZjE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 36], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (35.6ms)[0m  {"id":22}
+Redirected to http://localhost:3000/urls/22
+Completed 302 Found in 130ms (Searchkick: 35.6ms | ActiveRecord: 44.4ms)
+
+
+Started GET "/urls/22" for 127.0.0.1 at 2019-01-25 17:59:27 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:59:28 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 17:59:55 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsTMPsBMz/dzJdHxEt8bFygp3JeoPZgtCthuzPvfXmcmgzrN8jS2w9la3F/NQRy0za/5xlY5iCvfGgAT3qY+AQ==", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA", "domain"=>"youtube.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA"], ["shorturl", "http://CKLB/5xnF"], ["domain", "youtube.com"], ["suffix", "5xnF"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.2ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 37], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (28.2ms)[0m  {"id":23}
+Redirected to http://localhost:3000/urls/23
+Completed 302 Found in 82ms (Searchkick: 28.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/urls/23" for 127.0.0.1 at 2019-01-25 17:59:55 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:53
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 17:59:57 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 62ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:00:46 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCXhSCMRRPyxSoyLSPFxK7VA", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCXhSCMRRPyxSoyLSPFxK7VA", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCXhSCMRRPyxSoyLSPFxK7VA"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (5.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCXhSCMRRPyxSoyLSPFxK7VA"], ["shorturl", "http://CKLB/TpmF"], ["domain", "youtube.com"], ["suffix", "TpmF"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 38], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (34.4ms)[0m  {"id":24}
+Completed 200 OK in 92ms (Views: 0.3ms | Searchkick: 34.4ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:01:04 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCGi_crMdUZnrcsvkCa8pt-g", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCGi_crMdUZnrcsvkCa8pt-g", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCGi_crMdUZnrcsvkCa8pt-g"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (2.0ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCGi_crMdUZnrcsvkCa8pt-g"], ["shorturl", "http://CKLB/pFoF"], ["domain", "youtube.com"], ["suffix", "pFoF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 39], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (14.1ms)[0m  {"id":25}
+Completed 200 OK in 83ms (Views: 0.2ms | Searchkick: 14.1ms | ActiveRecord: 44.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:01:26 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCZYTClx2T1of7BRZ86-8fow", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCZYTClx2T1of7BRZ86-8fow", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCZYTClx2T1of7BRZ86-8fow"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (6.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCZYTClx2T1of7BRZ86-8fow"], ["shorturl", "http://CKLB/NclF"], ["domain", "youtube.com"], ["suffix", "NclF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 40], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (36.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (29.5ms)[0m  {"id":26}
+Completed 200 OK in 121ms (Views: 0.2ms | Searchkick: 29.5ms | ActiveRecord: 47.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:01:36 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA"], ["shorturl", "http://CKLB/8kmF"], ["domain", "youtube.com"], ["suffix", "8kmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 41], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (44.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (59.5ms)[0m  {"id":27}
+Completed 200 OK in 190ms (Views: 0.2ms | Searchkick: 59.5ms | ActiveRecord: 48.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:01:52 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCYenDLnIHsoqQ6smwKXQ7Hg", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCYenDLnIHsoqQ6smwKXQ7Hg", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCYenDLnIHsoqQ6smwKXQ7Hg"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCYenDLnIHsoqQ6smwKXQ7Hg"], ["shorturl", "http://CKLB/%vnF"], ["domain", "youtube.com"], ["suffix", "%vnF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 42], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (26.5ms)[0m  {"id":28}
+Completed 200 OK in 117ms (Views: 0.2ms | Searchkick: 26.5ms | ActiveRecord: 42.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:02:02 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g"], ["shorturl", "http://CKLB/GilF"], ["domain", "youtube.com"], ["suffix", "GilF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 43], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (77.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (34.6ms)[0m  {"id":29}
+Completed 200 OK in 119ms (Views: 0.2ms | Searchkick: 34.6ms | ActiveRecord: 43.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:02:15 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCJFp8uSYCjXOMnkUyb3CQ3Q", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCJFp8uSYCjXOMnkUyb3CQ3Q", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCJFp8uSYCjXOMnkUyb3CQ3Q"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCJFp8uSYCjXOMnkUyb3CQ3Q"], ["shorturl", "http://CKLB/0jmF"], ["domain", "youtube.com"], ["suffix", "0jmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (2.9ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 44], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (48.7ms)[0m  {"id":30}
+Completed 200 OK in 162ms (Views: 0.2ms | Searchkick: 48.7ms | ActiveRecord: 43.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:02:26 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/EpicMealTime", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/EpicMealTime", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/EpicMealTime"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (3.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/EpicMealTime"], ["shorturl", "http://CKLB/MBbD"], ["domain", "youtube.com"], ["suffix", "MBbD"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 45], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (50.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (42.9ms)[0m  {"id":31}
+Completed 200 OK in 147ms (Views: 0.2ms | Searchkick: 42.9ms | ActiveRecord: 54.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:02:36 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/JamieOliver", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/JamieOliver", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/JamieOliver"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/JamieOliver"], ["shorturl", "http://CKLB/VwbD"], ["domain", "youtube.com"], ["suffix", "VwbD"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (3.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 46], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (49.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (11.5ms)[0m  {"id":32}
+Completed 200 OK in 87ms (Views: 0.2ms | Searchkick: 11.5ms | ActiveRecord: 53.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:02:49 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/howtocookthat", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/howtocookthat", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/howtocookthat"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/howtocookthat"], ["shorturl", "http://CKLB/DZeE"], ["domain", "youtube.com"], ["suffix", "DZeE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 47], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (37.5ms)[0m  {"id":33}
+Completed 200 OK in 116ms (Views: 0.2ms | Searchkick: 37.5ms | ActiveRecord: 43.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:03:00 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/bgfilms", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/bgfilms", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/bgfilms"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/bgfilms"], ["shorturl", "http://CKLB/$X7D"], ["domain", "youtube.com"], ["suffix", "$X7D"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.2ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 48], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (23.3ms)[0m  {"id":34}
+Completed 200 OK in 97ms (Views: 0.7ms | Searchkick: 23.3ms | ActiveRecord: 49.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:03:10 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/LauraVitalesKitchen", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/LauraVitalesKitchen", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/LauraVitalesKitchen"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/LauraVitalesKitchen"], ["shorturl", "http://CKLB/tM$E"], ["domain", "youtube.com"], ["suffix", "tM$E"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 49], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (77.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (19.2ms)[0m  {"id":35}
+Completed 200 OK in 98ms (Views: 0.2ms | Searchkick: 19.2ms | ActiveRecord: 43.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:03:23 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/Maangchi", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/Maangchi", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/Maangchi"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/Maangchi"], ["shorturl", "http://CKLB/527D"], ["domain", "youtube.com"], ["suffix", "527D"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 50], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (10.8ms)[0m  {"id":36}
+Completed 200 OK in 74ms (Views: 0.2ms | Searchkick: 10.8ms | ActiveRecord: 42.7ms)
+
+
+  [1m[35m (81.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:03:36 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/JunsKitchen", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/JunsKitchen", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/JunsKitchen"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/JunsKitchen"], ["shorturl", "http://CKLB/9*bD"], ["domain", "youtube.com"], ["suffix", "9*bD"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 51], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (44.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (27.8ms)[0m  {"id":37}
+Completed 200 OK in 111ms (Views: 0.2ms | Searchkick: 27.8ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:03:48 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/BonAppetitDotCom", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/BonAppetitDotCom", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/BonAppetitDotCom"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/BonAppetitDotCom"], ["shorturl", "http://CKLB/hggE"], ["domain", "youtube.com"], ["suffix", "hggE"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 52], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (18.1ms)[0m  {"id":38}
+Completed 200 OK in 68ms (Views: 0.2ms | Searchkick: 18.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:04:02 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/sortedfood", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/sortedfood", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/sortedfood"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/sortedfood"], ["shorturl", "http://CKLB/ttaD"], ["domain", "youtube.com"], ["suffix", "ttaD"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 53], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (45.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (13.0ms)[0m  {"id":39}
+Completed 200 OK in 91ms (Views: 0.2ms | Searchkick: 13.0ms | ActiveRecord: 46.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:04:15 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/FitnessBlender", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/FitnessBlender", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/FitnessBlender"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/FitnessBlender"], ["shorturl", "http://CKLB/N0eE"], ["domain", "youtube.com"], ["suffix", "N0eE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.3ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 54], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (34.0ms)[0m  {"id":40}
+Completed 200 OK in 117ms (Views: 0.2ms | Searchkick: 34.0ms | ActiveRecord: 42.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:04:26 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/blogilates", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/blogilates", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/blogilates"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (3.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/blogilates"], ["shorturl", "http://CKLB/braD"], ["domain", "youtube.com"], ["suffix", "braD"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (2.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (3.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 55], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (23.0ms)[0m  {"id":41}
+Completed 200 OK in 123ms (Views: 0.3ms | Searchkick: 23.0ms | ActiveRecord: 48.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:04:42 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/XFitDaily", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/XFitDaily", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (3.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/XFitDaily"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/XFitDaily"], ["shorturl", "http://CKLB/oa8D"], ["domain", "youtube.com"], ["suffix", "oa8D"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 56], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (11.1ms)[0m  {"id":42}
+Completed 200 OK in 46ms (Views: 0.2ms | Searchkick: 11.1ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:04:53 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/popsugartvfit", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/popsugartvfit", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/popsugartvfit"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/popsugartvfit"], ["shorturl", "http://CKLB/S1eE"], ["domain", "youtube.com"], ["suffix", "S1eE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 57], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (36.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (12.2ms)[0m  {"id":43}
+Completed 200 OK in 78ms (Views: 0.2ms | Searchkick: 12.2ms | ActiveRecord: 46.2ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:05:04 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/ScottHermanFitness", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/ScottHermanFitness", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/ScottHermanFitness"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/ScottHermanFitness"], ["shorturl", "http://CKLB/hEiE"], ["domain", "youtube.com"], ["suffix", "hEiE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 58], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (12.3ms)[0m  {"id":44}
+Completed 200 OK in 74ms (Views: 0.2ms | Searchkick: 12.3ms | ActiveRecord: 42.3ms)
+
+
+  [1m[35m (76.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:05:17 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/TheFitnessMarshall", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/TheFitnessMarshall", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/TheFitnessMarshall"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/TheFitnessMarshall"], ["shorturl", "http://CKLB/ZCiE"], ["domain", "youtube.com"], ["suffix", "ZCiE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.2ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (2.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 59], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (33.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (88.1ms)[0m  {"id":45}
+Completed 200 OK in 203ms (Views: 0.2ms | Searchkick: 88.1ms | ActiveRecord: 42.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:05:53 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/TheFitnessMarshall", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/TheFitnessMarshall", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (1.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/TheFitnessMarshall"], ["shorturl", "http://CKLB/ZCiE"], ["domain", "youtube.com"], ["suffix", "ZCiE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (4.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 60], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (10.0ms)[0m  {"id":46}
+Completed 200 OK in 70ms (Views: 0.2ms | Searchkick: 10.0ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:06:04 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCGMOauU8dOd4mv2bT3Tx57w", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCGMOauU8dOd4mv2bT3Tx57w", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCGMOauU8dOd4mv2bT3Tx57w"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCGMOauU8dOd4mv2bT3Tx57w"], ["shorturl", "http://CKLB/L$lF"], ["domain", "youtube.com"], ["suffix", "L$lF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.7ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 61], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (49.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (9.6ms)[0m  {"id":47}
+Completed 200 OK in 82ms (Views: 0.2ms | Searchkick: 9.6ms | ActiveRecord: 51.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:06:16 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ"], ["shorturl", "http://CKLB/flmF"], ["domain", "youtube.com"], ["suffix", "flmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 62], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (58.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (123.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (11.3ms)[0m  {"id":48}
+Completed 200 OK in 152ms (Views: 0.2ms | Searchkick: 11.3ms | ActiveRecord: 60.1ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:06:21 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.8ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ"], ["shorturl", "http://CKLB/flmF"], ["domain", "youtube.com"], ["suffix", "flmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (2.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 63], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  ↳ app/models/url.rb:17
+  [1m[33mUrl Store (11.9ms)[0m  {"id":49}
+Completed 200 OK in 67ms (Views: 0.2ms | Searchkick: 11.9ms | ActiveRecord: 38.7ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:06:25 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ"], ["shorturl", "http://CKLB/flmF"], ["domain", "youtube.com"], ["suffix", "flmF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (2.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 64], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (26.5ms)[0m  {"id":50}
+Completed 200 OK in 90ms (Views: 0.5ms | Searchkick: 26.5ms | ActiveRecord: 42.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:07:45 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (64.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ) ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 71.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/...
+                                                 ^
+: SELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/channel/UCEQi1ZNJiw3YMRwni0OLsTQ) ORDER BY "urls"."id" ASC LIMIT $1):
+  
+app/controllers/urls_controller.rb:16:in `block (2 levels) in create'
+app/controllers/urls_controller.rb:14:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:08:40 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/user/jordanyeohfitness) ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/...
+                                                 ^
+: SELECT  "urls".* FROM "urls" WHERE (https://www.youtube.com/user/jordanyeohfitness) ORDER BY "urls"."id" ASC LIMIT $1):
+  
+app/controllers/urls_controller.rb:16:in `block (2 levels) in create'
+app/controllers/urls_controller.rb:14:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:08:56 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com", "url"=>{"longurl"=>"www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (8.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE (www.youtube.com/user/jordanyeohfitness) ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 8.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "youtube"
+LINE 1: SELECT  "urls".* FROM "urls" WHERE (www.youtube.com/user/jor...
+                                            ^
+: SELECT  "urls".* FROM "urls" WHERE (www.youtube.com/user/jordanyeohfitness) ORDER BY "urls"."id" ASC LIMIT $1):
+  
+app/controllers/urls_controller.rb:16:in `block (2 levels) in create'
+app/controllers/urls_controller.rb:14:in `create'
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:09:35 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com", "url"=>{"longurl"=>"www.youtube.com/user/jordanyeohfitness", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.youtube.com/user/jordanyeohfitness"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (15.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.youtube.com/user/jordanyeohfitness"], ["shorturl", "http://CKLB/7xbD"], ["domain", "youtube.com"], ["suffix", "7xbD"]]
+  ↳ app/models/url.rb:17
+  [1m[35m (41.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.3ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 65], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (38.8ms)[0m  {"id":51}
+Completed 200 OK in 136ms (Views: 0.3ms | Searchkick: 38.8ms | ActiveRecord: 61.9ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:09:49 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.youtube.com/user/saschafitness", "domain"=>"youtube.com", "url"=>{"longurl"=>"https://www.youtube.com/user/saschafitness", "domain"=>"youtube.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (9.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.youtube.com/user/saschafitness"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.youtube.com/user/saschafitness"], ["shorturl", "http://CKLB/aWdE"], ["domain", "youtube.com"], ["suffix", "aWdE"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 66], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  [1m[35m (78.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (37.1ms)[0m  {"id":52}
+Completed 200 OK in 119ms (Views: 0.2ms | Searchkick: 37.1ms | ActiveRecord: 53.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 18:10:19 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://blog.hubspot.com/marketing/best-youtube-channels", "domain"=>"blog.hubspot.com", "url"=>{"longurl"=>"https://blog.hubspot.com/marketing/best-youtube-channels", "domain"=>"blog.hubspot.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://blog.hubspot.com/marketing/best-youtube-channels"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:17
+  [1m[36mUrl Create (0.9ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://blog.hubspot.com/marketing/best-youtube-channels"], ["shorturl", "http://sEQB/eXqF"], ["domain", "blog.hubspot.com"], ["suffix", "eXqF"]]
+  ↳ app/models/url.rb:17
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 67], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:17
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (27.6ms)[0m  {"id":53}
+Completed 200 OK in 111ms (Views: 0.2ms | Searchkick: 27.6ms | ActiveRecord: 45.8ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 18:10:34 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 182ms (Views: 177.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 18:10:39 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 18:10:39 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 76ms (Views: 26.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 18:10:41 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JJ7M4sVvduWdfA1LjNXJX5silPR/O2Pmh6IWFmpwZdi4ypnuWO4NQpHyGJhTR/mL+C5xLZD1tkV6hKM/hoir2g==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 18:10:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 83ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 18:10:43 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (3.4ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 57ms (Views: 50.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 18:10:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[33mUrl Import (85.7ms)[0m  {"count":53}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "urls"[0m

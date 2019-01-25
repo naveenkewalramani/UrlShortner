@@ -1,5 +1,6 @@
 require 'elasticsearch/model'
 class Url < ApplicationRecord
+	searchkick
 	include Elasticsearch::Model
  	include Elasticsearch::Model::Callbacks
  	index_name('urls')
@@ -19,11 +20,6 @@ class Url < ApplicationRecord
 			return nil
 		end
 	end 
-	def self.FindLong(longurl) #Redis search long url
-		return Rails.cache.fetch("#{longurl}", expires_in: 15.minutes) do
-					Url.where(longurl: longurl).first
-				end
-	end
 	def self.FindShort(shorturl) #Redis search shorturl
 		return  Rails.cache.fetch("#{shorturl}", expires_in: 15.minutes) do
 					Url.where(shorturl: shorturl).first
