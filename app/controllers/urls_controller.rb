@@ -1,3 +1,5 @@
+require 'rubygems'
+#require 'tire'
 class UrlsController < ApplicationController
 	def new
 		if(session[:authenticate] == true)
@@ -64,7 +66,7 @@ class UrlsController < ApplicationController
 	def long
 		respond_to do |format|
 			format.json{
-				if(params[:shorturl][0..3]!="www.")
+				if(params[:shorturl][0..6]!="http://")
 					@url = Url.FindSuffix(params[:shorturl])
 				else
 					@url = Url.FindShort(params[:shorturl])
@@ -76,7 +78,7 @@ class UrlsController < ApplicationController
 				end
 			}
 			format.html{
-				if(params[:shorturl][0..3]!="www.")
+				if(params[:url][:shorturl][0..6]!="http://")
 					@url = Url.FindSuffix(params[:url][:shorturl])
 				else
 					@url = Url.FindShort(params[:url][:shorturl])

@@ -41373,3 +41373,1988 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 127ms (Views: 69.3ms | ActiveRecord: 5.4ms)
 
 
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 12:13:16 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YN7dOpk3rti397jqXuNoieFSm6G5Ryf3Yn2mh7D/cLH8iog2BLbVf7t5rTmBcVhdgl5+eFaJ8lSfWxOuXAe+sw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 368ms (ActiveRecord: 282.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 12:13:17 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 263ms (Views: 202.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 12:13:20 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 133ms (Views: 120.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 12:13:22 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-25 12:13:23 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 12:23:53 +0530
+  [1m[35m (35.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/views/search/search.html.erb:15: syntax error, unexpected ','
+...r.append=( link_to urllongurl., controller: "url", action: "...
+...                              ^
+/Users/naveen/Documents/Internship/projectIntern/app/views/search/search.html.erb:15: syntax error, unexpected ',', expecting ')'
+...urllongurl., controller: "url", action: "show", id: url._id)...
+...                              ^
+/Users/naveen/Documents/Internship/projectIntern/app/views/search/search.html.erb:15: syntax error, unexpected ',', expecting ')'
+...troller: "url", action: "show", id: url._id);@output_buffer....
+...                              ^):
+  
+app/views/search/search.html.erb:15: syntax error, unexpected ','
+app/views/search/search.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/search/search.html.erb:15: syntax error, unexpected ',', expecting ')'
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 12:24:14 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (427.4ms)
+Completed 500 Internal Server Error in 431ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `search_path' for #<#<Class:0x00007fee1e13b3e8>:0x00007fee210b15c8>
+Did you mean?  search_field_tag):
+    1: <h1>Url Search</h1>
+    2: 
+    3: <%= form_for search_path, method: :get do |f| %>
+    4:  <p>
+    5:   <%= f.label "Search for" %>
+    6:   <%= text_field_tag :q, params[:q] %>
+  
+app/views/search/search.html.erb:3:in `_app_views_search_search_html_erb___78434033725990945_70330366660360'
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 12:24:48 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (96.3ms)
+Completed 200 OK in 1143ms (Views: 1141.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger" for 127.0.0.1 at 2019-01-25 12:24:53 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger"}
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 2.2ms)
+
+
+  
+ArgumentError (urls does not exist to be imported into. Use create_index! or the :force option to create it.):
+  
+app/models/url.rb:5:in `<class:Url>'
+app/models/url.rb:2:in `<main>'
+app/controllers/search_controller.rb:6:in `search'
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 12:34:23 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 124ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 12:34:24 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 12:34:49 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 5.5ms)
+
+
+  
+ArgumentError (urls does not exist to be imported into. Use create_index! or the :force option to create it.):
+  
+app/models/url.rb:5:in `<class:Url>'
+app/models/url.rb:2:in `<main>'
+app/controllers/search_controller.rb:6:in `search'
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."domain" = $1 LIMIT $2[0m  [["domain", "facebook.com"], ["LIMIT", 11]]
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:01:14 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (232.9ms)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 6.6ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330335297480'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:01:22 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330377211020'
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-25 13:03:09 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 177ms (Views: 120.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 13:03:11 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKxcuG1pXlDmSxsm+g9dW+21rLXZVZyTxf7BE+pI4xL72Bg47L2E2/8TB4qdgzPiMBjuTzVFUWx7d7uWxahoPg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 32ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 13:03:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 29.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-25 13:03:23 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E17GLermdJuu0f6MM2TlZkE+P/TYWxXprCKryrheocXcKoKtazKuELeJ4iBU6IvfnJN9DjRL2BYSq9FPl74q6Q==", "url"=>{"shorturl"=>"www.EFKB/BS%I"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:81:in `block (2 levels) in long'
+app/controllers/urls_controller.rb:67:in `long'
+app/controllers/urls_controller.rb:60:in `Shorturl'
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-25 13:04:11 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E17GLermdJuu0f6MM2TlZkE+P/TYWxXprCKryrheocXcKoKtazKuELeJ4iBU6IvfnJN9DjRL2BYSq9FPl74q6Q==", "url"=>{"shorturl"=>"www.EFKB/BS%I"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "www.EFKB/BS%I"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:28
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 26ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-25 13:04:11 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 13:04:14 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/url/shorturl" for 127.0.0.1 at 2019-01-25 13:04:59 +0530
+Processing by UrlsController#Shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"53kSqQrSThqcPcfCNlLEAnNXcc9Anymsrq36mkoZelx8Wc98ZPwkbK8RxIhcrcaRDIJCTq46mfwAvwbNhxtcZQ==", "url"=>{"shorturl"=>"www.EFKB/BS%I"}, "commit"=>"Search"}
+Redirected to http://localhost:3000/urls/18
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/18" for 127.0.0.1 at 2019-01-25 13:04:59 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 13:10:59 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=" for 127.0.0.1 at 2019-01-25 13:11:00 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>""}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (370.4ms)
+Completed 200 OK in 441ms (Views: 439.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:11:06 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (139.2ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330376344340'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:13:01 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 4.8ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fee1ce29520>):
+  
+app/controllers/search_controller.rb:8:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:13:43 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (75.8ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <!-- <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330369468120'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:14:08 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (86.9ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <!-- <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330375192360'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:14:45 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fee1d319940>):
+  
+app/controllers/search_controller.rb:9:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:15:15 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 4.0ms)
+
+
+  
+Elasticsearch::Transport::Transport::Errors::BadRequest ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+  
+app/controllers/search_controller.rb:9:in `puts'
+app/controllers/search_controller.rb:9:in `puts'
+app/controllers/search_controller.rb:9:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:16:01 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (68.4ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11: <!-- <ul>
+    12:  <% @url.each do |url| %>
+    13:   <li>
+    14:    <h3>
+    15:     <%= link_to urllongurl, controller: "url", action: "show", id: url._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330368517560'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:16:17 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 81ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:16:19 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.JLQB%2FETdE" for 127.0.0.1 at 2019-01-25 13:18:23 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.JLQB/ETdE"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (179.4ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11:  <ul>
+    12:  <% @url.each do |f| %>
+    13:   <li>
+    14:    <h3>
+    15:     <p>Longurl : <%= f.longurl %></p>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330378846020'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I" for 127.0.0.1 at 2019-01-25 13:19:18 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (62.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.EFKB/BS%I': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11:  <ul>
+    12:  <% @url.each do |f| %>
+    13:   <li>
+    14:    <h3>
+    15:     <p>Longurl : <%= f.longurl %></p>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330369162700'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I" for 127.0.0.1 at 2019-01-25 13:20:52 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (52.7ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.EFKB/BS%I': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11:  <div>
+    12: 	 <% @url.each do |f| %>
+    13: 	    <p>Longurl : <%= f.longurl %></p>
+    14: 	 <% end %>
+    15: </div> 
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330378631420'
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=" for 127.0.0.1 at 2019-01-25 13:20:57 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>""}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 204ms (Views: 201.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=" for 127.0.0.1 at 2019-01-25 13:20:58 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>""}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=" for 127.0.0.1 at 2019-01-25 13:20:58 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>""}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go" for 127.0.0.1 at 2019-01-25 13:21:02 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (81.0ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.EFKB/BS%I]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.EFKB/BS%I': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/BS%I\""}}}}]},"status":400}):
+     9: <% end %>
+    10: 
+    11:  <div>
+    12: 	 <% @url.each do |f| %>
+    13: 	    <p>Longurl : <%= f.longurl %></p>
+    14: 	 <% end %>
+    15: </div> 
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___78434033725990945_70330377799820'
+Started GET "/" for 127.0.0.1 at 2019-01-25 14:13:29 +0530
+  [1m[35m (48.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 710ms (Views: 700.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 14:13:33 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 123ms (Views: 62.3ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 14:13:34 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DcsG6Ue4a7d7wjrF3P8BNNAiOrB8NqJXxDYEdGQS7gSRn1Pl2jkQEHdMLxYDbTHgsy7faZP4d/Q5ELFdiOogBg==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 38ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 14:13:34 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 83ms (Views: 31.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-25 14:13:36 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports"[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 59ms (Views: 41.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 14:13:38 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 91ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 14:13:45 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (191.0ms)
+Completed 200 OK in 240ms (Views: 227.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go" for 127.0.0.1 at 2019-01-25 14:13:52 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go" for 127.0.0.1 at 2019-01-25 14:15:01 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 82ms (Views: 27.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go" for 127.0.0.1 at 2019-01-25 14:18:55 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "shorturl"=>"www.EFKB/BS%I", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 94ms (Views: 92.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 14:19:36 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.interviewbit.com/?ref=home-page", "domain"=>"interviewbit.com", "url"=>{"longurl"=>"https://www.interviewbit.com/?ref=home-page", "domain"=>"interviewbit.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.interviewbit.com/?ref=home-page"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:20:44 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 155ms (Views: 127.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:21:16 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 8.4ms)
+
+
+  
+NoMethodError (undefined method `q' for #<Elasticsearch::Model::Response::Response:0x00007fee025aa0a8>):
+  
+app/controllers/search_controller.rb:8:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:21:35 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fedff53d2d0>):
+  
+app/controllers/search_controller.rb:8:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:22:45 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fedfeeaa670>):
+  
+app/controllers/search_controller.rb:8:in `search'
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2019-01-25 14:40:34 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 287ms (Views: 285.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 14:40:37 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 98ms (Views: 25.5ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 14:40:38 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"txTkXYaHeYyaqtZT3aOKeXYWdwOI/KNaYD8XOV7vXSkrQLFRGwYCK5Ykw4ACMbqtFRqS2mcydvmdGaIQsheTKw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 12ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 14:40:38 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 115ms (Views: 53.1ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 14:40:42 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oUJlA1sKhD9jvA3yGkOyHn9XjLKbXXeCGATZkfjoDpVuNiGD2t5etHrkEV59z9ynovrOSHdNun2mjaMU1wiFuQ==", "url"=>{"longurl"=>"www.facebook.com", "domain"=>"facebook"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+Redirected to http://localhost:3000/urls/4
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/urls/4" for 127.0.0.1 at 2019-01-25 14:40:42 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 60ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 14:40:44 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 14:40:53 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kNXyU7PtHvUZcxUBK84KqVTM/SQuLkJ7Q0mXFMdIrDugkgSggZVnwbMMGK/0UA0KsUrYddAqUn2Wi/nL4jHMXQ==", "url"=>{"longurl"=>"https://www.elastic.co/guide/en/elasticsearch/reference/1.4/fielddata-formats.html", "domain"=>"elastic.co"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/1.4/fielddata-formats.html"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (65.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/1.4/fielddata-formats.html"], ["shorturl", "http://JvJ/YqMH"], ["domain", "elastic.co"], ["suffix", "YqMH"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (1.0ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 13], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (516.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (352.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/34
+Completed 302 Found in 971ms (ActiveRecord: 584.6ms)
+
+
+Started GET "/urls/34" for 127.0.0.1 at 2019-01-25 14:40:54 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 14:44:57 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by SearchController#search as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `sub' for nil:NilClass):
+  
+app/controllers/search_controller.rb:3:in `search'
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 14:45:26 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (122.1ms)
+Completed 200 OK in 594ms (Views: 583.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:45:30 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fdc129d1ac0>):
+  
+app/controllers/search_controller.rb:10:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:46:26 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `longurl' for #<Elasticsearch::Model::Response::Response:0x00007fdc11740eb0>):
+  
+app/controllers/search_controller.rb:9:in `search'
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 14:46:37 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 79ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 14:46:38 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 120ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:46:44 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 3.4ms)
+
+
+  
+Elasticsearch::Transport::Transport::Errors::BadRequest ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB/ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB/ETdE': Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 14.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+  
+app/controllers/search_controller.rb:9:in `first'
+app/controllers/search_controller.rb:9:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 14:47:09 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 118ms (Views: 44.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:02:34 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 348ms (Views: 242.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:02:37 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 91ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2F%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:02:38 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB//ETdE", "commit"=>"Go"}
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+Elasticsearch::Transport::Transport::Errors::BadRequest ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB///ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [www.JLQB///ETdE]","index_uuid":"p4FkeszTQYOE1G5hAT_EJQ","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'www.JLQB///ETdE': Lexical error at line 1, column 16.  Encountered: <EOF> after : \"/ETdE\"","caused_by":{"type":"token_mgr_error","reason":"Lexical error at line 1, column 16.  Encountered: <EOF> after : \"/ETdE\""}}}}]},"status":400}):
+  
+app/controllers/search_controller.rb:9:in `first'
+app/controllers/search_controller.rb:9:in `search'
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2F%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:05:39 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB//ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (106.7ms)
+Completed 200 OK in 675ms (Views: 591.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2F%2F%2F%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:06:26 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB////ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 120ms (Views: 65.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2F%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:06:31 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB//ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:06:42 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 100ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:07:29 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 84ms (Views: 43.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:07:31 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 75ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:07:31 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 80ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:07:31 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 85ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 15:07:38 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 80ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:07:43 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 86ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:22:20 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 66ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:22:22 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 15:22:23 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 55ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:22:27 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 15:22:27 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 88ms (Views: 38.6ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 15:22:30 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IslRC9/0VA2e/ZcIDHrsI8GrsOLZdXzKGz9mp9sT9+K+nQQHQnUvqpJzgtvT6Nz3oqdVOza7qWnmGdOON+s54A==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 38ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:22:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 35.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:22:41 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5xJZYppg/yiHT+EQtZsqIugNBY5+A5KbcDehmAzMyq06A3lC71Zd7tFIyglWgIRVg127NXow7XTSaQDT9O4Bg==", "url"=>{"longurl"=>"https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html", "domain"=>"elastic.co"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (2.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html"], ["shorturl", "http://JvJ/mmRI"], ["domain", "elastic.co"], ["suffix", "mmRI"]]
+  ↳ app/models/url.rb:16
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+Redirected to http://localhost:3000/urls/35
+Completed 302 Found in 90ms (ActiveRecord: 33.2ms)
+
+
+Started GET "/urls/35" for 127.0.0.1 at 2019-01-25 15:22:41 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  Rendering urls/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  Rendered urls/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUrlreport Update (0.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 14], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 57ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A%2F%2FJvJ%2FmmRI&commit=Go" for 127.0.0.1 at 2019-01-25 15:22:53 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http://JvJ/mmRI", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+Migrating to CreateUrls (20190125100852)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (67.4ms)[0m  [1m[35mCREATE TABLE "urls" ("id" bigserial primary key, "longurl" character varying, "shorturl" character varying, "domain" character varying, "suffix" character varying)[0m
+  ↳ db/migrate/20190125100852_create_urls.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (13.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190125100852"]]
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4940285333737373340)[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/rubies/ruby-2.6.0/bin/rake:23
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:20 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 15:39:20 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 62ms (Views: 34.3ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 15:39:21 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TleNfnpok4cK3hWqrfUiyZrna5dZV9CIUGK77bWXIY/SA9hy5+noIAZQAHlyZxId+euOTraZBSutRA7EWW/vjQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 54ms (Views: 29.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:39:26 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oyv3W79tvsB+V9oFxr3GlPJH6E/fZXzmHc2C6r+tQ270X7PbPrlkS2cPxqmhMagtL+qqtTN1sRmjRPhvkE3IQg==", "url"=>{"longurl"=>"www.housing.com/seller", "domain"=>"housing.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.housing.com/seller"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (3.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.housing.com/seller"], ["shorturl", "http://mJLB/kXVC"], ["domain", "housing.com"], ["suffix", "kXVC"]]
+  ↳ app/models/url.rb:16
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+Redirected to http://localhost:3000/urls/1
+Completed 302 Found in 79ms (ActiveRecord: 45.2ms)
+
+
+Started GET "/urls/1" for 127.0.0.1 at 2019-01-25 15:39:26 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUrlreport Load (1.4ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 15], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:30 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:39:38 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t0TuLLavwMS6zsOTYmg5CLAJ5FuC7oKwL4FsgwcJoXaHAxjfhNe58BCxzj299j6rVY/BCnzqkrb6QwJcInDBEA==", "url"=>{"longurl"=>"www.facebook.com", "domain"=>"facebook.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (4.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.6ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.facebook.com"], ["shorturl", "http://vPLB/K0%B"], ["domain", "facebook.com"], ["suffix", "K0%B"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 16], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  ↳ app/models/url.rb:16
+Redirected to http://localhost:3000/urls/2
+Completed 302 Found in 73ms (ActiveRecord: 46.7ms)
+
+
+Started GET "/urls/2" for 127.0.0.1 at 2019-01-25 15:39:38 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUrl Load (1.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:40 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:39:45 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+9deF/H8UKIduRADtYoLudQQzLx/UzpPNFx9ld17a13qKuLbb+IdiIJ6e7RSC+NAtZmYw/5XO/pEx8pcgyNyw==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://redis.io/topics/rediscli"], ["shorturl", "http://RbH/J$&D"], ["domain", "redis.io"], ["suffix", "J$&D"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.4ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 17], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/3
+Completed 302 Found in 80ms (ActiveRecord: 46.3ms)
+
+
+Started GET "/urls/3" for 127.0.0.1 at 2019-01-25 15:39:45 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:47 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:39:57 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q1R6HmtUmn4hl3iUpGyxvfxOdpHkhrY4J4pf7i20ImubE4ztWSzjSovodTp78rYeGchTwBqCpj7ySDExCM1CDQ==", "url"=>{"longurl"=>"https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html", "domain"=>"elastic.co"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (1.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html"], ["shorturl", "http://JvJ/M6KH"], ["domain", "elastic.co"], ["suffix", "M6KH"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (1.1ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.8ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 18], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/4
+Completed 302 Found in 67ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/urls/4" for 127.0.0.1 at 2019-01-25 15:39:57 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 63ms (Views: 60.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:39:58 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:40:05 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V8aNn900gLKc+/f0ofG8J5TkY6oCDJSNXgA9YkChtcRngXts70z5hjaE+lp+b7uEcWJG+/wIhIuLwlO9ZdjVog==", "url"=>{"longurl"=>"https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-query-document.html", "domain"=>"elastic.co"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-query-document.html"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-query-document.html"], ["shorturl", "http://JvJ/Lo&J"], ["domain", "elastic.co"], ["suffix", "Lo&J"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.8ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.0ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 19], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/5
+Completed 302 Found in 65ms (ActiveRecord: 41.2ms)
+
+
+Started GET "/urls/5" for 127.0.0.1 at 2019-01-25 15:40:05 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:40:13 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:40:17 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kroU7GY0NHm4/oB+guGWlVPPo64CkfKP5Yi6QqZpdwai/eIfVExNTRKBjdBdf5E2tkmG//yV4okwStSdgxAXYA==", "url"=>{"longurl"=>"https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html", "domain"=>"elastic.co"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (1.0ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-update-settings.html"], ["shorturl", "http://JvJ/mmRI"], ["domain", "elastic.co"], ["suffix", "mmRI"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 20], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/6
+Completed 302 Found in 71ms (ActiveRecord: 43.0ms)
+
+
+Started GET "/urls/6" for 127.0.0.1 at 2019-01-25 15:40:17 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:40:18 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:40:27 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKrFRpa4pMuxWXCmRrV2T6jXTYADPv5dovRxSVP4PvhA7TO1pMDd/xsmfQiZK3HsTVFo0f067lt3Nh+WdoFeng==", "url"=>{"longurl"=>"http://localhost:3000/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go", "domain"=>"localhost:3000"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "http://localhost:3000/url/search?utf8=%E2%9C%93&shorturl=www.EFKB%2FBS%25I&commit=Go"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:16
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 35.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:40:40 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1OnH90XgzE5/fZ87ZxdqBf2wIjtNqttqHnKaSNkb3IQbnYN3xDQWxWYlg5cAmwS8IB1gwaG6FpWg++DN9vtXqA==", "url"=>{"longurl"=>"https://medium.com/@thecolorfulcrayon/configuring-elasticsearch-on-rails-8bcbe973e9e7", "domain"=>"medium.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://medium.com/@thecolorfulcrayon/configuring-elasticsearch-on-rails-8bcbe973e9e7"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://medium.com/@thecolorfulcrayon/configuring-elasticsearch-on-rails-8bcbe973e9e7"], ["shorturl", "http://SwKB/WV%I"], ["domain", "medium.com"], ["suffix", "WV%I"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.9ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 21], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/7
+Completed 302 Found in 65ms (ActiveRecord: 41.1ms)
+
+
+Started GET "/urls/7" for 127.0.0.1 at 2019-01-25 15:40:40 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 30.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:40:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:40:53 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z5eyKDuI2qLnB91nUuNlgn9JgkPnU2apDv5heY2jkpT/0ETbCfCjlk140MmNfWIhms+nEhlXdq/bPA+mqNry8g==", "url"=>{"longurl"=>"https://stackoverflow.com/questions/3024546/change-one-cells-data-in-mysql", "domain"=>"stackoverflow.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://stackoverflow.com/questions/3024546/change-one-cells-data-in-mysql"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (1.7ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://stackoverflow.com/questions/3024546/change-one-cells-data-in-mysql"], ["shorturl", "http://PWRB/U1CG"], ["domain", "stackoverflow.com"], ["suffix", "U1CG"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 22], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Redirected to http://localhost:3000/urls/8
+Completed 302 Found in 73ms (ActiveRecord: 43.4ms)
+
+
+Started GET "/urls/8" for 127.0.0.1 at 2019-01-25 15:40:53 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUrl Load (0.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:40:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 69ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+Started GET "/url/long?shorturl=www.JLQB/bWqF" for 127.0.0.1 at 2019-01-25 15:42:44 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"www.JLQB/bWqF"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "www.JLQB/bWqF"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:32
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:42:52 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"longurl"=>"https://www.interviewbit.com/?ref=home-page", "domain"=>"interviewbit.com", "url"=>{"longurl"=>"https://www.interviewbit.com/?ref=home-page", "domain"=>"interviewbit.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.interviewbit.com/?ref=home-page"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (1.2ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.interviewbit.com/?ref=home-page"], ["shorturl", "http://JLQB/ETdE"], ["domain", "interviewbit.com"], ["suffix", "ETdE"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.7ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 23], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (378.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (371.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 404ms (Views: 0.2ms | ActiveRecord: 380.5ms)
+
+
+Started GET "/url/long?shorturl=http://JLQB/ETd" for 127.0.0.1 at 2019-01-25 15:43:25 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"http://JLQB/ETd"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://JLQB/ETd"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:27
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/url/long?shorturl=http://JLQB/ETdE" for 127.0.0.1 at 2019-01-25 15:43:37 +0530
+Processing by UrlsController#long as */*
+  Parameters: {"shorturl"=>"http://JLQB/ETdE"}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://JLQB/ETdE"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:27
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:44:03 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEMVXKuPf1Uozc/TBMYpqWR26DFRLlzJarMryDKymgx8BOOvmfcGYYKywn3bWC4KgfDNYK8qTM+/cUUXF8v6ag==", "url"=>{"longurl"=>"https://www.google.com/search?q=subscripting+type+error&rlz=1C5CHFA_enIN831IN831&oq=subscripting+type+error&aqs=chrome..69i57.7527j0j7&sourceid=chrome&ie=UTF-8", "domain"=>"google.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.1ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.google.com/search?q=subscripting+type+error&rlz=1C5CHFA_enIN831IN831&oq=subscripting+type+error&aqs=chrome..69i57.7527j0j7&sourceid=chrome&ie=UTF-8"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.google.com/search?q=subscripting+type+error&rlz=1C5CHFA_enIN831IN831&oq=subscripting+type+error&aqs=chrome..69i57.7527j0j7&sourceid=chrome&ie=UTF-8"], ["shorturl", "http://OwKB/BbKOB"], ["domain", "google.com"], ["suffix", "BbKOB"]]
+  ↳ app/models/url.rb:16
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-25"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 24], ["id", 3]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:16
+Redirected to http://localhost:3000/urls/10
+Completed 302 Found in 49ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/urls/10" for 127.0.0.1 at 2019-01-25 15:44:03 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.9ms)
+  [1m[35m (56.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:44:06 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:44:21 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:46:34 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 15:46:35 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:51:25 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:51:39 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:51:58 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:52:08 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:52:51 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-25 15:52:56 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rpO8g/2QrlJwrMfNbmtqf99G0sgMQzqKYt1s9rO6iMdh5/gDfER02Wn022EJ5wTGAuuQMuBT93XcVBZznFoD6w==", "url"=>{"longurl"=>"efegwgqw", "domain"=>"wveqe"}, "commit"=>"Search"}
+  [1m[36mUrl Load (3.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "efegwgqw"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:16
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 33.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/urls" for 127.0.0.1 at 2019-01-25 15:53:07 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UrlsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:53:10 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:53:39 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:53:52 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:53:53 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:53:54 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:54:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:54:34 +0530
+Processing by UrlsController#new as HTML
+Redirected to http://localhost:3000/user/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-25 15:54:34 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 76ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 15:54:36 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WNsIwkcI1OlFcP2TMLdXKNadDc/ohXnaS7F8q59oy+mXr0xCxtwOYlwo4T9XOzmRCzBPNQSVtCX1OAYusIhAxQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:54:36 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:54:49 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:54:59 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:55:32 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 15:59:49 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:00:14 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:01:02 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-25 16:01:05 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-25 16:01:14 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMYxHUjfXZonRGg2QE+wCgehVd/E4/2VCNrdnusbCXdUkmQR1V4mPSvKfeWf3YDeZK2wBistKDb1/Gi3B+PHdQ==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:01:14 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:01:15 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:01:22 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:01:25 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 78ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 16:01:30 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 16:05:00 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 16:05:01 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:05:07 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:05:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:05:43 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:05:45 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 82ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-25 16:12:51 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 84ms (Views: 32.4ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:12:53 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:14:58 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:15:01 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:15:01 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-25 16:15:38 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=+dvn+.+d&commit=Go" for 127.0.0.1 at 2019-01-25 16:15:41 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>" dvn . d", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=+dvn+.+d&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:33 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>" dvn . d", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=+dvn+.+d&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:35 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>" dvn . d", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=+dvn+.+d&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:35 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>" dvn . d", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=bhbbihb&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:42 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"bhbbihb", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=bhb&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:46 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"bhb", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=bh&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:48 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"bh", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=br&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:51 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"br", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=br+&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:52 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"br ", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A%2F%2F&commit=Go" for 127.0.0.1 at 2019-01-25 16:16:58 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http://", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A%2F%2F&commit=Go" for 127.0.0.1 at 2019-01-25 16:17:00 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http://", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A&commit=Go" for 127.0.0.1 at 2019-01-25 16:17:02 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http:", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (166.1ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ([400] {"error":{"root_cause":[{"type":"query_shard_exception","reason":"Failed to parse query [http:]","index_uuid":"pmphL3PsQAGxjKvuEGNaqg","index":"urls"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"urls","node":"WlOCkHaLQRSE8NNyEFrimA","reason":{"type":"query_shard_exception","reason":"Failed to parse query [http:]","index_uuid":"pmphL3PsQAGxjKvuEGNaqg","index":"urls","caused_by":{"type":"parse_exception","reason":"Cannot parse 'http:': Encountered \"<EOF>\" at line 1, column 5.\nWas expecting one of:\n    <BAREOPER> ...\n    \"(\" ...\n    \"*\" ...\n    <QUOTED> ...\n    <TERM> ...\n    <PREFIXTERM> ...\n    <WILDTERM> ...\n    <REGEXPTERM> ...\n    \"[\" ...\n    \"{\" ...\n    <NUMBER> ...\n    ","caused_by":{"type":"parse_exception","reason":"Encountered \"<EOF>\" at line 1, column 5.\nWas expecting one of:\n    <BAREOPER> ...\n    \"(\" ...\n    \"*\" ...\n    <QUOTED> ...\n    <TERM> ...\n    <PREFIXTERM> ...\n    <WILDTERM> ...\n    <REGEXPTERM> ...\n    \"[\" ...\n    \"{\" ...\n    <NUMBER> ...\n    "}}}}]},"status":400}):
+     8: 	 	</p>
+     9: 	<% end %>
+    10:  	<div>
+    11: 		<% @url.each do |url| %>
+    12: 
+    13: 		    <p>Longurl : <%= url.longurl %> &nbsp &nbsp Shorturl : <%= url.shorturl %></p>
+    14: 		<% end %>
+  
+app/views/search/search.html.erb:11:in `_app_views_search_search_html_erb___4210623477961051116_70321747101180'
+Started GET "/url/search?utf8=%E2%9C%93&q=http%3A%2F%2FJvJ%2FmmRI&commit=Go" for 127.0.0.1 at 2019-01-25 16:17:10 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"http://JvJ/mmRI", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=mmRI&commit=Go" for 127.0.0.1 at 2019-01-25 16:19:07 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"mmRI", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=mmRI&commit=Go" for 127.0.0.1 at 2019-01-25 16:19:17 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"mmRI", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 61ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=mm&commit=Go" for 127.0.0.1 at 2019-01-25 16:19:22 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"mm", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www&commit=Go" for 127.0.0.1 at 2019-01-25 16:20:06 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=www.JLQB%2FETdE&commit=Go" for 127.0.0.1 at 2019-01-25 16:20:22 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"www.JLQB/ETdE", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&q=home&commit=Go" for 127.0.0.1 at 2019-01-25 16:20:33 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"home", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+

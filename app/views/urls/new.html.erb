@@ -19,9 +19,29 @@
   button{
     text-align:center;
     padding:2px;
-    margin:2px;
     font-family:Georgia,sans-serif;
     font-size:1.2em;
+  }
+  .btn-group button {
+  position:relative;
+  left:20%;
+  background-color: lightblue; 
+  border: 1px solid gray; 
+  color: white; 
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float: left; 
+  } 
+
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .btn-group button:not(:last-child) {
+    border-right: none; 
   }
 </style>
 <h2>WELCOME TO URL SHORTNER</h2>
@@ -38,11 +58,15 @@
     <p> Short Url / Suffix: <%= f.text_field :shorturl%> </br></p>
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
-</div>
+</div><br/>
 <div class="errors">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-  </div>
-<button>Logout : <%= link_to 'logout',user_logout_path  %> </button><br/>
-<button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+<br/>
+<div class="btn-group">
+  <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
+  <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
+  <button>Elastic Search : <%= link_to 'search',url_search_path  %> </button>
+</div>

@@ -1,0 +1,18 @@
+<h1>ELastic Url Search</h1>
+<div class="shorturl_form">
+	<%= form_for url_search_path, method: :get do |f| %>
+	 	<p>
+	  		<%= f.label "Search for" %>
+	  		<%= text_field_tag :q, params[:q] %>
+	  		<%= submit_tag "Go" %>
+	 	</p>
+	<% end %>
+ 	<div>
+		<% @url.each do |url| %>
+
+		    <p>Longurl : <%= url.longurl %> &nbsp &nbsp Shorturl : <%= url.shorturl %></p>
+		<% end %>
+	</div> 
+</div>
+
+<button><%= link_to 'Back', new_url_path %></button>

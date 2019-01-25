@@ -16,7 +16,7 @@ module UrlsHelper
 	end
 	def self.domain(input)
 		mdsum=mdvalue(input)
-		shorturl="www."
+		shorturl="http://"
 		map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
 		while mdsum!=0
 			shorturl += map[mdsum%52]

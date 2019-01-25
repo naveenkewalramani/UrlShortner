@@ -28,9 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'redis-rails'
 gem 'redis'
-gem 'rubocop', require: false
 gem 'sidekiq'
 gem 'elasticsearch'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry'
