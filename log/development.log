@@ -43358,3 +43358,11 @@ Processing by SearchController#search as HTML
 Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/url/search?utf8=%E2%9C%93&q=proptiger&commit=Go" for 127.0.0.1 at 2019-01-25 16:47:19 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"proptiger", "commit"=>"Go"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+

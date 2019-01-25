@@ -19,15 +19,17 @@ class Url < ApplicationRecord
 			return nil
 		end
 	end 
-	def self.FindLong(longurl) #Search long url in DB
-		return Url.where(longurl: longurl).first
+	def self.FindLong(longurl) #Redis search long url
+		return Rails.cache.fetch("#{longurl}", expires_in: 15.minutes) do
+					Url.where(longurl: longurl).first
+				end
 	end
-	def self.FindShort(shorturl)
+	def self.FindShort(shorturl) #Redis search shorturl
 		return  Rails.cache.fetch("#{shorturl}", expires_in: 15.minutes) do
 					Url.where(shorturl: shorturl).first
 				end
 	end
-	def self.FindSuffix(suffix)
+	def self.FindSuffix(suffix) #Redis search suffix url
 		return  Rails.cache.fetch("#{suffix}", expires_in: 15.minutes) do
 					Url.where(suffix: suffix).first
 				end
