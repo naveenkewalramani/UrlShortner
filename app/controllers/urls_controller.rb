@@ -10,11 +10,11 @@ class UrlsController < ApplicationController
 	def create
 		respond_to do |format|
 			format.json{
-				@url = Url.where(longurl: params[:longurl]).first
+				@url = Url.FindLong(params[:longurl])
 				if @url!=nil
 					render json: { 'status' => 'already_exist', 'shorturl' =>	@url.shorturl }
 				else
-					@url = Url.CreateLongUrl(web_params)
+					@url = Url.CreateLongUrl(url_params)
 					if @url!=nil
 						render json: { 'status' => 'new_created', 'shorturl' => @url.shorturl }
 					else 
@@ -24,11 +24,11 @@ class UrlsController < ApplicationController
 			}	
 			format.html{
 				if(session[:authenticate] == true)
-					@url = Url.where(longurl: params[:url][:longurl]).first
+					@url = Url.FindLong(params[:url][:longurl])
 					if @url!=nil
 						redirect_to @url
 					else
-						@url = Url.CreateLongUrl(web_params)
+						@url = Url.CreateLongUrl(url_params)
 						if @url!=nil
 							redirect_to @url
 						else
@@ -55,43 +55,44 @@ class UrlsController < ApplicationController
 
 	def Shorturl
 		if(session[:authenticate] == true)
-			if(params[:url][:shorturl][0..3]!="www.")
-				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
-						Url.where(suffix: params[:url][:shorturl]).first
-				end
-			else
-				@url = Rails.cache.fetch("#{params[:url][:shorturl]}", expires_in: 15.minutes) do
-					Url.where(shorturl: params[:url][:shorturl]).first
-				end
-			end
-			if @url!=nil
-				redirect_to @url
-			else
-				flash[:notice] = "Not a valid url"
-				redirect_to new_url_path
-			end 
+			long 
 		else
 			redirect_to user_login_path
 		end
 	end
 
 	def long
-		if(params[:shorturl][0..3]!="www.")
-			params[:shorturl]="www.nav.com/"+params[:shorturl]
+		respond_to do |format|
+			format.json{
+				if(params[:shorturl][0..3]!="www.")
+					@url = Url.FindSuffix(params[:shorturl])
+				else
+					@url = Url.FindShort(params[:shorturl])
+				end
+				if @url!=nil
+					render json: { 'status' => 'already_exist', 'longurl' => @url.longurl }
+				else
+					render json: { 'status' => 'invalid_shorturl' }		
+				end
+			}
+			format.html{
+				if(params[:shorturl][0..3]!="www.")
+					@url = Url.FindSuffix(params[:url][:shorturl])
+				else
+					@url = Url.FindShort(params[:url][:shorturl])
+				end
+				if @url!=nil
+					redirect_to @url
+				else
+					flash[:notice] = "Not a valid url"
+					redirect_to new_url_path
+				end 
+			}
 		end
-		@url = Rails.cache.fetch("#{params[:shorturl]}", expires_in: 15.minutes) do
-			Url.where(shorturl: params[:shorturl]).first
-		end
-		if @url!=nil
-			render json: { 'status' => 'already_exist', 'longurl' => @url.longurl }
-		else
-			render json: { 'status' => 'invalid_shorturl' }		
-		end
-		
 	end
 
 	private
-		def web_params
+		def url_params
 			params.require(:url).permit( :utf8, :longurl, :domain, :shorturl )
 		end
 end
