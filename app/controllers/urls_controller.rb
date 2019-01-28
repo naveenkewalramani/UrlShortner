@@ -1,6 +1,7 @@
 
 class UrlsController < ApplicationController
 
+	#Create a new instance
 	def new
 		if(session[:authenticate] == true)
 			@url = Url.new
@@ -9,12 +10,13 @@ class UrlsController < ApplicationController
 		end
 	end
 
-	def create
+	#Create Short Url
+	def CreateShort
 		respond_to do |format|
 			format.json{
-				@url = Url.where(longurl: params[:longurl]).first
+				@url = Url.FindLong(params[:longurl])
 				if @url!=nil
-					render json: { 'status' => 'already_exist', 'shorturl' =>	@url.shorturl }
+					render json: { 'status' => 'already_exist', 'shorturl' => @url.shorturl }
 				else
 					@url = Url.CreateLongUrl(url_params)
 					if @url!=nil
@@ -26,7 +28,7 @@ class UrlsController < ApplicationController
 			}	
 			format.html{
 				if(session[:authenticate] == true)
-					@url = Url.where(longurl: params[:url][:longurl]).first
+					@url = Url.FindLong(params[:url][:longurl])
 					if @url!=nil
 						redirect_to @url
 					else
@@ -43,10 +45,10 @@ class UrlsController < ApplicationController
 					redirect_to user_login_path
 				end
 			}
-			
 		end
 	end
 
+	#Display Url on Browser 
 	def show
 		if(session[:authenticate] == true)
     		@url = Url.find(params[:id])
@@ -55,15 +57,17 @@ class UrlsController < ApplicationController
     	end
   	end
 
-	def Shorturl
+  	#POST data from Shorturl form
+	def short
 		if(session[:authenticate] == true)
-			long 
+			SearchLong()
 		else
 			redirect_to user_login_path
 		end
 	end
 
-	def long
+	#Search For Long Url
+	def SearchLong
 		respond_to do |format|
 			format.json{
 				if(params[:shorturl][0..6]!="http://")

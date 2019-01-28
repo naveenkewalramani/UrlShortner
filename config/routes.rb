@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   
   # Routes for Urls
   resources :urls
-  get 'url/long' => 'urls#long'
-  post 'url/shorturl' => 'urls#Shorturl'
+  get 'url/long' => 'urls#SearchLong' 
+  post 'urls/short' => 'urls#short'
+  post 'urls/long' => 'urls#CreateShort'
 
   # Routes for urlreport
   get 'urlreport' => 'urlreports#index'

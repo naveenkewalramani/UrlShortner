@@ -7,6 +7,7 @@ class UsersController < ApplicationController
    def login
     @user = User.new
   end
+  #FUNCTION FOR SIGNUP
   def signup
     flash[:notice] = ""
     if (User.where(email: params[:user][:email]).first)
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #FUNCTION FOR LOGOUT
   def logout
     session[:id]=nil
     session[:username]=nil
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
     render 'login'
   end
 
+  #FUNCTION FOR NEW LOGIN 
   def login_new
     flash[:notice] = ""
      @user = User.where(email: params[:user][:email], password: UsersHelper.password_convert(params[:user][:password])).first

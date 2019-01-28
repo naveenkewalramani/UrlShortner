@@ -9,14 +9,14 @@
     font-family:Georgia,sans-serif;
     text-transform: capitalize;
   }
-	.Longshort{
+	.LongToShort{
 		border:2px solid black;
 		padding:5px;
 		margin:1px;
 		position:relative;
 		display:block;
 	}
-	.Shortlong{
+	.ShortToLong{
     margin:2px;
 		border:2px solid black;
 		position:relative;
@@ -51,29 +51,37 @@
     border-right: none; 
   }
 </style>
+
 <h2>WELCOME TO URL SHORTNER</h2>
 <span>Hi <%= session[:username] %></span><br/>
-<!--  <span><%= Time.now %></span> -->
- <div class=Longshort>
-  <%= form_for @url do |f| %>
+
+<div class=LongToShort>
+  <%= form_for @url , url: urls_long_path do |f| %>
     <p> Long Url: <%= f.text_field :longurl%> </br></p>
     <p>Domain : <%= f.text_field :domain%> <br /></p>
     <p>Find : <%=  f.submit 'Search' %><br/>
   <% end %>
 </div>
-<br><br>
-<div class=Shortlong>
-  <%= form_for @url, url: url_shorturl_path do |f| %>
+
+<br/><br/>
+
+<div class=ShortToLong>
+  <%= form_for @url, url: urls_short_path do |f| %>
     <p> Short Url / Suffix: <%= f.text_field :shorturl%> </br></p>
     <p>Find : <%=  f.submit  'Search'%><br/></p>
   <% end %>
-</div><br/>
+</div>
+
+<br/><br/>
+
 <div class="errors">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 </div>
-<br/>
+
+<br/><br/>
+
 <div class="btn-group">
   <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
   <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
