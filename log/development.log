@@ -48046,3 +48046,59 @@ Processing by UsersController#logout as HTML
 Completed 200 OK in 61ms (Views: 57.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-28 13:37:09 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47ms (Views: 26.5ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-28 13:37:10 +0530
+Processing by UsersController#login_new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEo3hL9xfL13WVPtYK+JTFRNFKBbs1E56wc+Pxy1Qb2X0v0h1CiWeklb1IbSPu3q7T4qq468agIkUpjfZGBS2w==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:45
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-28 13:37:10 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 28.9ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/urls" for 127.0.0.1 at 2019-01-28 13:37:16 +0530
+Processing by UrlsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JBJJcF1YGgXuIDnjNH7YJP9ZRYiOHnTT88lbGR8PviUPioPVNgHwwtAivoiG77yCRip7g1sRT+g8nP35Z9qtQw==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+Redirected to http://localhost:3000/urls/3
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/3" for 127.0.0.1 at 2019-01-28 13:37:16 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:52
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 101ms (Views: 29.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-28 13:37:17 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-28 13:37:19 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+

@@ -1,5 +1,4 @@
-require 'rubygems'
-#require 'tire'
+
 class UrlsController < ApplicationController
 
 	def new
