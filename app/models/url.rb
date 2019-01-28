@@ -12,7 +12,10 @@ class Url < ApplicationRecord
 	 	end
 	def self.CreateLongUrl(webparams)  #Create longurl from short url
 		@url  = Url.new(webparams)
-		@url.suffix= UrlsHelper.suffix(webparams[:longurl])
+		@url.suffix= UrlsHelper.suffix(webparams[:longurl],0)
+		while Unique(@url.suffix) == false
+			@url.suffix = Urls.Helper.suffix(webparams[:longurl],1)
+		end
 		@url.shorturl = UrlsHelper.domain(webparams[:domain]) + @url.suffix
 		if @url.save
 			return @url
@@ -29,6 +32,14 @@ class Url < ApplicationRecord
 		return  Rails.cache.fetch("#{suffix}", expires_in: 15.minutes) do
 					Url.where(suffix: suffix).first
 				end
+	end
+	def self.Unique(suffix)
+		@check = Url.where(suffix: suffix).first
+		if @check == nil
+			return true
+		else
+			return false
+		end
 	end
 end
 

@@ -2,6 +2,13 @@
   *{
     text-align:center;
   }
+  span{
+    color:midnightblue;
+    font-size:1.2em;
+    padding:5px;
+    font-family:Georgia,sans-serif;
+    text-transform: capitalize;
+  }
 	.Longshort{
 		border:2px solid black;
 		padding:5px;
@@ -45,6 +52,8 @@
   }
 </style>
 <h2>WELCOME TO URL SHORTNER</h2>
+<span>Hi <%= session[:username] %></span><br/>
+<!--  <span><%= Time.now %></span> -->
  <div class=Longshort>
   <%= form_for @url do |f| %>
     <p> Long Url: <%= f.text_field :longurl%> </br></p>
