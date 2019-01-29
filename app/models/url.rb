@@ -1,4 +1,5 @@
 require 'elasticsearch/model'
+
 class Url < ApplicationRecord
   
   #Elastic Search
@@ -10,7 +11,33 @@ class Url < ApplicationRecord
   #Validations of url
   validates :longurl, :presence => true
   validates_format_of :longurl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
-  
+ 
+  #mapping for elastic search
+  settings index: {
+   number_of_shards: 1,
+   number_of_replicas: 0,
+   analysis: {
+      analyzer: {
+         pattern: {
+            type: 'pattern',
+            pattern: "\\s|_|-|\\.",
+            lowercase: true
+         },
+       }
+     }
+   }do
+    mapping do
+      indexes :short_url, type: 'text', analyzer: 'english' do
+        indexes :keyword, analyzer: 'keyword'
+        indexes :pattern, analyzer: 'pattern'
+      end
+      indexes :long_url, type: 'text', analyzer: 'english' do
+        indexes :keyword, analyzer: 'keyword'
+        indexes :pattern, analyzer: 'pattern'
+      end
+    end
+  end
+
   #Sidekiq 
   after_create :background_process
   def background_process

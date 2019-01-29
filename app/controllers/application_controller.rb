@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       if(session[:expires_at] < Time.current)
         session[:username]=nil
 	      session[:authenticate]=false
-        redirect_to user_login_path
+        #redirect_to user_login_path
       end
     end
   end

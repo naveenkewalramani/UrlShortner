@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-   def login_login
+  def login
     @user = User.new
   end
 
@@ -20,15 +20,9 @@ class UsersController < ApplicationController
     else
       @user = User.create_user(user_params)
       if @user !=nil
-        session[:id]=@user[:id]
-        session[:username]=@user[:username]
-        session[:authenticate] = true
-        session[:expires_at] = Time.current + 20.minutes
-        redirect_to new_url_path #redirect to the url page
+        set_session
       else
-        @user=User.new
-        flash[:notice] = ""
-        render 'new'
+        redirect_to user_new_path  
       end
     end
   end
@@ -49,16 +43,20 @@ class UsersController < ApplicationController
     flash[:notice] = ""
      @user = User.where(email: params[:user][:email], password: UsersHelper.password_convert(params[:user][:password])).first
     if (@user!=nil)
-      session[:id]=@user[:id]
-      session[:username]=@user[:username]
-      session[:authenticate] = true
-      session[:expires_at] = Time.current + 20.minutes
-      redirect_to new_url_path
+      set_session
     else
-      @user=User.new
       flash[:notice] = "Invalid Email or Password"
-      render 'login'
+      redirect_to user_login_path
     end
+  end
+
+  #Set session
+  def set_session
+    session[:id]=@user[:id]
+    session[:username]=@user[:username]
+    session[:authenticate] = true
+    session[:expires_at] = Time.current + 20.minutes
+    redirect_to new_url_path #redirect to the url page
   end
 
   private

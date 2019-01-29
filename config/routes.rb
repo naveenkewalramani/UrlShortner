@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Routes for login
   get 'homepage' => 'users#homepage'
   get 'user/new' => 'users#new'
-  get 'user/login' => 'users#login_render'
+  get 'user/login' => 'users#login'
   post 'users/signup' => 'users#signup'
   post 'users/login' => 'users#login_check'
   post 'user/show' => 'users#show'
