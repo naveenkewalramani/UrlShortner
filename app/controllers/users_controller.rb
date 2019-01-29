@@ -7,6 +7,7 @@ class UsersController < ApplicationController
    def login
     @user = User.new
   end
+
   #FUNCTION FOR SIGNUP
   def signup
     flash[:notice] = ""
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
       redirect_to new_url_path
     else
       @user = User.new(user_params)
-      flash[:notice] = "username/password/email invalid"
+      flash[:notice] = "password/email invalid"
       render 'login'
     end
   end

@@ -4,7 +4,6 @@
 		padding:2px;
 		font-size:1.2em;
 		margin:10px
-
 	}
 	#display {
 	  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -25,12 +24,14 @@
 	  color: white;
 	}
 </style>
-<h1>ELastic Url Search</h1>
-<div class="shorturl_form">
+
+<h2>ELastic Url Search</h2>
+
+<div>
 	<%= form_for url_search_path, method: :get do |f| %>
 	 	<p>
 	  		<%= f.label "Search for" %>
-	  		<%= text_field_tag :q, params[:q] %>
+	  		<%= text_field_tag :url, params[:url] %>
 	  		<%= submit_tag "Go" %>
 	 	</p>
 	<% end %>
@@ -49,5 +50,5 @@
 		</table>
 	</div> 
 </div>
-
+<br/>
 <button><%= link_to 'Back', new_url_path %></button>

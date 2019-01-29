@@ -37,7 +37,7 @@ class UrlsController < ApplicationController
 							redirect_to @url
 						else
 							@url = Url.new
-							flash[:notice] = "Invalid long url"
+							flash[:notice] = "Invalid long Url"
 							render 'new'
 						end
 					end
@@ -76,7 +76,7 @@ class UrlsController < ApplicationController
 					@url = Url.FindShort(params[:shorturl])
 				end
 				if @url!=nil
-					render json: { 'status' => 'already_exist', 'longurl' => @url.longurl }
+					render json: { 'status' => 'ok', 'longurl' => @url.longurl }
 				else
 					render json: { 'status' => 'invalid_shorturl' }		
 				end
@@ -90,7 +90,7 @@ class UrlsController < ApplicationController
 				if @url!=nil
 					redirect_to @url
 				else
-					flash[:notice] = "Not a valid url"
+					flash[:notice] = "Invalid Short Url"
 					redirect_to new_url_path
 				end 
 			}
@@ -99,6 +99,6 @@ class UrlsController < ApplicationController
 
 	private
 		def url_params
-			params.require(:url).permit( :utf8, :longurl, :domain, :shorturl )
+			params.require(:url).permit(:longurl, :domain, :shorturl )
 		end
 end

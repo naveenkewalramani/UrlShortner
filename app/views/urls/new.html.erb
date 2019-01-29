@@ -56,19 +56,19 @@
 <span>Hi <%= session[:username] %></span><br/>
 
 <div class=LongToShort>
-  <%= form_for @url , url: urls_long_path do |f| %>
-    <p> Long Url: <%= f.text_field :longurl%> </br></p>
-    <p>Domain : <%= f.text_field :domain%> <br /></p>
-    <p>Find : <%=  f.submit 'Search' %><br/>
+  <%= form_for @url , url: urls_long_path do |form| %>
+    <p> Long Url: <%= form.text_field :longurl%> </br></p>
+    <p>Domain : <%= form.text_field :domain%> <br /></p>
+    <p>Find : <%=  form.submit 'Search' %><br/>
   <% end %>
 </div>
 
 <br/><br/>
 
 <div class=ShortToLong>
-  <%= form_for @url, url: urls_short_path do |f| %>
-    <p> Short Url / Suffix: <%= f.text_field :shorturl%> </br></p>
-    <p>Find : <%=  f.submit  'Search'%><br/></p>
+  <%= form_for @url, url: urls_short_path do |form| %>
+    <p> Short Url / Suffix: <%= form.text_field :shorturl%> </br></p>
+    <p>Find : <%=  form.submit  'Search'%><br/></p>
   <% end %>
 </div>
 

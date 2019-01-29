@@ -1,11 +1,10 @@
 class SearchController < ApplicationController
 
 	def search
- 		if params[:q].nil?
+ 		if params[:url].nil?
   			@url = []
  		else
-			puts params[:q].gsub('/','//')
- 			@url = Url.search(params[:q].gsub('/','//'))
+ 			@url = Url.search(params[:url].gsub('/','//'))
  		end
 	end
 end

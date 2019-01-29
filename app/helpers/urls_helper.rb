@@ -1,32 +1,39 @@
 module UrlsHelper
-	def self.mdvalue(input)
-		ascii = 0;
-		input.each_char {|x| ascii+=x.ord}
-		return ascii
+	
+	#Calculate the ascii value of url
+	def self.AsciiValue(url)
+		ascii_value = 0;
+		url.each_char {|url| ascii_value += url.ord}
+		return ascii_value
 	end
-	def self.suffix(input,flag)
-		ascii = mdvalue(input)
+
+	#Calculate the suffix for  the shorturl
+	def self.suffix(longurl,flag)
+		ascii_value = AsciiValue(longurl)
 		if(flag == 1)
-			ascii = ascii + rand(100..1000)
+			ascii_value = ascii_value + rand(100..1000)
 		end
-		output = ""
-		map = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz" #base(66)
-		while ascii!=0
-			output += map[ascii%66]
-			ascii=ascii/10
+		suffix = ""
+		map_hash = "ABCDEFGHIJKLMNO%PQRSTUVWXYZ0123&456789abcdefghi$jklmnopqrstuvwx*yz" #base(66)
+		while ascii_value!=0
+			suffix += map_hash[ascii_value % 66]
+			ascii_value = ascii_value/10
 		end
-		return output
+		return suffix
 	end
-	def self.domain(input)
-		ascii=mdvalue(input)
+
+	#Calculate the domain for shorturl
+	def self.domain(domain)
+		ascii_value = AsciiValue(domain)
 		shorturl="http://"
-		map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
-		while ascii!=0
-			shorturl += map[ascii%52]
-			ascii=ascii/10
+		map_hash = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
+		while ascii_value!=0
+			shorturl += map_hash[ascii_value % 52]
+			ascii_value = ascii_value /10
 		end
-		shorturl+='/'
+		shorturl += '/'
 		
 		return shorturl
 	end
+
 end

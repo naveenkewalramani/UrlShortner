@@ -1,42 +1,43 @@
 <style>
-  .display{
-    border:2px dotted black;
-    margin:10px;
-    font-size:1.2em;
-    padding:2px;
-    font-family:Georgia;
-    text-decoration: none;
-    text-align:center;
-  }
   button{
     color:black;
     font-size:1.1em;
-    position:relative;
-    left:48%;
     text-align:center;
     font-family:sans-serif;
-
+  }
+  #display {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #display td, #display th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  ##display tr:nth-child(even){background-color: #f2f2f2;}
+  #display tr:hover {background-color: #ddd;}
+  #display th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: midnightblue;
+    color: white;
   }
 </style>
-<div class = "display">
-  <p>
-    <strong>LongUrl : </strong>
-    <%= @url.longurl %>
-  </p>
-   
-  <p>
-    <strong>Domain : </strong>
-    <%= @url.domain %>
-  </p>
-   
-  <p>
-    <strong>Shorturl : </strong>
-    <%= @url.shorturl %>
-  </p>
-  <p>
-    <strong>SUFFIX : </strong>
-    <%= @url.suffix %>
-  </p>
-  
-</div>
+<div id = "display">
+  <table>
+    <tr>
+      <th>LONGURL</th>
+      <th>DOMAIN</th>
+      <th>SHORTURL</th>
+      <th>SUFFIX</th>
+    </tr>
+    <tr>
+      <td><%= @url.longurl %></td>
+      <td><%= @url.domain %></td>
+      <td><%= @url.shorturl %></td>
+      <td><%= @url.suffix %></td>
+    </tr>
+  </table>
+</div><br/>
 <button><%= link_to 'Back', new_url_path %></button>
