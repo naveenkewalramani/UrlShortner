@@ -33,6 +33,7 @@ gem 'elasticsearch'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
+#gem 'elastic_record', '~> 5.4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry'

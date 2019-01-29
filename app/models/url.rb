@@ -1,6 +1,6 @@
 require 'elasticsearch/model'
 class Url < ApplicationRecord
-	
+	searchkick
 	#Include Library
 	include Elasticsearch::Model
  	include Elasticsearch::Model::Callbacks
