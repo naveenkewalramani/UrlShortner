@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, :confirmation => true 
   validates_length_of :password, :in => 6..200, :on => :create
 
-  def self.CreateUser(user_params)
+  def self.create_user(user_params)
   	@user = User.new(user_params)
     @user.password = UsersHelper.password_convert(user_params[:password])
     if @user.save

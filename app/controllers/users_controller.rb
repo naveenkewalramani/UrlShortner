@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Username Already Exist"
       render 'new'
     else
-      @user = User.CreateUser(user_params)
+      @user = User.create_user(user_params)
       if @user !=nil
         session[:id]=@user[:id]
         session[:username]=@user[:username]

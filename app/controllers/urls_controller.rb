@@ -14,11 +14,11 @@ class UrlsController < ApplicationController
   def CreateShort
     respond_to do |format|
       format.json{
-        @url = Url.FindLong(params[:longurl])
+        @url = Url.find_long(params[:longurl])
         if @url!=nil
           render json: { 'status' => 'already_exist', 'shorturl' => @url.shorturl }
         else
-          @url = Url.CreateLongUrl(url_params)
+          @url = Url.create_longurl(url_params)
           if @url!=nil
             render json: { 'status' => 'new_created', 'shorturl' => @url.shorturl }
           else 
@@ -28,11 +28,11 @@ class UrlsController < ApplicationController
       }   
       format.html{
         if(session[:authenticate] == true)
-          @url = Url.FindLong(params[:url][:longurl])
+          @url = Url.find_long(params[:url][:longurl])
           if @url!=nil
             redirect_to @url
           else
-            @url = Url.CreateLongUrl(url_params)
+            @url = Url.create_longurl(url_params)
             if @url!=nil
               redirect_to @url
             else
@@ -62,9 +62,9 @@ class UrlsController < ApplicationController
       respond_to do |format|
         format.json{
           if(params[:shorturl][0..6]!="http://")
-            @url = Url.FindSuffix(params[:shorturl])
+            @url = Url.find_suffix(params[:shorturl])
           else
-            @url = Url.FindShort(params[:shorturl])
+            @url = Url.find_short(params[:shorturl])
           end
           if @url!=nil
             render json: { 'status' => 'ok', 'longurl' => @url.longurl }
@@ -74,9 +74,9 @@ class UrlsController < ApplicationController
         }
         format.html{
           if(params[:url][:shorturl][0..6]!="http://")
-            @url = Url.FindSuffix(params[:url][:shorturl])
+            @url = Url.find_suffix(params[:url][:shorturl])
           else
-            @url = Url.FindShort(params[:url][:shorturl])
+            @url = Url.find_short(params[:url][:shorturl])
           end
           if @url!=nil
             redirect_to @url

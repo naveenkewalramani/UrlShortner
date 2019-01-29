@@ -34,5 +34,4 @@ module UrlsHelper
 		shorturl += '/'
 		return shorturl
 	end
-
 end
