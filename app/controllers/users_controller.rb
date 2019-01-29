@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-   def login
+   def login_login
     @user = User.new
   end
 
@@ -38,13 +38,14 @@ class UsersController < ApplicationController
     session[:id]=nil
     session[:username]=nil
     session[:authenticate]=false
-    flash[:success] = "Logged out"
+    session[:expire_at]=nil
+    flash[:notice] = "Logged out"
     @user = User.new
     render 'login'
   end
 
   #FUNCTION FOR NEW LOGIN 
-  def login_new
+  def login_check
     flash[:notice] = ""
      @user = User.where(email: params[:user][:email], password: UsersHelper.password_convert(params[:user][:password])).first
     if (@user!=nil)
@@ -54,8 +55,8 @@ class UsersController < ApplicationController
       session[:expires_at] = Time.current + 20.minutes
       redirect_to new_url_path
     else
-      @user = User.new(user_params)
-      flash[:notice] = "password/email invalid"
+      @user=User.new
+      flash[:notice] = "Invalid Email or Password"
       render 'login'
     end
   end

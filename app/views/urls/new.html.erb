@@ -50,12 +50,12 @@
   }
 </style>
 
-<h2>WELCOME TO URL SHORTNER</h2>
+<h2>URL SHORTNER</h2>
 <span>Hi <%= session[:username] %></span><br/>
 
 <div class=LongToShort>
   <%= form_for @url , url: urls_long_path do |form| %>
-    <p> Long Url: <%= form.text_field :longurl%> </br></p>
+    <p>Long Url: <%= form.text_field :longurl%> </br></p>
     <p>Domain : <%= form.text_field :domain%> <br /></p>
     <p>Find : <%=  form.submit 'Search' %><br/>
   <% end %>
