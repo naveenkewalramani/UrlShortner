@@ -14,7 +14,7 @@
 	  border: 1px solid #ddd;
 	  padding: 8px;
 	}
-	##display tr:nth-child(even){background-color: #f2f2f2;}
+	#display tr:nth-child(even){background-color: #f2f2f2;}
 	#display tr:hover {background-color: #ddd;}
 	#display th {
 	  padding-top: 12px;
@@ -30,9 +30,9 @@
 <div>
 	<%= form_for url_search_path, method: :get do |f| %>
 	 	<p>
-	  		<%= f.label "Search for" %>
-	  		<%= text_field_tag :url, params[:url] %>
-	  		<%= submit_tag "Go" %>
+	  	<%= f.label "Search for" %>
+      <%= text_field_tag :url, params[:url] %>
+      <%= submit_tag "Go" %>
 	 	</p>
 	<% end %>
  	<div>

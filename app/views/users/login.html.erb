@@ -20,17 +20,17 @@
   }
 </style>
 <h2><i>WELCOME TO LOGIN PAGE</i></h2>
-  <div class="Login_Form">
-    <h1>Login</h1>
-    <%= form_for @user, :url => users_login_path do |form| %>
-      <p> Email:</br> <%= form.text_field :email%> </p>
-      <p> Password:</br> <%= form.password_field :password%></p>
-      <%= form.submit :login_new %>
+<div class="Login_Form">
+  <h1>Login</h1>
+  <%= form_for @user, :url => users_login_path do |form| %>
+    <p> Email:</br> <%= form.text_field :email%> </p>
+    <p> Password:</br> <%= form.password_field :password%></p>
+    <%= form.submit :login_new %>
+  <% end %>
+  <div class="errors">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
-    <div class="errors">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-    </div>
-    <button>SignUp : <%= link_to "signup" , user_new_path %></button>
   </div>
+  <button>SignUp : <%= link_to "signup" , user_new_path %></button>
+</div>

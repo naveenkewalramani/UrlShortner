@@ -1,7 +1,5 @@
 <style>
-  *{
-    text-align:center;
-  }
+ 
   span{
     color:midnightblue;
     font-size:1.2em;
@@ -66,7 +64,7 @@
 <br/><br/>
 
 <div class=ShortToLong>
-  <%= form_for @url, url: urls_short_path do |form| %>
+  <%= form_for @url, url: url_long_path, method: :get do |form| %>
     <p> Short Url / Suffix: <%= form.text_field :shorturl%> </br></p>
     <p>Find : <%=  form.submit  'Search'%><br/></p>
   <% end %>
