@@ -1,0 +1,117 @@
+<style>
+  div{
+    padding:5px;
+    margin:5px;
+    border:1px solid black;
+  }
+  span{
+    line-height: 0.4em;
+    font-family:Georgia,sans-serif;
+    font-weight:bold;
+    color:midnightblue;
+  }
+</style>
+<h1>DOCUMENTATION</h1>
+<div>
+  <p><span>Action Name : </span>new</p>
+  <p><span>Controller Name : </span>Urls</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>new_url</p>
+  <p><span>URI Pattern : </span>/urls/new</p>
+  <p><span>Description : </span>Check the authentication of the user and create a new instance.If not authenticated redirect it to the user login/signup page</p>
+</div>
+<div>
+  <p><span>Action Name : </span>create_shorturl</p>
+  <p><span>Controller Name : </span>Urls</p>
+  <p><span>Request Type : </span>POST</p>
+  <p><span>Route Path : </span>urls_long</p>
+  <p><span>URI Pattern : </span>/urls/long</p>
+  <p><span>Description : </span>Take longurl and domain from params and serach on database for any existing entity.If foubd return the search object instance.If not call a method defined in the model call "create_short_url".Passing the parameters like longurl and domain.If the shorturl is successfully created and saved in database ,instance variable is return otherwise Null value is returned.Based on the returned input either the show action is called if successfully saved or error message is flashed on screen/json format regarding error</p>
+</div>
+
+<div>
+  <p><span>Action Name : </span>show</p>
+  <p><span>Controller Name : </span>Urls</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>url</p>
+  <p><span>URI Pattern : </span>/urls/:id</p>
+  <p><span>Description : </span>Search for the url with id in the database .If found display it in html view</p>
+</div>
+<div>
+  <p><span>Action Name : </span>search_longurl</p>
+  <p><span>Controller Name : </span>Urls</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>url_long</p>
+  <p><span>URI Pattern : </span>/url/long</p>
+  <p><span>Description : </span>Take either shorturl or suffix as the input.Matches whether the input is shorturl or suffix.If shorturl is given as input, "find_short" method of url model is invoked ,this method search in the redis cache and DB and if found return instance of the url else nil. If the input is suffix , "find_suffix" method of url model is invoked ,his method search in the redis cache and DB and if found return instance of the url else nil.If the return value is nil it will return "Invalid url" error message either in json format or html view.If not nill it will show the longurl corresponding to the shorturl in json format.</p>
+</div>
+<div>
+  <p><span>Action Name : </span>serach</p>
+  <p><span>Controller Name : </span>Search</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>url_search</p>
+  <p><span>URI Pattern : </span>/url/search</p>
+  <p><span>Description : </span>This action is called in order to perfrom elatic search.The input parameters are serach corressponding to inverted index created by default.The search results are shown on search.html.erb file</p>
+</div>
+<div>
+  <p><span>Action Name : </span>index</p>
+  <p><span>Controller Name : </span>Urlreports</p>
+  <p><span>Request Type : </span> GET</p>
+  <p><span>Route Path : </span>urlreport</p>
+  <p><span>URI Pattern : </span>/urlreport</p>
+  <p><span>Description : </span> Indexes all the records in the urlreports table and show their field on index.html.erb view page.</p>
+</div>
+<div>
+  <p><span>Action Name : </span>new</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>user_new</p>
+  <p><span>URI Pattern : </span>/users/new</p>
+  <p><span>Description : </span>Create a new instance of user object  in order for singup page rendering </p>
+</div>
+<div>
+  <p><span>Action Name : </span>login</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>user_login</p>
+  <p><span>URI Pattern : </span>/users/login</p>
+  <p><span>Description : </span>Create a new instance of user object in order for login page rendering </p>
+</div>
+
+<div>
+  <p><span>Action Name : </span>signup</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Request Type : </span>POST</p>
+  <p><span>Route Path : </span>users_signup</p>
+  <p><span>URI Pattern : </span>/users/signup</p>
+  <p><span>Description : </span></p>
+</div>
+<div>
+  <p><span>Action Name : </span>login_check</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Request Type : </span>POST</p>
+  <p><span>Route Path : </span>users_login</p>
+  <p><span>URI Pattern : </span>/users/login</p>
+  <p><span>Description : </span></p>
+</div>
+<div>
+  <p><span>Action Name : </span>logout</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Request Type : </span>GET</p>
+  <p><span>Route Path : </span>user_logout</p>
+  <p><span>URI Pattern : </span>/user/logout</p>
+  <p><span>Description : </span></p>
+</div>
+<div>
+  <p><span>Action Name : </span>set_session</p>
+  <p><span>Controller Name : </span>Users</p>
+  <p><span>Description : </span></p>
+</div>
+
+<div>
+  <p><span>Method Name : </span></p>
+  <p><span>Model Name : </span>Users</p>
+  <p><span>Input Type : </span></p>
+  <p><span>Output Type : </span></p>
+  <p><span>Description : </span></p>
+</div>

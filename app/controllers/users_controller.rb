@@ -27,17 +27,6 @@ class UsersController < ApplicationController
     end
   end
 
-  #FUNCTION FOR LOGOUT
-  def logout
-    session[:id]=nil
-    session[:username]=nil
-    session[:authenticate]=false
-    session[:expire_at]=nil
-    flash[:notice] = "Logged out"
-    @user = User.new
-    render 'login'
-  end
-
   #FUNCTION FOR NEW LOGIN 
   def login_check
     flash[:notice] = ""
@@ -58,6 +47,19 @@ class UsersController < ApplicationController
     session[:expires_at] = Time.current + 20.minutes
     redirect_to new_url_path #redirect to the url page
   end
+  
+  #FUNCTION FOR LOGOUT
+  def logout
+    session[:id]=nil
+    session[:username]=nil
+    session[:authenticate]=false
+    session[:expire_at]=nil
+    flash[:notice] = "Logged out"
+    @user = User.new
+    render 'login'
+  end
+
+  
 
   private
     def user_params

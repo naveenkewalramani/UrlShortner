@@ -44,8 +44,8 @@ class Url < ApplicationRecord
     ConvertWorker.perform_async
   end
 
-  #Create longurl from short url
-  def self.create_longurl(url_params)  
+  #Create shorturl from longurl
+  def self.create_short_url(url_params)  
     url  = Url.new(url_params)
     url.suffix= UrlsHelper.suffix(url_params[:longurl],0)
     while unique(url.suffix) == false

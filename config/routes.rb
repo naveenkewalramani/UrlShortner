@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   post 'urls/long' => 'urls#create_shorturl'
 
   # Routes for urlreport
-  get 'urlreport' => 'urlreports#index'
-
+  get 'urlreport' => 'urlreports#index' 
   #Routed for elastic search
   get 'url/search' =>'search#search'
   

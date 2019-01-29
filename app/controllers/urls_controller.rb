@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
         if url!=nil
           render json: { 'status' => 'already_exist', 'shorturl' => url.shorturl }
         else
-          url = Url.create_longurl(url_params)
+          url = Url.create_short_url(url_params)
           if url!=nil
             render json: { 'status' => 'new_created', 'shorturl' => url.shorturl }
           else 
@@ -31,7 +31,7 @@ class UrlsController < ApplicationController
         if @url!=nil
           redirect_to @url
         else
-          @url = Url.create_longurl(url_params)
+          @url = Url.create_short_url(url_params)
           if @url!=nil
             redirect_to @url
           else
