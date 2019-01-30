@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   # Routes for urlreport
   get 'urlreport' => 'urlreports#index' 
+  
   #Routed for elastic search
   get 'url/search' =>'search#search'
 

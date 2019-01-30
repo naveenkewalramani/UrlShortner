@@ -28,7 +28,7 @@
   }
   .btn-group button {
   position:relative;
-  left:5%;
+  left:2%;
   background-color: lightblue; 
   border: 1px solid gray; 
   color: white; 
@@ -80,7 +80,7 @@
 
 <div class="btn-group">
   <button>Add ShortDomain : <%= link_to 'create',new_short_domain_path %></button>
-  <button>BACK : <%= link_to 'showall', short_domain_index_path  %> </button>
+  <button>Short Domain List: <%= link_to 'showall', short_domain_index_path  %> </button>
   <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
   <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
   <button>Elastic Search : <%= link_to 'search',url_search_path  %> </button>
