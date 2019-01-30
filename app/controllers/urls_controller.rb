@@ -175,11 +175,22 @@ class UrlsController < ApplicationController
         if @url!=nil
           redirect_to @url
         else
+          @url=Url.new
           flash[:notice] = "Invalid Short Url"
           redirect_to new_url_path
         end 
       }
     end
+  end
+
+=begin
+  **Request Type:** GET
+  **Routes:** urls_path
+  **URI pattern:**/urls
+  **Description:** Indexes all the records in the url table and show their field on index.html.erb view page.
+=end 
+  def index
+    @url = Url.all.order("id ASC")
   end
 
   private

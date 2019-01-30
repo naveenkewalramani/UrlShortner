@@ -24,13 +24,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'redis-rails'
-gem 'redis'
-gem 'rdoc'
+gem 'redis' 
 gem 'sidekiq'
 gem 'elasticsearch'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'popper_js'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

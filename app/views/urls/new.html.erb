@@ -6,19 +6,11 @@
     font-family:Georgia,sans-serif;
     text-transform: capitalize;
   }
-	.LongToShort{
-		border:2px solid black;
-		padding:5px;
-		margin:1px;
+	.form{
+		border:1px solid black;
+		padding:10px;
+		margin:15px;
 		position:relative;
-		display:block;
-	}
-	.ShortToLong{
-    margin:2px;
-		border:2px solid black;
-		position:relative;
-		display:block;
-		padding:5px;  
 	}
   button{
     text-align:center;
@@ -28,7 +20,7 @@
   }
   .btn-group button {
   position:relative;
-  left:2%;
+  left:1%;
   background-color: lightblue; 
   border: 1px solid gray; 
   color: white; 
@@ -48,40 +40,35 @@
     border-right: none; 
   }
 </style>
+<div>
+  <h2>URL SHORTNER</h2>
+  <span>Hi <%= session[:username] %></span>
+  <div class="form">
+    <%= form_for @url , url: urls_long_path do |form| %>
+      <p>Long Url: <%= form.text_field :longurl%> </br></p>
+      <p>Domain : <%= form.text_field :domain%> <br /></p>
+      <p>Find : <%=  form.submit 'Search' %></p><br/>
+    <% end %>
+  </div>
 
-<h2>URL SHORTNER</h2>
-<span>Hi <%= session[:username] %></span><br/>
+  <div class="form">
+    <%= form_for @url, url: url_long_path, method: :get do |form| %>
+      <p> Short Url / Suffix: <%= form.text_field :shorturl%> </br></p>
+      <p>Find : <%=  form.submit  'Search'%><br/></p>
+    <% end %>
+  </div>
 
-<div class=LongToShort>
-  <%= form_for @url , url: urls_long_path do |form| %>
-    <p>Long Url: <%= form.text_field :longurl%> </br></p>
-    <p>Domain : <%= form.text_field :domain%> <br /></p>
-    <p>Find : <%=  form.submit 'Search' %><br/>
-  <% end %>
-</div>
+  <div class="errors">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 
-<br/><br/>
-
-<div class=ShortToLong>
-  <%= form_for @url, url: url_long_path, method: :get do |form| %>
-    <p> Short Url / Suffix: <%= form.text_field :shorturl%> </br></p>
-    <p>Find : <%=  form.submit  'Search'%><br/></p>
-  <% end %>
-</div>
-
-<br/><br/>
-<div class="errors">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
-</div>
-
-<br/><br/>
-
-<div class="btn-group">
-  <button>Add ShortDomain : <%= link_to 'create',new_short_domain_path %></button>
-  <button>Short Domain List: <%= link_to 'showall', short_domain_index_path  %> </button>
-  <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
-  <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
-  <button>Elastic Search : <%= link_to 'search',url_search_path  %> </button>
+  <div class="btn-group">
+    <button>Add ShortDomain : <%= link_to 'create',new_short_domain_path %></button>
+    <button>Short Domain List: <%= link_to 'showall', short_domain_index_path  %> </button>
+    <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
+    <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
+    <button>Elastic Search : <%= link_to 'search',url_search_path  %> </button>
+  </div>
 </div>

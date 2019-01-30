@@ -29,6 +29,7 @@ class ShortDomainController < ApplicationController
         render 'new'
       else
         flash[:notice] =  "Error in creating new domain"
+      end 
     end
   end
 

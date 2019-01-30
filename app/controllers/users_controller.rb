@@ -88,6 +88,15 @@ class UsersController < ApplicationController
   
 =begin
   **Request Type:** GET
+  **Routes:** urls_path
+  **URI pattern:**/urls
+  **Description:** Indexes all the records in the url table and show their field on index.html.erb view page.
+=end 
+def index
+    @user = User.all.order("id ASC")
+  end
+=begin
+  **Request Type:** GET
   **Route Path:** user_logout
   **URI Pattern:** /user/logout
   **Description:** This action will reset the session and render the login page again
