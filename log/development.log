@@ -59659,3 +59659,680 @@ Processing by UsersController#logout as HTML
 Completed 200 OK in 39ms (Views: 24.8ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-30 10:02:04 +0530
+Processing by UsersController#homepage as HTML
+  Rendering users/homepage.html.erb within layouts/application
+  Rendered users/homepage.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2019-01-30 10:02:06 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 74ms (Views: 40.1ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:09:15 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"https://www.quora.com/What-are-some-examples-of-bad-design", "domain"=>"quora.com", "url"=>{"longurl"=>"https://www.quora.com/What-are-some-examples-of-bad-design", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.quora.com/What-are-some-examples-of-bad-design"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/url/long?shorturl=http://hnJ/&VqF" for 127.0.0.1 at 2019-01-30 10:09:25 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://hnJ/", "VqF"=>nil}
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://hnJ/"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:70
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:17:01 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"https://www.quora.com/What", "domain"=>"quora.com", "url"=>{"longurl"=>"https://www.quora.com/What", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.quora.com/What"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "glXC"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[36mUrl Create (47.1ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "https://www.quora.com/What"], ["shorturl", "http://hnJ/glXC"], ["domain", "quora.com"], ["suffix", "glXC"]]
+  ↳ app/models/url.rb:55
+  [1m[36mUrlreport Load (2.3ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-30"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:10
+  [1m[36mUrlreport Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urlreports" WHERE "urlreports"."date" = $1 LIMIT $2[0m  [["date", "2019-01-30"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:10
+  [1m[36mUrlreport Create (52.4ms)[0m  [1m[32mINSERT INTO "urlreports" ("count", "date") VALUES ($1, $2) RETURNING "id"[0m  [["count", 1], ["date", "2019-01-30"]]
+  ↳ app/workers/convert_worker.rb:10
+  [1m[35m (466.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (162.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:55
+  ↳ app/workers/convert_worker.rb:10
+  [1m[33mUrl Store (588.1ms)[0m  {"id":126}
+Completed 200 OK in 1217ms (Views: 0.3ms | Searchkick: 588.1ms | ActiveRecord: 522.3ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:19:45 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"www.quora.com/What", "domain"=>"quora.com", "url"=>{"longurl"=>"www.quora.com/What", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (3.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.quora.com/What"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (1.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "qhQB"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[36mUrl Create (9.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "www.quora.com/What"], ["shorturl", "http://hnJ/qhQB"], ["domain", "quora.com"], ["suffix", "qhQB"]]
+  ↳ app/models/url.rb:55
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:55
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-30"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "urlreports" WHERE "urlreports"."date" = $1 AND "urlreports"."id" != $2 LIMIT $3[0m  [["date", "2019-01-30"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (47.2ms)[0m  {"id":127}
+  [1m[36mUrlreport Update (0.6ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 2], ["id", 8]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+Completed 200 OK in 222ms (Views: 0.4ms | Searchkick: 47.2ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:19:56 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"quora.com/What", "domain"=>"quora.com", "url"=>{"longurl"=>"quora.com/What", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (4.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "quora.com/What"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (2.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "jENB"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("longurl", "shorturl", "domain", "suffix") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["longurl", "quora.com/What"], ["shorturl", "http://hnJ/jENB"], ["domain", "quora.com"], ["suffix", "jENB"]]
+  ↳ app/models/url.rb:55
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/url.rb:55
+  [1m[36mUrlreport Load (0.5ms)[0m  [1m[34mSELECT  "urlreports".* FROM "urlreports" WHERE "urlreports"."date" = $1 ORDER BY "urlreports"."id" ASC LIMIT $2[0m  [["date", "2019-01-30"], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urlreports" WHERE "urlreports"."date" = $1 AND "urlreports"."id" != $2 LIMIT $3[0m  [["date", "2019-01-30"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[36mUrlreport Update (1.5ms)[0m  [1m[33mUPDATE "urlreports" SET "count" = $1 WHERE "urlreports"."id" = $2[0m  [["count", 3], ["id", 8]]
+  ↳ app/workers/convert_worker.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/convert_worker.rb:12
+  [1m[33mUrl Store (36.0ms)[0m  {"id":128}
+Completed 200 OK in 130ms (Views: 0.3ms | Searchkick: 36.0ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:20:10 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"quora", "domain"=>"quora.com", "url"=>{"longurl"=>"quora", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "quora"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (1.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "XqF"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 96ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-30 10:23:27 +0530
+Processing by UsersController#login_check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+xCeTdo+U4rvGISgP4wSwqQdYbO+lkLahuirZd2moDW+ASgwYqdnueMNULBm8D7SOG2AdHB+1F0XLSE/AgD4Q==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 27ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:23:27 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:23:33 +0530
+Processing by UrlsController#create_shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KdsfiayPmgKOZ/CaCrHxjBUknHjOLqBAmYi+tQJnaKD74UdPlIU/ZcsMeAbEhToY4XO2Ral6IhGtywV2EvZHTA==", "url"=>{"longurl"=>"quora", "domain"=>"quora.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "quora"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "XqF"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 32.1ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:24:54 +0530
+Processing by UrlsController#create_shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9ye+UMO4S4Rrk7J0CB1WvE6zXNgX6ygdfQduJwGAP1d5sY/ewRESVTFxlUeFL7OBW3nTgcLLvFBt6Z7jJcvEQ==", "url"=>{"longurl"=>"www.facebook.com", "domain"=>"facebook.com"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "www.facebook.com"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+Redirected to http://localhost:3000/urls/2
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/urls/2" for 127.0.0.1 at 2019-01-30 10:24:54 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:50
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:25:14 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"", "domain"=>"quora.com", "url"=>{"longurl"=>"", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (2.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:26:48 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 52ms (Views: 35.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:27:02 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 26.1ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:27:05 +0530
+Processing by UrlsController#create_shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fS8htl++/N7XQPJ8akgUl9Tb6PN3M3o+4Zuna8Szz7+vFXlwZ7RZuZIreuCkfN8DIIzCzhBn+G/V2Byo1CLgUw==", "url"=>{"longurl"=>"fmfmfm", "domain"=>""}, "commit"=>"Search"}
+  [1m[36mUrl Load (2.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "fmfmfm"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "b*G"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 45ms (Views: 29.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/urls/long" for 127.0.0.1 at 2019-01-30 10:27:07 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"long"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:51
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Url with 'id'=long):
+  
+app/controllers/urls_controller.rb:51:in `show'
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:27:12 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:28:50 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"", "domain"=>"quora.com", "url"=>{"longurl"=>"", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:28:57 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>" ", "domain"=>"quora.com", "url"=>{"longurl"=>" ", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", " "], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "4D"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:29:43 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>" ", "domain"=>"quora.com", "url"=>{"longurl"=>" ", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", " "], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "4D"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/url/long" for 127.0.0.1 at 2019-01-30 10:30:16 +0530
+Processing by UrlsController#search_longurl as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:61:in `block (2 levels) in search_longurl'
+app/controllers/urls_controller.rb:59:in `search_longurl'
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:30:33 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"domain"=>"quora.com", "url"=>{"domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" IS NULL ORDER BY "urls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `each_char' for nil:NilClass):
+  
+app/helpers/urls_helper.rb:6:in `ascii_value'
+app/helpers/urls_helper.rb:12:in `suffix'
+app/models/url.rb:50:in `create_short_url'
+app/controllers/urls_controller.rb:22:in `block (2 levels) in create_shorturl'
+app/controllers/urls_controller.rb:16:in `create_shorturl'
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:33:41 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"", "domain"=>"quora.com", "url"=>{"longurl"=>"", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:36:45 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"", "domain"=>"quora.com", "url"=>{"longurl"=>"", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:37:19 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"", "domain"=>"quora.com", "url"=>{"longurl"=>"", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.8ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", ""], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:38:10 +0530
+Processing by UrlsController#create_shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jSNiNLxl1mpqlOg+XezxDjgUPWd3sxN0T1Y5Xk86u8dfGTryhG9zDS//YKKT2DqazEMXWhDnkSV7FYKdX6uUKw==", "url"=>{"longurl"=>"f", "domain"=>"ffff"}, "commit"=>"Search"}
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "f"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."suffix" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["suffix", "8KB"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/url.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/url.rb:55
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 30.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-30 10:38:17 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 58ms (Views: 33.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-30 10:38:20 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 61ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2019-01-30 10:38:43 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EVXN82uu6Zpf/moonmPYCUSvZxjf0iYQ8Cz4u9Y4cLM1uffLtpzJqrqiqnT0XznHJ0zizA1Njb/q+nBpwJ6P5A==", "user"=>{"username"=>"test1", "email"=>"test1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"signup"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    24: 
+    25: <div class="Sign_Form">
+    26:   <h1>Sign Up</h1>
+    27:   <%= form_for @user, :url => users_signup_path do |form| %>
+    28:     <p> Username:<br/><%= form.text_field :username%> </p>
+    29:     <p> Email:<br/><%= form.text_field :email%> </p>
+    30:     <p> Password:<br/> <%= form.password_field :password%></p>
+  
+app/views/users/new.html.erb:27:in `_app_views_users_new_html_erb__1414321501588251192_70286255527340'
+app/controllers/users_controller.rb:18:in `signup'
+Started POST "/users/signup" for 127.0.0.1 at 2019-01-30 10:39:15 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i7KWYM5h3YxPC6Y2fql2sdCuUnpGWD8Gymn1oCstkQZZiM6m9mt46wpgLqqwnb0lJPl4RyEMvVf+Kk5jO7y+6g==", "user"=>{"username"=>"test1", "email"=>"test1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"signup"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    24: 
+    25: <div class="Sign_Form">
+    26:   <h1>Sign Up</h1>
+    27:   <%= form_for @user, :url => users_signup_path do |form| %>
+    28:     <p> Username:<br/><%= form.text_field :username%> </p>
+    29:     <p> Email:<br/><%= form.text_field :email%> </p>
+    30:     <p> Password:<br/> <%= form.password_field :password%></p>
+  
+app/views/users/new.html.erb:27:in `_app_views_users_new_html_erb__1414321501588251192_70286240670100'
+app/controllers/users_controller.rb:18:in `signup'
+Started GET "/user/login" for 127.0.0.1 at 2019-01-30 10:40:40 +0530
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 25.5ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2019-01-30 10:40:41 +0530
+Processing by UsersController#login_check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zR4JOm3FM5RkR1ZnYfvxoj9lYX7BoUNxhZkIXFMB6TZcCk/jmydXRKh3ATcgngESfRSi+d6a4Sub3h51OH9wVw==", "user"=>{"email"=>"naveen.kewalramani@proptiger.com", "password"=>"[FILTERED]"}, "commit"=>"login_new"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["email", "naveen.kewalramani@proptiger.com"], ["password", "q112tp337ru565kh773gs988"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:40:41 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 74ms (Views: 50.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/user/logout" for 127.0.0.1 at 2019-01-30 10:40:43 +0530
+Processing by UsersController#logout as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2019-01-30 10:40:45 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2019-01-30 10:41:10 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LvZoUJwZ30biT7kDgFO/SSzpjRE9kERWK8kzaXNa0T0KGlJoQSv/dgcTeV/qb16HTwoIxe8P7/kxH7u7Zfwuag==", "user"=>{"username"=>"rakesh", "email"=>"rakheshiiita@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"signup"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "rakheshiiita@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "rakesh"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rakesh"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rakheshiiita@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Create (29.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "rakesh"], ["email", "rakheshiiita@gmail.com"], ["password", "s114cl318jf523ui742kj952ku1173c"], ["created_at", "2019-01-30 05:11:10.616258"], ["updated_at", "2019-01-30 05:11:10.616258"]]
+  ↳ app/models/user.rb:11
+  [1m[35m (389.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11
+Redirected to http://localhost:3000/urls/new
+Completed 302 Found in 438ms (ActiveRecord: 421.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:41:11 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urlreport" for 127.0.0.1 at 2019-01-30 10:41:22 +0530
+Processing by UrlreportsController#index as HTML
+  Rendering urlreports/index.html.erb within layouts/application
+  [1m[36mUrlreport Load (0.6ms)[0m  [1m[34mSELECT "urlreports".* FROM "urlreports" ORDER BY id ASC[0m
+  ↳ app/views/urlreports/index.html.erb:33
+  Rendered urlreports/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 38ms (Views: 31.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:43:50 +0530
+Processing by UrlsController#create_shorturl as */*
+  Parameters: {"longurl"=>"https://www.quora.com/What-are-some-examples-of-bad-design", "domain"=>"quora.com", "url"=>{"longurl"=>"https://www.quora.com/What-are-some-examples-of-bad-design", "domain"=>"quora.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (1.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://www.quora.com/What-are-some-examples-of-bad-design"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/url/long?shorturl=http://hnJ/&VqF" for 127.0.0.1 at 2019-01-30 10:44:25 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://hnJ/", "VqF"=>nil}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:44:34 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/urls/long" for 127.0.0.1 at 2019-01-30 10:44:39 +0530
+Processing by UrlsController#create_shorturl as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXeAoofzyWNVZJ3swm8zXxt2jdGEEBqNCl5CcYNgkwGql9TRDfCI2LB7hyUiPmNZmabsnPCBMXmQU9GglJEB5A==", "url"=>{"longurl"=>"https://redis.io/topics/rediscli", "domain"=>"redis.io"}, "commit"=>"Search"}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."longurl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["longurl", "https://redis.io/topics/rediscli"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:64
+Redirected to http://localhost:3000/urls/3
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/3" for 127.0.0.1 at 2019-01-30 10:44:39 +0530
+Processing by UrlsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUrl Load (0.9ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:51
+  Rendering urls/show.html.erb within layouts/application
+  Rendered urls/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/url/long?shorturl=http://RbH/J$&D" for 127.0.0.1 at 2019-01-30 10:44:48 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://RbH/J$", "D"=>nil}
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://RbH/J$"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:70
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 10:45:50 +0530
+Processing by UrlsController#new as HTML
+  Rendering urls/new.html.erb within layouts/application
+  Rendered urls/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search" for 127.0.0.1 at 2019-01-30 10:45:51 +0530
+Processing by SearchController#search as HTML
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 64ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&url=youtubr.com&commit=Go" for 127.0.0.1 at 2019-01-30 10:45:58 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "url"=>"youtubr.com", "commit"=>"Go"}
+  [1m[33mUrl Search (342.5ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"youtubr.com","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  [1m[36mUrl Load (1.0ms)[0m  [1m[34mSELECT "urls".* FROM "urls" WHERE "urls"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34)[0m  [["id", 18], ["id", 28], ["id", 39], ["id", 46], ["id", 49], ["id", 21], ["id", 30], ["id", 32], ["id", 33], ["id", 34], ["id", 42], ["id", 23], ["id", 31], ["id", 37], ["id", 45], ["id", 47], ["id", 50], ["id", 20], ["id", 27], ["id", 35], ["id", 36], ["id", 38], ["id", 43], ["id", 51], ["id", 22], ["id", 24], ["id", 25], ["id", 26], ["id", 29], ["id", 40], ["id", 41], ["id", 44], ["id", 48], ["id", 52]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/searchkick-3.1.2/lib/searchkick/results.rb:30
+  Rendered search/search.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 466ms (Views: 47.2ms | Searchkick: 342.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/url/long?shorturl=http://RbH/J$%26" for 127.0.0.1 at 2019-01-30 10:48:09 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://RbH/J$&"}
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://RbH/J$&"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:70
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/url/long?shorturl=http://CKLB/9%2AbD" for 127.0.0.1 at 2019-01-30 10:48:35 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://CKLB/9*bD"}
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://CKLB/9*bD"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:70
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/url/long?shorturl=http://CKLB/9%2Ab" for 127.0.0.1 at 2019-01-30 10:51:17 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://CKLB/9*b"}
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."shorturl" = $1 ORDER BY "urls"."id" ASC LIMIT $2[0m  [["shorturl", "http://CKLB/9*b"], ["LIMIT", 1]]
+  ↳ app/models/url.rb:70
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/url/long?shorturl=" for 127.0.0.1 at 2019-01-30 10:52:20 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>""}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/long?=http://CKLB/9%2AbD" for 127.0.0.1 at 2019-01-30 10:53:10 +0530
+Processing by UrlsController#search_longurl as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:61:in `block (2 levels) in search_longurl'
+app/controllers/urls_controller.rb:59:in `search_longurl'
+Started GET "/url/long?=http://CKLB/9%2AbD" for 127.0.0.1 at 2019-01-30 10:53:32 +0530
+Processing by UrlsController#search_longurl as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/urls_controller.rb:61:in `block (2 levels) in search_longurl'
+app/controllers/urls_controller.rb:59:in `search_longurl'
+Started GET "/url/long?shorturl=http://CKLB/9%2AbD" for 127.0.0.1 at 2019-01-30 10:53:38 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>"http://CKLB/9*bD"}
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/url/long?shorturl=" for 127.0.0.1 at 2019-01-30 10:53:44 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>""}
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/url/long?shorturl=" for 127.0.0.1 at 2019-01-30 10:54:01 +0530
+Processing by UrlsController#search_longurl as */*
+  Parameters: {"shorturl"=>""}
+Completed 200 OK in 35ms (Views: 0.4ms | ActiveRecord: 22.4ms)
+
+
+Started GET "/url/search?utf8=%E2%9C%93&url=youtubr.com&commit=Go" for 127.0.0.1 at 2019-01-30 11:06:12 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "url"=>"youtubr.com", "commit"=>"Go"}
+  [1m[33mUrl Search (58.9ms)[0m  curl http://localhost:9200/urls_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"multi_match":{"query":"youtubr.com","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"youtubr.com","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  Rendering search/search.html.erb within layouts/application
+  [1m[36mUrl Load (1.4ms)[0m  [1m[34mSELECT "urls".* FROM "urls" WHERE "urls"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34)[0m  [["id", 18], ["id", 28], ["id", 39], ["id", 46], ["id", 49], ["id", 21], ["id", 30], ["id", 32], ["id", 33], ["id", 34], ["id", 42], ["id", 23], ["id", 31], ["id", 37], ["id", 45], ["id", 47], ["id", 50], ["id", 20], ["id", 27], ["id", 35], ["id", 36], ["id", 38], ["id", 43], ["id", 51], ["id", 22], ["id", 24], ["id", 25], ["id", 26], ["id", 29], ["id", 40], ["id", 41], ["id", 44], ["id", 48], ["id", 52]]
+  ↳ /Users/naveen/.rvm/gems/ruby-2.6.0/gems/searchkick-3.1.2/lib/searchkick/results.rb:30
+  Rendered search/search.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 117ms (Views: 35.0ms | Searchkick: 58.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/urls/new" for 127.0.0.1 at 2019-01-30 11:06:14 +0530
+  
+SyntaxError (/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:15: syntax error, unexpected '=', expecting end
+  =begin
+  ^
+/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:19: syntax error, unexpected '=', expecting end
+  =end
+  ^
+/Users/naveen/Documents/Internship/projectIntern/app/controllers/urls_controller.rb:159: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/urls_controller.rb:15: syntax error, unexpected '=', expecting end
+app/controllers/urls_controller.rb:19: syntax error, unexpected '=', expecting end
+app/controllers/urls_controller.rb:159: syntax error, unexpected end-of-input, expecting end

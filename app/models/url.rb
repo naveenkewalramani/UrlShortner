@@ -9,9 +9,11 @@ class Url < ApplicationRecord
   index_name('urls')
 
   #Validations of url
-  validates :longurl, :presence => true
+  validates :longurl, presence: true , :length => { :in => 3..1000 }
   validates_format_of :longurl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
- 
+  validates :shorturl, presence: true , :length => { :in => 3..1000 }
+  validates_format_of :shorturl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
+  
   #mapping for elastic search
   settings index: {
    number_of_shards: 1,
