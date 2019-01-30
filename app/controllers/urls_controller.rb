@@ -54,6 +54,10 @@ class UrlsController < ApplicationController
 
     d)Status : 500 Internal server error
     Description : If the longurl is not defined in the input params
+
+    e)Message : "Short Domain not found,please add short domain" 
+    Status : 200 OK
+    Description : if domain entered by user in not in shortdomain table
   }   
 =end
   
@@ -64,11 +68,16 @@ class UrlsController < ApplicationController
         if url!=nil
           render json: { 'message' => 'longurl already exist', 'shorturl' => url.shorturl }
         else
-          url = Url.create_short_url(url_params)
-          if url!=nil
-            render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
-          else 
-            render json: { 'message' => 'error occured' }
+          domain = ShortDomain.where(domain: params[:url][:domain]).first
+          if domain==nil
+            render json: {'message' => "Short Domain not found,please add short domain"}
+          else
+            url = Url.create_short_url(url_params)
+            if url!=nil
+              render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
+            else 
+              render json: { 'message' => 'error occured' }
+            end
           end
         end
       }   
@@ -77,13 +86,20 @@ class UrlsController < ApplicationController
         if @url!=nil
           redirect_to @url
         else
-          @url = Url.create_short_url(url_params)
-          if @url!=nil
-            redirect_to @url
-          else
-            @url = Url.new
-            flash[:notice] = "Invalid long Url"
+          domain = ShortDomain.where(domain: params[:url][:domain]).first
+          if domain==nil
+            @url=Url.new
+            flash[:notice] = "Short Domain not found,please add short domain"
             render 'new'
+          else
+            @url = Url.create_short_url(url_params)
+            if @url!=nil
+              redirect_to @url
+            else
+              @url = Url.new
+              flash[:notice] = "Invalid long Url"
+              render 'new'
+            end
           end
         end
       }

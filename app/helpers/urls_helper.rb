@@ -21,17 +21,4 @@ module UrlsHelper
     end
     return suffix
   end
-
-  #Calculate the domain for shorturl
-  def self.domain(domain)
-    ascii_value = ascii_value(domain)
-    shorturl="http://"
-    map_hash = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" #base(52)
-    while ascii_value!=0
-      shorturl += map_hash[ascii_value % 52]
-      ascii_value = ascii_value /10
-    end
-    shorturl += '/'
-    return shorturl
-  end
 end

@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   get 'urlreport' => 'urlreports#index' 
   #Routed for elastic search
   get 'url/search' =>'search#search'
+
+  #Routes for short domain
+  resources :short_domain
+  post 'short_domain/create' => 'short_domain#create_short_domain'
   
 end

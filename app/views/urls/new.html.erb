@@ -1,5 +1,4 @@
 <style>
- 
   span{
     color:midnightblue;
     font-size:1.2em;
@@ -29,7 +28,7 @@
   }
   .btn-group button {
   position:relative;
-  left:20%;
+  left:5%;
   background-color: lightblue; 
   border: 1px solid gray; 
   color: white; 
@@ -71,7 +70,6 @@
 </div>
 
 <br/><br/>
-
 <div class="errors">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
@@ -81,6 +79,8 @@
 <br/><br/>
 
 <div class="btn-group">
+  <button>Add ShortDomain : <%= link_to 'create',new_short_domain_path %></button>
+  <button>BACK : <%= link_to 'showall', short_domain_index_path  %> </button>
   <button>Logout : <%= link_to 'logout',user_logout_path  %> </button>
   <button>Daily Report : <%= link_to 'index',urlreport_path  %> </button>
   <button>Elastic Search : <%= link_to 'search',url_search_path  %> </button>

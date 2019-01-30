@@ -53,7 +53,7 @@ class Url < ApplicationRecord
     while unique(url.suffix) == false
       url.suffix = UrlsHelper.suffix(url_params[:longurl],1)
     end
-    url.shorturl = UrlsHelper.domain(url_params[:domain]) + url.suffix
+    url.shorturl = "http://" + ShortDomain.where(domain: url_params[:domain]).first[:prefix]+'/'+ url.suffix
     if url.save
       return url
     else
@@ -80,7 +80,7 @@ class Url < ApplicationRecord
     end
   end
 
-  #Find Unique Suffix
+  #Check whether generated suffix is unique or not
   def self.unique(suffix)         
     check = Url.where(suffix: suffix).first
     if check == nil
