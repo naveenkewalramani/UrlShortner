@@ -46,7 +46,6 @@
   <div class="form">
     <%= form_for @url , url: urls_long_path do |form| %>
       <p>Long Url: <%= form.text_field :longurl%> </br></p>
-      <p>Domain : <%= form.text_field :domain%> <br /></p>
       <p>Find : <%=  form.submit 'Search' %></p><br/>
     <% end %>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_31_051920) do
+ActiveRecord::Schema.define(version: 2019_01_31_173652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_01_31_051920) do
   create_table "urls", force: :cascade do |t|
     t.string "longurl"
     t.string "shorturl"
-    t.string "domain"
     t.string "suffix"
     t.index ["longurl"], name: "index_urls_on_longurl"
     t.index ["shorturl"], name: "index_urls_on_shorturl"

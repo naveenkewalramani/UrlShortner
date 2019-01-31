@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   to signup page again   
 =end
   def signup
+    @user = User.new
     if (User.where(email: params[:user][:email]).first)
       flash[:notice] = "User Already Exist"
       render 'new'

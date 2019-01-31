@@ -66,52 +66,40 @@ class UrlsController < ApplicationController
   def create_shorturl
     respond_to do |format|
       format.json{
-        if params[:domain]!= Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
-          render json: { 'message' => 'Domain Name does not matched' }, status: :not_found
+        response = Url.check_params(params[:longurl])
+        if response!=true
+          render json: { 'message' => 'longurl already exist'}
         else
           url = Url.find_long(params[:longurl])
           if url!=nil
             render json: { 'message' => 'longurl already exist', 'shorturl' => url.shorturl }
-          else
-            domain = ShortDomain.where(domain: params[:url][:domain]).first
-            if domain==nil
-              render json: {'message' => "Short Domain not found,please add short domain"}, status: :not_found
-            else
-              url = Url.create_short_url(url_params)
-              if url!=nil
-                render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
-              else 
-                render json: { 'message' => 'error occured' }, status: :not_found
-              end
+          else       
+            url = Url.create_short_url(url_params)
+            if url!=nil
+              render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
+            else 
+              render json: { 'message' => 'error occured' }, status: :not_found
             end
           end
         end
       }   
       format.html{
-        puts Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
-        if params[:url][:domain]!= Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
-          flash[:notice]="Domain Name does not matched"
-          @url=Url.new
+        @url=Url.new
+        response = Url.check_params(params[:url][:longurl])
+        if response != true
+          flash[:notice]=response
           render 'new'
         else
           @url = Url.find_long(params[:url][:longurl])
           if @url!=nil
             redirect_to @url
           else
-            domain = ShortDomain.where(domain: params[:url][:domain]).first
-            if domain==nil
-              @url=Url.new
-              flash[:notice] = "Short Domain not found,please add short domain"
-              render 'new'
+            @url = Url.create_short_url(url_params)
+            if @url!=nil
+              redirect_to @url
             else
-              @url = Url.create_short_url(url_params)
-              if @url!=nil
-                redirect_to @url
-              else
-                @url = Url.new
-                flash[:notice] = "Invalid long Url"
-                render 'new'
-              end
+              flash[:notice] = "Invalid long Url"
+              render 'new'
             end
           end
         end
