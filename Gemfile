@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'redis-rails'
 gem 'redis' 
+gem 'rdoc'
 gem 'sidekiq'
 gem 'elasticsearch'
 gem 'elasticsearch-model'

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class UrlsController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create_shorturl">#create_shorturl</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-new">#new</a>
+    
+    <li ><a href="#method-i-search_longurl">#search_longurl</a>
+    
+    <li ><a href="#method-i-show">#show</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-UrlsController">
+  <h1 id="class-UrlsController" class="class">
+    class UrlsController
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create_shorturl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_shorturl</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>**Common Name:** Create shorturl from the input longurl and domain **End points:** Other services **Request Type:** POST *<strong>Route:</strong>* urls_long_path *<strong>url:</strong>*  URI(“<a href="http://localhost:3000/urls/long">localhost:3000/urls/long</a>”) *<strong>Paramas:</strong>* { “longurl” : “ ”,</p>
+
+<pre>  &quot;domain&quot;  : &quot; &quot;
+}</pre>
+
+<p>*<strong>Cookies:</strong>* {</p>
+
+<pre>Name : _project_intern_session
+Value : 
+Domain : localhost
+HttpOnly : True
+Secure : false</pre>
+
+<p>} *<strong>Content-Type:</strong>* application/json; charset=utf-8 **Input Type:** JSON **Input Fields:** longurl,domain  **Output Type:** JSON **Output Fields:** status, shorturl *<strong>Host:</strong>* localhost:3000 *<strong>Cache-Control:</strong>* no-cache **Custom Status Messages:** {</p>
+
+<pre>a)Message : &quot;already_exist&quot;
+Status  : 200 OK
+Description : Since the input longurl is already existed in the database,it will just find the shorturl correponding to that longurl in the database and return that shorturl along with above mentioned message.
+
+b)Message  : &quot;new created shorturl&quot;
+Status   :  200 OK
+Description : If the input longurl is not already present in the database,and new shorturl is created correponding to that longurl and domain.It is than saved in the database and return the newly generated shorturl alongwith the above message.
+
+c)Message : &quot;error occured&quot;
+Status : 200 OK
+Description : If the input url is not according to the validations mentioned in the url model ,than an error message will be displayed to the user as mentioned above
+
+d)Status : 500 Internal server error
+Description : If the longurl is not defined in the input params
+
+e)Message : &quot;Short Domain not found,please add short domain&quot; 
+Status : 200 OK
+Description : if domain entered by user in not in shortdomain table</pre>
+
+<p>}</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_shorturl-source">
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_shorturl</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{
+      <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_long</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:longurl</span>])
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;longurl already exist&#39;</span>, <span class="ruby-string">&#39;shorturl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">shorturl</span> }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">domain</span> = <span class="ruby-constant">ShortDomain</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">domain:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:domain</span>]).<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">domain</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> {<span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Short Domain not found,please add short domain&quot;</span>}
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">create_short_url</span>(<span class="ruby-identifier">url_params</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;new created shorturl&#39;</span>, <span class="ruby-string">&#39;shorturl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">shorturl</span> }
+          <span class="ruby-keyword">else</span> 
+            <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;error occured&#39;</span> }
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    }   
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>{
+      <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_long</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:longurl</span>])
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@url</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">domain</span> = <span class="ruby-constant">ShortDomain</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">domain:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:domain</span>]).<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">domain</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>
+          <span class="ruby-ivar">@url</span>=<span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
+          <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Short Domain not found,please add short domain&quot;</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;new&#39;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">create_short_url</span>(<span class="ruby-identifier">url_params</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@url</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Invalid long Url&quot;</span>
+            <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;new&#39;</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <pre>**Request Type:** GET
+**Routes:** urls_path
+**URI pattern:**/urls
+**Description:** Indexes all the records in the url table and show their field on index.html.erb view page.</pre>
+
+<h1 id="method-i-index-label-end+">end <span><a href="#method-i-index-label-end+">&para;</a> <a href="#top">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+  <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;id ASC&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>*<strong>Description:</strong>* This action will check whether the user is already logged in or not .If not it will  redirect it to the user_login_path.If logged in it will create a new instance of user object and  render the new.html.erb file</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:authenticate</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">user_login_path</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search_longurl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_longurl</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>**Common Name:**Search for longurl from input shorturl **End points:** Other services **Request Type** : GET *<strong>Routes</strong>* : url_long_path *<strong>url:</strong>* URI(“<a href="http://localhost:3000/url/long?shorturl">localhost:3000/url/long?shorturl</a>=”) *<strong>Params:</strong>* KEY-&gt;shorturl , VALUE-&gt; &#39;&#39; , DESCRIPTION-&gt; &#39;ShortUrl Input to get longurl in return&#39; *<strong>Cookies:</strong>*{</p>
+
+<pre>Name : _project_intern_session
+Value : 
+Domain : localhost
+HttpOnly : True
+Secure : false</pre>
+
+<p>} *<strong>Content-Type:</strong>* application/json; charset=utf-8 **Output Type:** JSON **Output Fields:** status,longurl *<strong>Host:</strong>* localhost:3000 *<strong>Cache-Control:</strong>*  no-cache **Custom Status Messages:**{</p>
+
+<pre>a)Message : &quot;longurl corresponding to shorturl is found&quot;
+Status  : 200 OK
+Description : Since the input shorturl is already existed in the database,it will just find the longurl correponding to that shorturl in the database and return that longurl along with above mentioned message.
+
+b)Message  : &quot;Invalid shorturl&quot;
+Status   :  200 OK
+Description : If the input shorturl is not already present in the database,it will return the above message
+
+c)Status : 500 Internal server error
+Description : If the shorturl key is not mentioned in the input params</pre>
+
+<p>}</p>
+          
+          
+
+          
+          <div class="method-source-code" id="search_longurl-source">
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_longurl</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
+        <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
+      <span class="ruby-keyword">else</span>
+         <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;longurl corresponding to shorturl is found&#39;</span>, <span class="ruby-string">&#39;longurl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">longurl</span> }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Invalid shorturl&#39;</span> }     
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>{
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
+        <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@url</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@url</span>=<span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Invalid Short Url&quot;</span>
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_url_path</span>
+      <span class="ruby-keyword">end</span> 
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <pre>**Common Name:** Show the url by search it in database via params[:id]
+**Request Type:** GET
+**Routes:** url_path
+**Description:** Check the authentication session and if logged in,it will display the longurl,shorturl,domain and suffix corresponding to the url</pre>
+
+<h1 id="method-i-show-label-end+">end <span><a href="#method-i-show-label-end+">&para;</a> <a href="#top">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:authenticate</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">user_login_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
