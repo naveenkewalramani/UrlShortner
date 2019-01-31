@@ -56,13 +56,17 @@ class UrlsController < ApplicationController
     e)Message : "Short Domain not found,please add short domain" 
     Status : 404 not-found
     Description : if domain entered by user in not in shortdomain table
+
+    f)Message : "Domain Name does not matched" 
+    Status : 404 not-found
+    Description : if domain entered by user in not match longurl domain
   }   
 =end
   
   def create_shorturl
     respond_to do |format|
       format.json{
-        if params[:domain]!=Domainatrix.parse(params[:longurl]).domain
+        if params[:domain]!= Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
           render json: { 'message' => 'Domain Name does not matched' }, status: :not_found
         else
           url = Url.find_long(params[:longurl])
@@ -84,7 +88,8 @@ class UrlsController < ApplicationController
         end
       }   
       format.html{
-        if params[:url][:domain]!=Domainatrix.parse(params[:url][:long_url]).domain
+        puts Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
+        if params[:url][:domain]!= Domainatrix.parse(params[:url][:longurl]).domain+'.' +Domainatrix.parse(params[:url][:longurl]).public_suffix
           flash[:notice]="Domain Name does not matched"
           @url=Url.new
           render 'new'
