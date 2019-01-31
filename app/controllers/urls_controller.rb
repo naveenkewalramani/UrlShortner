@@ -1,4 +1,4 @@
-
+  
 class UrlsController < ApplicationController
 
 =begin
@@ -155,29 +155,38 @@ class UrlsController < ApplicationController
   def search_longurl
     respond_to do |format|
       format.json{
-        if(params[:shorturl][0..6]!="http://")
-          url = Url.find_suffix(params[:shorturl])
+        if(params[:shorturl]==nil)
+          render json: { 'message' => 'Input Shorturl is Empty' } 
         else
-           url = Url.find_short(params[:shorturl])
-        end
-        if url!=nil
-          render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
-        else
-          render json: { 'message' => 'Invalid shorturl' }     
+          if(params[:shorturl][0..6]!="http://")
+            url = Url.find_suffix(params[:shorturl])
+          else
+            url = Url.find_short(params[:shorturl])
+          end
+          if url!=nil
+            render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
+          else
+            render json: { 'message' => 'Invalid shorturl' }     
+          end
         end
       }
       format.html{
-        if(params[:url][:shorturl][0..6]!="http://")
-          @url = Url.find_suffix(params[:url][:shorturl])
-        else
-          @url = Url.find_short(params[:url][:shorturl])
-        end
-        if @url!=nil
-          redirect_to @url
-        else
-          @url=Url.new
-          flash[:notice] = "Invalid Short Url"
+        if(params[:url][:shorturl]==nil)
+          flash[:notice] = "Input Shorturl is Empty"
           redirect_to new_url_path
+        else
+          if(params[:url][:shorturl][0..6]!="http://")
+            @url = Url.find_suffix(params[:url][:shorturl])
+          else
+            @url = Url.find_short(params[:url][:shorturl])
+          end
+          if @url!=nil
+            redirect_to @url
+          else
+            @url=Url.new
+            flash[:notice] = "Invalid Short Url"
+            redirect_to new_url_path
+          end
         end 
       }
     end
