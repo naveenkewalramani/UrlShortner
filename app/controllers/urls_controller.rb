@@ -22,9 +22,7 @@ class UrlsController < ApplicationController
   **Request Type:** POST
   **Route:** urls_long_path
   **url:**  URI("http://localhost:3000/urls/long")
-  **Paramas:** { "longurl" : " ",
-            "domain"  : " "
-          }
+  **Paramas:** { "longurl" : " ","domain"  : " "}
   **Cookies:** {
     Name : _project_intern_session
     Value : 
@@ -49,14 +47,14 @@ class UrlsController < ApplicationController
     Description : If the input longurl is not already present in the database,and new shorturl is created correponding to that longurl and domain.It is than saved in the database and return the newly generated shorturl alongwith the above message.
 
     c)Message : "error occured"
-    Status : 200 OK
+    Status : 404 not-dound
     Description : If the input url is not according to the validations mentioned in the url model ,than an error message will be displayed to the user as mentioned above
 
     d)Status : 500 Internal server error
     Description : If the longurl is not defined in the input params
 
     e)Message : "Short Domain not found,please add short domain" 
-    Status : 200 OK
+    Status : 404 not-found
     Description : if domain entered by user in not in shortdomain table
   }   
 =end
@@ -70,13 +68,13 @@ class UrlsController < ApplicationController
         else
           domain = ShortDomain.where(domain: params[:url][:domain]).first
           if domain==nil
-            render json: {'message' => "Short Domain not found,please add short domain"}
+            render json: {'message' => "Short Domain not found,please add short domain"}, status: :not_found
           else
             url = Url.create_short_url(url_params)
             if url!=nil
               render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
             else 
-              render json: { 'message' => 'error occured' }
+              render json: { 'message' => 'error occured' }, status: :not_found
             end
           end
         end
@@ -141,14 +139,14 @@ class UrlsController < ApplicationController
   **Cache-Control:**  no-cache
   **Custom Status Messages:**{
     a)Message : "longurl corresponding to shorturl is found"
-    Status  : 200 OK
+    Status  : 404 not-found
     Description : Since the input shorturl is already existed in the database,it will just find the longurl correponding to that shorturl in the database and return that longurl along with above mentioned message.
 
     b)Message  : "Invalid shorturl"
     Status   :  200 OK
     Description : If the input shorturl is not already present in the database,it will return the above message
 
-    c)Status : 500 Internal server error
+    c)Status : 404 not-found
     Description : If the shorturl key is not mentioned in the input params
   }
 =end
@@ -156,7 +154,7 @@ class UrlsController < ApplicationController
     respond_to do |format|
       format.json{
         if(params[:shorturl]==nil)
-          render json: { 'message' => 'Input Shorturl is Empty' } 
+          render json: { 'message' => 'Input Shorturl is Empty' }, status: :not_found 
         else
           if(params[:shorturl][0..6]!="http://")
             url = Url.find_suffix(params[:shorturl])
@@ -166,7 +164,7 @@ class UrlsController < ApplicationController
           if url!=nil
             render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
           else
-            render json: { 'message' => 'Invalid shorturl' }     
+            render json: { 'message' => 'Invalid shorturl' } ,status: :not_found    
           end
         end
       }

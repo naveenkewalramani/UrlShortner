@@ -151,14 +151,14 @@ Status   :  200 OK
 Description : If the input longurl is not already present in the database,and new shorturl is created correponding to that longurl and domain.It is than saved in the database and return the newly generated shorturl alongwith the above message.
 
 c)Message : &quot;error occured&quot;
-Status : 200 OK
+Status : 404 not-dound
 Description : If the input url is not according to the validations mentioned in the url model ,than an error message will be displayed to the user as mentioned above
 
 d)Status : 500 Internal server error
 Description : If the longurl is not defined in the input params
 
 e)Message : &quot;Short Domain not found,please add short domain&quot; 
-Status : 200 OK
+Status : 404 not-found
 Description : if domain entered by user in not in shortdomain table</pre>
 
 <p>}</p>
@@ -177,13 +177,13 @@ Description : if domain entered by user in not in shortdomain table</pre>
       <span class="ruby-keyword">else</span>
         <span class="ruby-identifier">domain</span> = <span class="ruby-constant">ShortDomain</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">domain:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:domain</span>]).<span class="ruby-identifier">first</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">domain</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>
-          <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> {<span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Short Domain not found,please add short domain&quot;</span>}
+          <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> {<span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Short Domain not found,please add short domain&quot;</span>}, <span class="ruby-value">status:</span> <span class="ruby-value">:not_found</span>
         <span class="ruby-keyword">else</span>
           <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">create_short_url</span>(<span class="ruby-identifier">url_params</span>)
           <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
             <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;new created shorturl&#39;</span>, <span class="ruby-string">&#39;shorturl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">shorturl</span> }
           <span class="ruby-keyword">else</span> 
-            <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;error occured&#39;</span> }
+            <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;error occured&#39;</span> }, <span class="ruby-value">status:</span> <span class="ruby-value">:not_found</span>
           <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
@@ -246,7 +246,7 @@ Description : if domain entered by user in not in shortdomain table</pre>
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 192</span>
+            <pre><span class="ruby-comment"># File app/controllers/urls_controller.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;id ASC&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -322,14 +322,14 @@ Secure : false</pre>
 <p>} *<strong>Content-Type:</strong>* application/json; charset=utf-8 **Output Type:** JSON **Output Fields:** status,longurl *<strong>Host:</strong>* localhost:3000 *<strong>Cache-Control:</strong>*  no-cache **Custom Status Messages:**{</p>
 
 <pre>a)Message : &quot;longurl corresponding to shorturl is found&quot;
-Status  : 200 OK
+Status  : 404 not-found
 Description : Since the input shorturl is already existed in the database,it will just find the longurl correponding to that shorturl in the database and return that longurl along with above mentioned message.
 
 b)Message  : &quot;Invalid shorturl&quot;
 Status   :  200 OK
 Description : If the input shorturl is not already present in the database,it will return the above message
 
-c)Status : 500 Internal server error
+c)Status : 404 not-found
 Description : If the shorturl key is not mentioned in the input params</pre>
 
 <p>}</p>
@@ -342,29 +342,38 @@ Description : If the shorturl key is not mentioned in the input params</pre>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_longurl</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{
-      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
-        <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>]<span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Input Shorturl is Empty&#39;</span> }, <span class="ruby-value">status:</span> <span class="ruby-value">:not_found</span> 
       <span class="ruby-keyword">else</span>
-         <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
-      <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
-        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;longurl corresponding to shorturl is found&#39;</span>, <span class="ruby-string">&#39;longurl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">longurl</span> }
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Invalid shorturl&#39;</span> }     
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
+          <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:shorturl</span>])
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;longurl corresponding to shorturl is found&#39;</span>, <span class="ruby-string">&#39;longurl&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">longurl</span> }
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> { <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Invalid shorturl&#39;</span> } ,<span class="ruby-value">status:</span> <span class="ruby-value">:not_found</span>    
+        <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
     }
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>{
-      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
-        <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
-      <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
-        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@url</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-ivar">@url</span>=<span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
-        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Invalid Short Url&quot;</span>
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>]<span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Input Shorturl is Empty&quot;</span>
         <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_url_path</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>]<span class="ruby-operator">!=</span><span class="ruby-string">&quot;http://&quot;</span>)
+          <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_suffix</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@url</span> = <span class="ruby-constant">Url</span>.<span class="ruby-identifier">find_short</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>][<span class="ruby-value">:shorturl</span>])
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@url</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span>
+          <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@url</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@url</span>=<span class="ruby-constant">Url</span>.<span class="ruby-identifier">new</span>
+          <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Invalid Short Url&quot;</span>
+          <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_url_path</span>
+        <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span> 
     }
   <span class="ruby-keyword">end</span>
