@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_action :check_session, only: [:login, :new, :login_check]
+
 =begin
   **Request Type:** GET
   **Routes:** user_new_path
@@ -8,7 +10,6 @@ class UsersController < ApplicationController
 =end
   def new
     @user = User.new
-    flash[:notice] = ""
   end
 
 
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
 =end
   def login
     @user = User.new
-    flash[:notice] = ""
   end
 
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Username Already Taken"
       render 'new'
     else
-      @user = User.create_user(user_params)
+      @user = @user.create_user(user_params)
       if @user !=nil
         set_session
       else
@@ -93,7 +93,7 @@ class UsersController < ApplicationController
   **URI pattern:**/urls
   **Description:** Indexes all the records in the url table and show their field on index.html.erb view page.
 =end 
-def index
+  def index
     @user = User.all.order("id ASC")
   end
 =begin
@@ -115,7 +115,7 @@ def index
   
 
   private
-    def user_params
-      params.require(:user).permit(:username , :email, :password)
-    end
+  def user_params
+    params.require(:user).permit(:username , :email, :password)
+  end
 end

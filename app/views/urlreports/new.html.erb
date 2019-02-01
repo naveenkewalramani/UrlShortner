@@ -1,0 +1,7 @@
+<div class="section">
+  <%= form_for @urlreport , url: urlreport_path , method: :get  do |form| %>
+    <p>Start Date: <%= form.date_field :date %> </br></p>
+    <p>Find : <%=  form.submit 'Search' %></p><br/>
+  <% end %>
+  <button><%=link_to 'Back', new_url_path %></button>
+</div>

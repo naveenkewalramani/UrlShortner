@@ -9,10 +9,10 @@ class Url < ApplicationRecord
   index_name('urls')
 
   #Validations of url
-  validates :longurl, presence: true , :length => { :in => 3..1000 }
-  validates_format_of :longurl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
-  validates :shorturl, presence: true , :length => { :in => 3..1000 }
-  validates_format_of :shorturl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
+  validates :longurl, presence: true , :length => { :in => 3..1000 } , uniqueness: true
+  validates_format_of :longurl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#-?&\/\/=]*)?\z/
+  validates :shorturl, presence: true , :length => { :in => 3..1000 } , uniqueness: true
+  validates_format_of :shorturl, with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#-?&\/\/=]*)?\z/
   
   #mapping for elastic search
   settings index: {
@@ -47,7 +47,7 @@ class Url < ApplicationRecord
   end
 
   #check all input parameters
-  def self.check_params(longurl)
+  def check_params(longurl)
     if longurl==""
       return false
     else 
@@ -61,11 +61,11 @@ class Url < ApplicationRecord
   end
 
   #Create shorturl from longurl
-  def self.create_short_url(url_params)  
+  def create_short_url(url_params)  
     url  = Url.new(url_params)
-    url.suffix= Url.suffix(url_params[:longurl],0)
-    while unique(url.suffix) == false
-      url.suffix = Url.suffix(url_params[:longurl],1)
+    url.suffix= url.create_suffix(url_params[:longurl],0)
+    while url.unique(url.suffix) == false
+      url.suffix = url.create_suffix(url_params[:longurl],1)
     end
     domain = Domainatrix.parse(url_params[:longurl]).domain + '.' + Domainatrix.parse(url_params[:longurl]).public_suffix
     short_domain = ShortDomain.where(domain: domain).first[:prefix]
@@ -78,26 +78,26 @@ class Url < ApplicationRecord
   end
 
   #Search Long Url in DB
-  def self.find_long(longurl) 
+  def find_long(longurl) 
      Url.where(longurl: longurl).first
   end
 
   #Redis search shorturl
-  def self.find_short(shorturl)        
+  def find_short(shorturl)        
     Rails.cache.fetch("#{shorturl}", expires_in: 100.hours) do
         Url.where(shorturl: shorturl).first
     end
   end
 
   #Redis search suffix
-  def self.find_suffix(suffix)          
+  def find_suffix(suffix)          
     Rails.cache.fetch("#{suffix}", expires_in: 100.hours) do
       Url.where(suffix: suffix).first
     end
   end
 
   #Check whether generated suffix is unique or not
-  def self.unique(suffix)         
+  def unique(suffix)         
     check = Url.where(suffix: suffix).first
     if check == nil
       return true
@@ -107,14 +107,14 @@ class Url < ApplicationRecord
   end
 
   #Calculate the ascii value of url
-  def self.ascii_value(url)
+  def ascii_value(url)
     ascii_value = 0;
     url.each_char {|url| ascii_value += url.ord}
     return ascii_value
   end
 
   #Calculate the suffix for  the shorturl
-  def self.suffix(longurl,flag)
+  def create_suffix(longurl,flag)
     ascii_value = ascii_value(longurl)
     if(flag == 1)
       ascii_value = ascii_value + rand(100..1000)

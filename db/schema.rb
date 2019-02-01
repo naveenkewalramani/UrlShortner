@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_31_173652) do
+ActiveRecord::Schema.define(version: 2019_02_01_045611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 2019_01_31_173652) do
     t.string "prefix"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["domain"], name: "index_short_domains_on_domain"
   end
 
   create_table "urlreports", force: :cascade do |t|
     t.integer "count"
     t.string "date"
+    t.index ["date"], name: "index_urlreports_on_date"
   end
 
   create_table "urls", force: :cascade do |t|

@@ -24,16 +24,15 @@
     color: white;
   }
 </style>
+  
   <table id='display'>
     <tr>
       <th>LongUrl</th>
-      <th>Domain</th>
       <th>Shorturl</th>
     </tr>
     <% @url.each do |url| %>
       <tr>
         <td><%= url.longurl %></td>
-        <td><%= url.domain %></td>
         <td><%= url.shorturl %></td>
       </tr>
     <% end %>

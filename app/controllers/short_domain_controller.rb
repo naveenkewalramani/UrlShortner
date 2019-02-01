@@ -19,13 +19,14 @@ class ShortDomainController < ApplicationController
   a new shortdomain will be created and saved.
 =end
   def create_short_domain
-    @short_domain = ShortDomain.find_domain(params[:short_domain][:domain])
+    @short_domain=ShortDomain.new
+    @short_domain = @short_domain.find_short_domain(params[:short_domain][:domain])
     if @short_domain!=nil
-      flash[:message] ="short domain already exist"
+      flash[:message] ="Short Domain already exist"
     else
       @short_domain = ShortDomain.new(domain_params)
       if @short_domain.save
-        flash[:notice] = "domain added successfully"
+        flash[:notice] = "Domain added successfully"
         render 'new'
       else
         flash[:notice] =  "Error in creating new domain"

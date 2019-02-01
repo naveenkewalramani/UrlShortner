@@ -7,12 +7,7 @@ class UrlsController < ApplicationController
   render the new.html.erb file
 =end
   def new
-    if(session[:authenticate] == true)
-      @url = Url.new
-      flash[:notice] = ""
-    else
-      redirect_to user_login_path
-     end
+    @url = Url.new
   end
 
   
@@ -66,40 +61,40 @@ class UrlsController < ApplicationController
   def create_shorturl
     respond_to do |format|
       format.json{
-        response = Url.check_params(params[:longurl])
+        url=Url.new
+        response = url.check_params(params[:longurl])
+        puts response
         if response!=true
-          render json: { 'message' => 'longurl already exist'}
+          render json: { 'message' => "Invalid longurl value or Domain not registered"}
         else
-          url = Url.find_long(params[:longurl])
-          if url!=nil
+          if url.find_long(params[:longurl]) != nil
             render json: { 'message' => 'longurl already exist', 'shorturl' => url.shorturl }
           else       
-            url = Url.create_short_url(url_params)
-            if url!=nil
-              render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
-            else 
+            url=Url.new
+            if url.create_short_url(url_params) == nil
               render json: { 'message' => 'error occured' }, status: :not_found
+            else
+              render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
             end
           end
         end
       }   
       format.html{
         @url=Url.new
-        response = Url.check_params(params[:url][:longurl])
+        response = @url.check_params(params[:url][:longurl])
         if response != true
-          flash[:notice]=response
+          flash[:notice]="Invalid longurl value or Domain not registered"
           render 'new'
         else
-          @url = Url.find_long(params[:url][:longurl])
-          if @url!=nil
-            redirect_to @url
+          if @url.find_long(params[:url][:longurl]) != nil
+            redirect_to @url.find_long(params[:url][:longurl])
           else
-            @url = Url.create_short_url(url_params)
-            if @url!=nil
-              redirect_to @url
+            @url=@url.create_short_url(url_params)
+            if @url != nil
+              render 'show' 
             else
               flash[:notice] = "Invalid long Url"
-              render 'new'
+              render 'new'  
             end
           end
         end
@@ -114,11 +109,7 @@ class UrlsController < ApplicationController
   **Description:** Check the authentication session and if logged in,it will display the longurl,shorturl,domain and suffix corresponding to the url
 =end 
   def show
-    if(session[:authenticate] == true)
-      @url = Url.find(params[:id])
-    else
-      redirect_to user_login_path
-    end
+    @url = Url.find(params[:id])
   end
   
 =begin
@@ -156,13 +147,14 @@ class UrlsController < ApplicationController
   def search_longurl
     respond_to do |format|
       format.json{
+        url=Url.new
         if(params[:shorturl]==nil)
           render json: { 'message' => 'Input Shorturl is Empty' }, status: :not_found 
         else
           if(params[:shorturl][0..6]!="http://")
-            url = Url.find_suffix(params[:shorturl])
+            url = url.find_suffix(params[:shorturl])
           else
-            url = Url.find_short(params[:shorturl])
+            url = url.find_short(params[:shorturl])
           end
           if url!=nil
             render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
@@ -172,14 +164,15 @@ class UrlsController < ApplicationController
         end
       }
       format.html{
+        @url=Url.new
         if(params[:url][:shorturl]==nil)
           flash[:notice] = "Input Shorturl is Empty"
           redirect_to new_url_path
         else
           if(params[:url][:shorturl][0..6]!="http://")
-            @url = Url.find_suffix(params[:url][:shorturl])
+            @url = @url.find_suffix(params[:url][:shorturl])
           else
-            @url = Url.find_short(params[:url][:shorturl])
+            @url = @url.find_short(params[:url][:shorturl])
           end
           if @url!=nil
             redirect_to @url
@@ -191,16 +184,6 @@ class UrlsController < ApplicationController
         end 
       }
     end
-  end
-
-=begin
-  **Request Type:** GET
-  **Routes:** urls_path
-  **URI pattern:**/urls
-  **Description:** Indexes all the records in the url table and show their field on index.html.erb view page.
-=end 
-  def index
-    @url = Url.all.order("id ASC")
   end
 
   private

@@ -1,19 +1,22 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  after_action :clear_flash
-  def clear_flash
-    flash[:notice]=""
-  end
+  # after_action :clear_flash
+  # def clear_flash
+  #   flash[:notice]=""
+  # end
 
+  #before_filter :check_session
   before_action :check_session
   #This function checks whether session is set or not 
   def check_session
     if(session[:expires_at]!=nil)
-      if(session[:expires_at] < Time.current)
+      if(session[:authenticate]==false)
+        redirect_to user_login_path
+      elsif(session[:expires_at] < Time.current )
         session[:username]=nil
 	      session[:authenticate]=false
-        #redirect_to user_login_path
+        redirect_to user_login_path
       end
     end
   end
