@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_action :check_session, only: [:login, :new, :login_check]
+  # skip_before_action :check_session, only: [:login, :new, :login_check]
 
 =begin
   **Request Type:** GET

@@ -59,46 +59,44 @@ class UrlsController < ApplicationController
 =end
   
   def create_shorturl
-    respond_to do |format|
-      format.json{
-        url=Url.new
-        response = url.check_params(params[:longurl])
-        puts response
-        if response!=true
-          render json: { 'message' => "Invalid longurl value or Domain not registered"}
+    # respond_to do |format|
+    #   format.json{
+    #     url=Url.new
+    #     response = url.check_params(params[:longurl])
+    #     puts response
+    #     if response!=true
+    #       render json: { 'message' => "Invalid longurl value or Domain not registered"}
+    #     else
+    #       if url.find_long(params[:longurl]) != nil
+    #         render json: { 'message' => 'longurl already exist', 'shorturl' => url.shorturl }
+    #       else       
+    #         url=Url.new
+    #         if url.create_short_url(url_params) == nil
+    #           render json: { 'message' => 'error occured' }, status: :not_found
+    #         else
+    #           render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
+    #         end
+    #       end
+    #     end
+    #   }   
+    #   format.html{
+    @url=Url.new
+    response = @url.check_params(params[:url][:longurl])
+    if response != true
+      flash[:notice]="Invalid longurl value or Domain not registered"
+      render 'new'
+    else
+      if @url.find_long(params[:url][:longurl]) != nil
+        redirect_to @url.find_long(params[:url][:longurl])
+      else
+        @url=@url.create_short_url(url_params)
+        if @url != nil
+          render 'show' 
         else
-          if url.find_long(params[:longurl]) != nil
-            render json: { 'message' => 'longurl already exist', 'shorturl' => url.shorturl }
-          else       
-            url=Url.new
-            if url.create_short_url(url_params) == nil
-              render json: { 'message' => 'error occured' }, status: :not_found
-            else
-              render json: { 'message' => 'new created shorturl', 'shorturl' => url.shorturl }
-            end
-          end
+          flash[:notice] = "Invalid long Url"
+          render 'new'  
         end
-      }   
-      format.html{
-        @url=Url.new
-        response = @url.check_params(params[:url][:longurl])
-        if response != true
-          flash[:notice]="Invalid longurl value or Domain not registered"
-          render 'new'
-        else
-          if @url.find_long(params[:url][:longurl]) != nil
-            redirect_to @url.find_long(params[:url][:longurl])
-          else
-            @url=@url.create_short_url(url_params)
-            if @url != nil
-              render 'show' 
-            else
-              flash[:notice] = "Invalid long Url"
-              render 'new'  
-            end
-          end
-        end
-      }
+      end
     end
   end
 
@@ -145,45 +143,43 @@ class UrlsController < ApplicationController
   }
 =end
   def search_longurl
-    respond_to do |format|
-      format.json{
-        url=Url.new
-        if(params[:shorturl]==nil)
-          render json: { 'message' => 'Input Shorturl is Empty' }, status: :not_found 
-        else
-          if(params[:shorturl][0..6]!="http://")
-            url = url.find_suffix(params[:shorturl])
-          else
-            url = url.find_short(params[:shorturl])
-          end
-          if url!=nil
-            render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
-          else
-            render json: { 'message' => 'Invalid shorturl' } ,status: :not_found    
-          end
-        end
-      }
-      format.html{
+    # respond_to do |format|
+    #   format.json{
+    #     url=Url.new
+    #     if(params[:shorturl]==nil)
+    #       render json: { 'message' => 'Input Shorturl is Empty' }, status: :not_found 
+    #     else
+    #       if(params[:shorturl][0..6]!="http://")
+    #         url = url.find_suffix(params[:shorturl])
+    #       else
+    #         url = url.find_short(params[:shorturl])
+    #       end
+    #       if url!=nil
+    #         render json: { 'message' => 'longurl corresponding to shorturl is found', 'longurl' => url.longurl }
+    #       else
+    #         render json: { 'message' => 'Invalid shorturl' } ,status: :not_found    
+    #       end
+    #     end
+    #   }
+    #   format.html{
+    @url=Url.new
+    if(params[:url][:shorturl]==nil)
+      flash[:notice] = "Input Shorturl is Empty"
+      redirect_to new_url_path
+    else
+      if(params[:url][:shorturl][0..6]!="http://")
+        @url = @url.find_suffix(params[:url][:shorturl])
+      else
+        @url = @url.find_short(params[:url][:shorturl])
+      end
+      if @url!=nil
+        redirect_to @url
+      else
         @url=Url.new
-        if(params[:url][:shorturl]==nil)
-          flash[:notice] = "Input Shorturl is Empty"
-          redirect_to new_url_path
-        else
-          if(params[:url][:shorturl][0..6]!="http://")
-            @url = @url.find_suffix(params[:url][:shorturl])
-          else
-            @url = @url.find_short(params[:url][:shorturl])
-          end
-          if @url!=nil
-            redirect_to @url
-          else
-            @url=Url.new
-            flash[:notice] = "Invalid Short Url"
-            redirect_to new_url_path
-          end
-        end 
-      }
-    end
+        flash[:notice] = "Invalid Short Url"
+        redirect_to new_url_path
+      end
+    end 
   end
 
   private

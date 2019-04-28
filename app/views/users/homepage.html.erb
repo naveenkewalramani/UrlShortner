@@ -4,25 +4,18 @@
     color:midnightblue;
     font-family:Georgia;
   }
-  .home{
-    border:2px dotted black;
-    text-align:center;
-    padding:15px;
-    margin:20px;
-  }
-  button{
-    position:relative;
-    padding:2px;
-    margin:3px;
-    width:10%;
-    height:auto;
-    font-size:1em;
-    font-family:Times Roman,sans-serif;
-    text-transform: none;
-  }
 </style>
-<h2><i>WELCOME TO HOME PAGE</i></h2>
-<div class="home">
-  <button>SignUp : <%= link_to "signup" , user_new_path %></button><br>
-  <button>Login : <%= link_to "login" , user_login_path %></button>
+<div class='container-fluid'>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Housing.com</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "SignUp" , user_new_path %></li>
+        <li> <%= link_to "LogIn" , user_login_path %></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row"></div>
 </div>
