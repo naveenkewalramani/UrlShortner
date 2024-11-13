@@ -1,8 +1,8 @@
 *.DS_Store
 *~
 
-pkg/
-tmp/
-.bundle
-log/
-tmp/cache
+ruby-implementation/pkg/
+ruby-implementation/tmp/
+ruby-implementation/.bundle
+ruby-implementation/log/
+ruby-implementation/tmp/cache
